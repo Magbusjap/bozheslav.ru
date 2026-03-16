@@ -1,0 +1,37 @@
+/* ==========================================================================
+   BLOCK: menu (nav links)
+   ========================================================================== */
+
+.nav__links {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.nav__link {
+	color: var(--muted-fg);
+	padding: 0.5rem 0.75rem;
+	font-size: 1.05rem;
+	border-radius: var(--radius);
+	transition:
+		color 0.15s,
+		background-color 0.15s;
+}
+
+.nav__link:hover {
+	color: var(--fg);
+	background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.nav__mobile-links {
+	padding: 0.5rem 0.75rem 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.nav__link--mobile {
+	display: block;
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+}

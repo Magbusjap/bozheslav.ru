@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
+		<script defer src="./js/index.js" type="module"></script>
+		<title>Михаил Божеслав — Разработчик</title>
+	</head>
+	<body>
+		<!-- NAV -->
+		<nav class="nav">
+			<div class="container nav__container">
+				<div class="nav__inner">
+					<div class="nav__logo">Михаил Божеслав</div>
+
+					<!-- Desktop links + theme toggle -->
+					<div class="nav__desktop">
+						<div class="nav__links">
+							<a href="#home" class="nav__link">Главная</a>
+							<a href="#skills" class="nav__link">Умения</a>
+							<a href="#experience" class="nav__link">Портфолио</a>
+							<a href="#projects" class="nav__link">Опыт</a>
+							<a href="#blog" class="nav__link">Блог</a>
+							<a href="#contact" class="nav__link">Контакты</a>
+						</div>
+						<button
+							class="btn btn--icon theme-toggle"
+							id="themeToggle"
+							aria-label="Toggle theme"
+						>
+							<i
+								data-lucide="sun"
+								class="theme-toggle__icon theme-toggle__icon--sun"
+							></i>
+							<i
+								data-lucide="moon"
+								class="theme-toggle__icon theme-toggle__icon--moon"
+							></i>
+						</button>
+					</div>
+
+					<!-- Mobile: theme toggle + hamburger -->
+					<div class="nav__mobile-controls">
+						<button
+							class="btn btn--icon theme-toggle"
+							id="themeToggleMobile"
+							aria-label="Toggle theme"
+						>
+							<i
+								data-lucide="sun"
+								class="theme-toggle__icon theme-toggle__icon--sun"
+							></i>
+							<i
+								data-lucide="moon"
+								class="theme-toggle__icon theme-toggle__icon--moon"
+							></i>
+						</button>
+						<button
+							class="btn btn--icon"
+							id="mobileMenuBtn"
+							aria-label="Toggle menu"
+						>
+							<!-- <i data-lucide="menu" class="menu-icon" id="menuIcon"></i>
+							<i data-lucide="x" class="close-icon" id="closeIcon"></i> -->
+							<svg width="24" height="24">
+								<use
+									id="menuIcon"
+									class="menu-icon"
+									href="./icons/sprites.svg#burger-menu"
+								></use>
+								<use
+									id="closeIcon"
+									class="close-icon"
+									href="./icons/sprites.svg#cross-menu"
+								></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Mobile dropdown menu -->
+			<div class="nav__mobile-menu" id="mobileMenu" hidden>
+				<div class="nav__mobile-links">
+					<a href="#home" class="nav__link nav__link--mobile">Главная</a>
+					<a href="#skills" class="nav__link nav__link--mobile">Умения</a>
+					<a href="#experience" class="nav__link nav__link--mobile"
+						>Портфолио</a
+					>
+					<a href="#projects" class="nav__link nav__link--mobile">Опыт</a>
+					<a href="#contact" class="nav__link nav__link--mobile">Блог</a>
+					<a href="#contact" class="nav__link nav__link--mobile">Контакты</a>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<!-- HERO -->
+			<section class="hero section" id="home">
+				<!-- Animated background -->
+				<div class="hero__bg">
+					<div class="hero__blob hero__blob--1"></div>
+					<div class="hero__blob hero__blob--2"></div>
+					<div class="hero__blob hero__blob--3"></div>
+					<div class="hero__grid-bg">
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+					</div>
+				</div>
+
+				<div class="container hero__container">
+					<div class="hero__layout">
+						<!-- Left: text content -->
+						<div class="hero__content">
+							<div class="hero__badge-wrap">
+								<span class="badge badge--primary">
+									<!-- <i data-lucide="sparkles" class="badge__icon"></i> -->
+									<svg class="badge__icon" width="20" height="20">
+										<use href="./icons/sprites.svg#handshake"></use>
+									</svg>
+									Доступен для сотрудничества
+								</span>
+							</div>
+
+							<div class="hero__heading-group">
+								<h1 class="hero__title">
+									<span class="hero__typed">
+										<span class="hero__typed-prefix">&gt;</span>
+										<span class="hero__typed-text"></span>
+										<span class="hero__cursor">|</span>
+									</span>
+									<!-- <span class="hero__title-line">Hello, I'm</span> -->
+									<span class="hero__title-name"
+										>Михаил Анкудинов, Разработчик</span
+									>
+								</h1>
+								<div class="hero__desc-group">
+									<p class="hero__lead">
+										Верстаю сайты, настраиваю серверы, автоматизирую рутину.
+										Открыт к новым проектам.
+										<!-- TODO: дополнительный текст под описанием -->
+										<!-- <span class="hero__lead-accent"> 5+ years</span> of
+										expertise -->
+									</p>
+									<!-- TODO: дополнительный текст под описанием -->
+									<!-- <p class="hero__sub">
+										Specializing in full-stack development, DevOps practices,
+										and scalable solutions that drive business growth.
+									</p> -->
+								</div>
+							</div>
+
+							<div class="hero__actions">
+								<a href="#" class="btn btn--primary btn--lg">
+									<svg class="btn__icon" width="20" height="20">
+										<use href="./icons/sprites.svg#download"></use>
+									</svg>
+									Скачать моё резюме
+								</a>
+								<a href="#projects" class="btn btn--outline btn--lg">
+									<svg class="btn__icon" width="20" height="20">
+										<use href="./icons/sprites.svg#folder-data-storage"></use>
+									</svg>
+									Посмотреть мои работы
+								</a>
+							</div>
+
+							<div class="hero__socials">
+								<a
+									href="#"
+									class="btn btn--ghost btn--icon btn--circle"
+									aria-label="GitHub"
+								>
+									<svg class="sprites">
+										<use href="./icons/sprites.svg#github"></use>
+									</svg>
+								</a>
+								<a
+									href="#"
+									class="btn btn--ghost btn--icon btn--circle"
+									aria-label="LinkedIn"
+								>
+									<svg class="sprites">
+										<use href="./icons/sprites.svg#telegram"></use>
+									</svg>
+								</a>
+								<a
+									href="#"
+									class="btn btn--ghost btn--icon btn--circle"
+									aria-label="Email"
+								>
+									<svg class="sprites">
+										<use href="./icons/sprites.svg#email"></use>
+									</svg>
+								</a>
+							</div>
+
+							<div class="hero__stats">
+								<div class="stat">
+									<div class="stat__value">5+</div>
+									<p class="stat__label">Проектов</p>
+								</div>
+								<div class="stat">
+									<div class="stat__value">1+</div>
+									<p class="stat__label">Год в IT (и не только)</p>
+								</div>
+								<div class="stat">
+									<div class="stat__value">✓ отзывы</div>
+									<p class="stat__label">На Kwork</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right: photo -->
+						<div class="hero__image-wrap">
+							<div class="hero__image-container">
+								<div class="hero__glow hero__glow--top"></div>
+								<div class="hero__glow hero__glow--bottom"></div>
+
+								<div class="hero__avatar-group">
+									<div class="hero__avatar">
+										<picture>
+											<source
+												srcset="./images/mikhail-ankudinov-developer.webp"
+												type="image/webp"
+											/>
+											<img
+												class="hero__photo"
+												src="./images/mikhail-ankudinov-developer.jpg"
+												loading="lazy"
+												alt="Михаил Божеслав - Разработчик"
+											/>
+										</picture>
+										<div class="hero__avatar-overlay"></div>
+									</div>
+
+									<div class="hero__status">
+										<span class="hero__status-dot"></span>
+										<span class="hero__status-text">Нанять на проект</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Scroll indicator -->
+					<div class="hero__scroll">
+						<span class="hero__scroll-text">Вниз</span>
+						<i data-lucide="arrow-down" class="hero__scroll-icon"></i>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+		<script defer src="./js/index.js" type="module"></script>
+	</body>
+</html>

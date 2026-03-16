@@ -1,0 +1,92 @@
+/* ==========================================================================
+   BLOCK: nav (header)
+   ========================================================================== */
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: var(--layer-3);
+	background-color: var(--nav-bg);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-bottom: 1px solid var(--border);
+	transition: var(--transition);
+}
+
+.nav__container {
+	max-width: 80rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.nav__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 4rem;
+}
+
+.nav__logo {
+	font-size: 1.325rem;
+	font-weight: 500;
+	flex-shrink: 0;
+}
+
+/* Desktop nav — hidden on mobile */
+.nav__desktop {
+	display: none;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Mobile controls — shown on mobile */
+.nav__mobile-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Mobile dropdown */
+.nav__mobile-menu {
+	border-top: 1px solid var(--border);
+	background-color: var(--bg);
+}
+
+/* hamburger icon management */
+.close-icon {
+	display: none;
+}
+
+/* Responsive: show desktop nav at ≥ 768px */
+@media (min-width: 768px) {
+	.nav__desktop {
+		display: flex;
+	}
+	.nav__mobile-controls {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   BLOCK: theme-toggle
+   ========================================================================== */
+
+.theme-toggle__icon--moon {
+	display: block;
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.theme-toggle__icon--sun {
+	display: none;
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.dark .theme-toggle__icon--moon {
+	display: none;
+}
+.dark .theme-toggle__icon--sun {
+	display: block;
+}
