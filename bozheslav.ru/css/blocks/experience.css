@@ -1,0 +1,133 @@
+/* ==========================================================================
+   BLOCK: experience
+   ========================================================================== */
+
+.experience {
+	padding: 5rem 1rem;
+	background-color: rgba(var(--primary-rgb), 0.02);
+}
+
+/* === Container === */
+
+.experience__container {
+	max-width: 56rem;
+	margin: 0 auto;
+}
+
+/* === Header === */
+
+.experience__header {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.experience__title {
+	margin-bottom: 1rem;
+	font-size: 1.875rem;
+}
+
+.experience__desc {
+	max-width: 42rem;
+	margin: 0 auto;
+	color: var(--muted-fg);
+}
+
+/* === List === */
+
+.experience__list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* === Card top: job title + meta === */
+
+.experience__card-top {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.experience__company {
+	margin-top: 0.25rem;
+	color: var(--primary);
+}
+
+/* === Meta (date, location) === */
+
+.experience__meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.experience__meta-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--muted-fg);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.experience__meta-icon {
+	flex-shrink: 0;
+	width: 1rem;
+	height: 1rem;
+}
+
+/* === Body === */
+
+.experience__text {
+	margin-bottom: 1rem;
+	color: var(--muted-fg);
+}
+
+.experience__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.experience__strong {
+	font-size: 1.3rem;
+}
+
+/* === Card title override for experience section === */
+
+.experience .card__title {
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+/* ==========================================================================
+   BLOCK: badge (experience modifier)
+   ========================================================================== */
+
+.badge__experience {
+	padding: 0.3rem 1.25rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+/* ==========================================================================
+   Desktop (>= 768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+	.experience__title {
+		font-size: 2.25rem;
+	}
+
+	.experience__card-top {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.experience__meta {
+		align-items: flex-end;
+	}
+}

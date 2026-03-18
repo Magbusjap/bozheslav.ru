@@ -1,0 +1,31 @@
+/* ==========================================================================
+   BLOCK: footer
+   ========================================================================== */
+
+.footer {
+	padding: 3rem 1rem;
+	border-top: 1px solid var(--border);
+	background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.footer__container {
+	max-width: 56rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.footer__name {
+	margin-bottom: 1rem;
+	font-size: 1.325rem;
+	font-weight: 500;
+}
+
+.footer__role {
+	margin-bottom: 1.5rem;
+	color: var(--muted-fg);
+}
+
+.footer__copy {
+	color: var(--muted-fg);
+	font-size: 0.875rem;
+}

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   BLOCK: contact
+   ========================================================================== */
+
+.contact {
+	padding: 5rem 1rem;
+	background-color: rgba(var(--primary-rgb), 0.02);
+}
+
+/* === Container === */
+
+.contact__container {
+	max-width: 56rem;
+	margin: 0 auto;
+}
+
+/* === Header === */
+
+.contact__header {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.contact__title {
+	margin-bottom: 1rem;
+	font-size: 1.875rem;
+}
+
+.contact__desc {
+	max-width: 42rem;
+	margin: 0 auto;
+	color: var(--muted-fg);
+}
+
+/* === Grid === */
+
+.contact__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 3rem;
+}
+
+/* === Info cards === */
+
+.contact__info {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* Override card__body padding for contact info cards */
+.contact__info .card .card__body {
+	padding: 1.5rem;
+}
+
+.contact__info-row {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.contact__info-icon {
+	flex-shrink: 0;
+	width: 18px;
+	height: 18px;
+	color: var(--primary);
+}
+
+.contact__info-label {
+	margin-bottom: 0.125rem;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.contact__info-value {
+	color: var(--muted-fg);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+/* === card__title override for contact section === */
+
+.contact .card__title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+
+/* === Form === */
+
+.contact__form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.contact__form-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+/* === Socials === */
+
+.contact__find {
+	font-size: 1.3rem;
+}
+
+.contacts__socials {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+	padding-top: 25px;
+}
+
+.contacts__socials .hero__socials {
+	justify-content: flex-start;
+	margin-top: 0;
+	width: fit-content;
+}
+
+/* ==========================================================================
+   Desktop (>= 640px)
+   ========================================================================== */
+
+@media (min-width: 640px) {
+	.contact__form-row {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* ==========================================================================
+   Desktop (>= 768px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+	.contact__title {
+		font-size: 2.25rem;
+	}
+}
+
+/* ==========================================================================
+   Desktop (>= 1024px)
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+	.contact__grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}

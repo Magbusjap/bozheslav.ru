@@ -3,49 +3,64 @@
    ========================================================================== */
 
 :root {
-	/* === FONT FAMILY === */
+
+	/* === Font family === */
 	--casual-font-family: "Inter", system-ui, sans-serif;
 
-	/* Colors */
+	/* === Colors === */
 	--bg: #ffffff;
 	--fg: #1a1a2e;
 	--primary: #030213;
 	--primary-fg: #ffffff;
-	--primary-rgb: 3, 2, 19; /* for rgba() */
+	--primary-rgb: 3, 2, 19; /* для rgba() */
 	--secondary: #f0f0f5;
 	--muted: #ececf0;
-	--muted-fg: #717182;
+	--muted-fg: #555560;
 	--accent: #e9ebef;
 	--border: rgba(0, 0, 0, 0.1);
 	--card-bg: #ffffff;
 	--input-bg: #f3f3f5;
 
-	/* Nav background (semi-transparent for blur effect) */
-	--nav-bg: rgba(255, 255, 255, 0.95);
+	/* === Nav === */
+	--nav-bg: rgba(255, 255, 255, 0.95); /* полупрозрачный фон для blur-эффекта */
 
-	/* Radius */
+	/* === Border radius === */
 	--radius-sm: 0.375rem; /* 6px  */
-	--radius: 0.625rem; /* 10px */
-	--radius-lg: 0.75rem; /* 12px */
-	--radius-xl: 1rem; /* 16px */
+	--radius:    0.625rem; /* 10px */
+	--radius-lg: 0.75rem;  /* 12px */
+	--radius-xl: 1rem;     /* 16px */
 
-	/* Shadows */
+	/* === Shadows === */
 	--shadow-xl:
-		0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+		0 20px 25px -5px rgba(0, 0, 0, 0.1),
+		0 8px 10px -6px rgba(0, 0, 0, 0.1);
 	--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-	/* Transitions */
+	/* === Transitions === */
+	/* --transition используется в * {} для глобального переключения темы */
 	--transition:
-		background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+		background-color 0.3s ease,
+		border-color 0.3s ease,
+		color 0.3s ease;
+	/* --transition-time используется в отдельных анимациях через transition: prop var(--transition-time) */
+	--transition-time: 0.3s;
 
-	/* Layers */
+	/* === Z-index layers === */
 	--layer-1: 10;
 	--layer-2: 50;
 	--layer-3: 100;
+
+	/* === Container === */
+	--container-width: 1294px;
+	--container-padding: 20px;
 }
 
-/* Dark theme */
+/* ==========================================================================
+   Dark theme
+   ========================================================================== */
+
 .dark {
+	/* === Colors === */
 	--bg: #1c1c1c;
 	--fg: #fafafa;
 	--primary: #fafafa;
@@ -59,6 +74,6 @@
 	--card-bg: #1c1c1c;
 	--input-bg: #2a2a2a;
 
-	/* Nav background */
+	/* === Nav === */
 	--nav-bg: rgba(28, 28, 28, 0.95);
 }

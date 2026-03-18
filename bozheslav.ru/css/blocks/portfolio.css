@@ -1,0 +1,247 @@
+/* ==========================================================================
+   BLOCK: projects
+   ========================================================================== */
+
+.projects {
+	padding: 5rem 1rem;
+}
+
+/* === Header === */
+
+.projects__header {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+/* === Layout === */
+
+.projects__layout {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 1.5rem;
+	align-items: stretch;
+}
+
+/* === Sidebar === */
+
+.projects__sidebar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.projects__list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+/* === Project item === */
+
+.project-item {
+	padding: 1rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease;
+}
+
+.project-item:hover {
+	border-color: var(--primary);
+}
+
+.project-item.active {
+	border-color: var(--primary);
+	background-color: rgba(var(--primary-rgb), 0.04);
+}
+
+.project-item__name {
+	margin-bottom: 0.75rem;
+}
+
+.project-item__actions {
+	display: flex;
+	gap: 0.5rem;
+}
+
+/* === Navigation === */
+
+.projects__nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.projects__arrows {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.projects__arrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: transparent;
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease;
+}
+
+.projects__arrow:hover {
+	border-color: var(--primary);
+	background-color: rgba(var(--primary-rgb), 0.04);
+}
+
+.projects__arrow:disabled {
+	opacity: 0.4;
+	cursor: default;
+	pointer-events: none;
+}
+
+.projects__arrow-left,
+.projects__arrow-right {
+	width: 1.8rem;
+	height: 1.8rem;
+	padding: 0.4rem;
+	color: var(--fg);
+}
+
+.projects__counter {
+	min-width: 2.5rem;
+	color: var(--muted-fg);
+	font-size: 0.875rem;
+	text-align: center;
+}
+
+.projects__all {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0.675rem 1.5rem;
+	border: 1px solid rgba(var(--primary-rgb), 0.2);
+	border-radius: var(--radius);
+	color: var(--fg);
+	font-size: 1rem;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.projects__all:hover {
+	background-color: rgba(var(--primary-rgb), 0.05);
+	color: var(--primary);
+}
+
+/* === Project detail === */
+
+.project-detail {
+	display: none;
+	flex-direction: column;
+	height: 610px;
+	overflow: hidden;
+}
+
+.project-detail.active {
+	display: flex;
+}
+
+.project-detail .card__body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	overflow: hidden;
+}
+
+.project-detail__image-wrap {
+	flex-shrink: 0;
+	border-radius: var(--radius) var(--radius) 0 0;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
+.project-detail__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.project-detail__image-wrap:hover .project-detail__image {
+	transform: scale(1.05);
+}
+
+.project-detail__title {
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.project-detail__desc {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	margin-bottom: 1rem;
+	color: var(--muted-fg);
+	overflow: hidden;
+}
+
+.project-detail__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.project-detail__actions {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: auto;
+	padding-top: 0.5rem;
+}
+
+/* ==========================================================================
+   BLOCK: badge (portfolio modifier)
+   ========================================================================== */
+
+.badge__portfolio {
+	padding: 0.3rem 1.25rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+/* ==========================================================================
+   Mobile (max-width: 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+	.projects__layout {
+		grid-template-columns: 1fr;
+	}
+
+	.projects__sidebar {
+		order: 2;
+	}
+
+	.projects__list {
+		display: none;
+	}
+
+	.projects__nav {
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.projects__detail {
+		order: 1;
+	}
+}
