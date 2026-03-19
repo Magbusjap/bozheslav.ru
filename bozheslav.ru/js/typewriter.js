@@ -1,4 +1,5 @@
 export function initTyped() {
+	if (!document.querySelector(".hero__typed")) return;
 	const typed = {
 		phrases: [
 			"Привет...",

@@ -15,3 +15,10 @@
 @import url("./blocks/experience.css");
 @import url("./blocks/contacts.css");
 @import url("./blocks/footer.css");
+
+/* === PAGES === */
+@import url("./pages/blog-page.css");
+@import url("./pages/contacts-page.css");
+@import url("./pages/experience-page.css");
+@import url("./pages/skills-page.css");
+@import url("./pages/portfolio-page.css");

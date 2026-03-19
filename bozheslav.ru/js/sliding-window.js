@@ -49,6 +49,7 @@ export function nextProject() {
 }
 
 export function initProjects() {
+	if (!document.getElementById("projectsCounter")) return;
 	selectProject(0);
 }
 

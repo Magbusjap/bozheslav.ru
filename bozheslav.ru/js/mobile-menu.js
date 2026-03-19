@@ -2,6 +2,7 @@ const BREAKPOINT = 768;
 
 export function initMenu(headerFixedInstance = null) {
 	const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+	if (!mobileMenuBtn) return;
 	const mobileMenu = document.getElementById("mobileMenu");
 	const menuIcon = document.getElementById("menuIcon");
 	const closeIcon = document.getElementById("closeIcon");

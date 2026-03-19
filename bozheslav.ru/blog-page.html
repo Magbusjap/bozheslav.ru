@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
+		<title>Блог — Михаил Божеслав</title>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<main class="main">
+			<!-- Blog page -->
+			<section class="section blog-page" id="blog">
+				<div class="container blog-page__container">
+					<div class="blog-page__header">
+						<h1 class="blog-page__title">Блог</h1>
+						<p class="blog-page__desc">
+							Пишу о разработке, инструментах, книгах и профессиональном росте.
+						</p>
+					</div>
+
+					<!-- Фильтры -->
+					<div class="blog-page__filters" id="blogFilters">
+						<button class="blog-filter active" data-filter="all">Все</button>
+						<button class="blog-filter" data-filter="devops">DevOps</button>
+						<button class="blog-filter" data-filter="frontend">Frontend</button>
+						<button class="blog-filter" data-filter="backend">Backend</button>
+						<button class="blog-filter" data-filter="books">Книги</button>
+						<button class="blog-filter" data-filter="other">Разное</button>
+					</div>
+
+					<!-- Сетка статей -->
+					<div class="blog-page__grid" id="blogGrid">
+						<article class="card blog-card" data-category="devops">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-1.webp" type="image/webp" />
+									<img
+										src="images/blog/post-1.jpg"
+										alt="Как я поднял свой первый VPS"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog" data-filter="devops"
+										>DevOps</span
+									>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="./icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-03-10"
+											>10 марта 2025</time
+										>
+									</span>
+								</div>
+								<h2 class="blog-card__title">Как я поднял свой первый VPS</h2>
+								<p class="blog-card__desc">
+									nginx, Docker, SSL — с нуля до рабочего сервера. Разбираю
+									каждый шаг и подводные камни которые встретил.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="./icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card" data-category="frontend">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-2.webp" type="image/webp" />
+									<img
+										src="images/blog/post-2.jpg"
+										alt="BEM: почему я наконец понял методологию"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog" data-filter="frontend"
+										>Frontend</span
+									>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="./icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-02-20"
+											>20 февраля 2025</time
+										>
+									</span>
+								</div>
+								<h2 class="blog-card__title">
+									BEM: почему я наконец понял методологию
+								</h2>
+								<p class="blog-card__desc">
+									Долго не мог принять BEM. Рассказываю что изменилось и почему
+									теперь верстаю только так.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="./icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card" data-category="books">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-3.webp" type="image/webp" />
+									<img
+										src="images/blog/post-3.jpg"
+										alt="Книга: Чистый код"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog" data-filter="books"
+										>Книги</span
+									>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="./icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-01-15"
+											>15 января 2025</time
+										>
+									</span>
+								</div>
+								<h2 class="blog-card__title">Книга: Чистый код</h2>
+								<p class="blog-card__desc">
+									Прочитал «Чистый код» Мартина. Что взял для себя и что
+									показалось спорным — честный разбор.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="./icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card" data-category="backend">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-4.webp" type="image/webp" />
+									<img
+										src="images/blog/post-4.jpg"
+										alt="Laravel: первые шаги"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog" data-filter="backend"
+										>Backend</span
+									>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="./icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-01-05"
+											>5 января 2025</time
+										>
+									</span>
+								</div>
+								<h2 class="blog-card__title">Laravel: первые шаги</h2>
+								<p class="blog-card__desc">
+									Как я начал разбираться в Laravel после чистого HTML. Что
+									удивило, что показалось сложным.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="./icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card" data-category="other">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-5.webp" type="image/webp" />
+									<img
+										src="images/blog/post-5.jpg"
+										alt="Как я перешёл из производства в IT"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog" data-filter="different"
+										>Разное</span
+									>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="./icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2024-12-01"
+											>1 декабря 2024</time
+										>
+									</span>
+								</div>
+								<h2 class="blog-card__title">
+									Как я перешёл из производства в IT
+								</h2>
+								<p class="blog-card__desc">
+									Личная история. Завод, точная механика и решение сменить
+									профессию. Без прикрас.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="./icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card" data-category="devops">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-6.webp" type="image/webp" />
+									<img
+										src="images/blog/post-6.jpg"
+										alt="Docker Compose: что это и зачем"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog" data-filter="devops"
+										>DevOps</span
+									>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="./icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2024-11-15"
+											>15 ноября 2024</time
+										>
+									</span>
+								</div>
+								<h2 class="blog-card__title">
+									Docker Compose: что это и зачем
+								</h2>
+								<p class="blog-card__desc">
+									Объясняю простыми словами зачем нужен Compose и как я
+									использую его на своём сервере.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="./icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+					</div>
+
+					<!-- Пагинация -->
+					<nav
+						class="blog-pagination"
+						id="blogPagination"
+						aria-label="Страницы блога"
+					>
+						<button
+							class="blog-pagination__btn"
+							id="prevPage"
+							onclick="prevPage()"
+							disabled
+						>
+							<svg class="sprites badge__icon" aria-hidden="true">
+								<use href="./icons/sprites.svg#arrow-left"></use>
+							</svg>
+						</button>
+						<div class="blog-pagination__pages" id="paginationPages"></div>
+						<button
+							class="blog-pagination__btn"
+							id="nextPage"
+							onclick="nextPage()"
+						>
+							<svg class="sprites badge__icon" aria-hidden="true">
+								<use href="./icons/sprites.svg#arrow-right"></use>
+							</svg>
+						</button>
+					</nav>
+				</div>
+			</section>
+		</main>
+
+		<div id="footer"></div>
+		<script defer src="./js/index.js" type="module"></script>
+	</body>
+</html>

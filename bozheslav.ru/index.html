@@ -8,88 +8,9 @@
 		<title>Михаил Божеслав — Разработчик</title>
 	</head>
 	<body>
-
-		<!-- Navigation -->
-		<nav class="nav">
-			<div class="container nav__container">
-				<div class="nav__inner">
-					<div class="nav__logo">Михаил Божеслав</div>
-
-					<!-- Desktop links + theme toggle -->
-					<div class="nav__desktop">
-						<div class="nav__links">
-							<a href="#home" class="nav__link">Главная</a>
-							<a href="#skills" class="nav__link">Умения</a>
-							<a href="#experience" class="nav__link">Портфолио</a>
-							<a href="#projects" class="nav__link">Опыт</a>
-							<a href="#blog" class="nav__link">Блог</a>
-							<a href="#contact" class="nav__link">Контакты</a>
-						</div>
-						<button
-							class="btn btn--icon theme-toggle"
-							id="themeToggle"
-							aria-label="Toggle theme"
-						>
-							<svg class="sprites badge__icon theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
-								<use href="./icons/sprites.svg#sun"></use>
-							</svg>
-							<svg class="sprites badge__icon theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
-								<use href="./icons/sprites.svg#moon"></use>
-							</svg>
-						</button>
-					</div>
-
-					<!-- Mobile: theme toggle + hamburger -->
-					<div class="nav__mobile-controls">
-						<button
-							class="btn btn--icon theme-toggle"
-							id="themeToggleMobile"
-							aria-label="Toggle theme"
-						>
-							<svg class="sprites badge__icon theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
-								<use href="./icons/sprites.svg#sun"></use>
-							</svg>
-							<svg class="sprites badge__icon theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
-								<use href="./icons/sprites.svg#moon"></use>
-							</svg>
-						</button>
-						<button
-							class="btn btn--icon"
-							id="mobileMenuBtn"
-							aria-label="Toggle menu"
-						>
-							<svg width="24" height="24" aria-hidden="true">
-								<use
-									id="menuIcon"
-									class="menu-icon"
-									href="./icons/sprites.svg#burger-menu"
-								></use>
-								<use
-									id="closeIcon"
-									class="close-icon"
-									href="./icons/sprites.svg#cross-menu"
-								></use>
-							</svg>
-						</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- Mobile dropdown menu -->
-			<div class="nav__mobile-menu" id="mobileMenu" hidden>
-				<div class="nav__mobile-links">
-					<a href="#home" class="nav__link nav__link--mobile">Главная</a>
-					<a href="#skills" class="nav__link nav__link--mobile">Умения</a>
-					<a href="#experience" class="nav__link nav__link--mobile">Портфолио</a>
-					<a href="#projects" class="nav__link nav__link--mobile">Опыт</a>
-					<a href="#contact" class="nav__link nav__link--mobile">Блог</a>
-					<a href="#contact" class="nav__link nav__link--mobile">Контакты</a>
-				</div>
-			</div>
-		</nav>
+		<div id="header"></div>
 
 		<main class="main">
-
 			<!-- Hero -->
 			<section class="hero section" id="home">
 				<!-- Animated background -->
@@ -133,7 +54,9 @@
 										<span class="hero__typed-text"></span>
 										<span class="hero__cursor">|</span>
 									</span>
-									<span class="hero__title-name">Михаил Анкудинов, Разработчик</span>
+									<span class="hero__title-name"
+										>Михаил Анкудинов, Разработчик</span
+									>
 								</h1>
 								<div class="hero__desc-group">
 									<p class="hero__lead">
@@ -145,13 +68,23 @@
 
 							<div class="hero__actions">
 								<a href="#" class="btn btn--primary btn--lg">
-									<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+									<svg
+										class="btn__icon"
+										width="20"
+										height="20"
+										aria-hidden="true"
+									>
 										<use href="./icons/sprites.svg#download"></use>
 									</svg>
 									Скачать моё резюме
 								</a>
 								<a href="#projects" class="btn btn--outline btn--lg">
-									<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+									<svg
+										class="btn__icon"
+										width="20"
+										height="20"
+										aria-hidden="true"
+									>
 										<use href="./icons/sprites.svg#folder-data-storage"></use>
 									</svg>
 									Посмотреть мои работы
@@ -388,14 +321,19 @@
 					</div>
 
 					<div class="projects__layout">
-						<!-- Список слева 1/3 -->
+						<!-- 1/3 -->
 						<div class="projects__sidebar">
 							<div class="projects__list" id="projectsList">
 								<div class="project-item active" onclick="selectProject(0)">
 									<h3 class="project-item__name">bozheslav.ru</h3>
 									<div class="project-item__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -406,7 +344,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -418,7 +361,12 @@
 									<h3 class="project-item__name">Telegram Bot + n8n</h3>
 									<div class="project-item__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -429,7 +377,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -441,7 +394,12 @@
 									<h3 class="project-item__name">Landing page</h3>
 									<div class="project-item__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -452,7 +410,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -464,7 +427,12 @@
 									<h3 class="project-item__name">Landing page</h3>
 									<div class="project-item__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -475,7 +443,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -487,7 +460,12 @@
 									<h3 class="project-item__name">Landing page</h3>
 									<div class="project-item__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -498,7 +476,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -507,7 +490,7 @@
 								</div>
 							</div>
 
-							<!-- Навигация и ссылка -->
+							<!-- Nav and links -->
 							<div class="projects__nav">
 								<div class="projects__arrows">
 									<button
@@ -515,17 +498,25 @@
 										id="prevBtn"
 										onclick="prevProject()"
 									>
-										<svg class="sprites badge__icon projects__arrow-left" aria-hidden="true">
+										<svg
+											class="sprites badge__icon projects__arrow-left"
+											aria-hidden="true"
+										>
 											<use href="./icons/sprites.svg#arrow-left"></use>
 										</svg>
 									</button>
-									<span class="projects__counter" id="projectsCounter">1 / 3</span>
+									<span class="projects__counter" id="projectsCounter"
+										>1 / 3</span
+									>
 									<button
 										class="projects__arrow"
 										id="nextBtn"
 										onclick="nextProject()"
 									>
-										<svg class="sprites badge__icon projects__arrow-right" aria-hidden="true">
+										<svg
+											class="sprites badge__icon projects__arrow-right"
+											aria-hidden="true"
+										>
 											<use href="./icons/sprites.svg#arrow-right"></use>
 										</svg>
 									</button>
@@ -539,12 +530,15 @@
 							</div>
 						</div>
 
-						<!-- Детали справа 2/3 -->
+						<!-- 2/3 -->
 						<div class="projects__detail">
 							<div class="project-detail card active" id="project-0">
 								<div class="project-detail__image-wrap">
 									<picture>
-										<source srcset="images/projects/bozheslav.webp" type="image/webp" />
+										<source
+											srcset="images/projects/bozheslav.webp"
+											type="image/webp"
+										/>
 										<img
 											src="images/projects/bozheslav.jpg"
 											alt="Скриншот проекта bozheslav.ru"
@@ -569,7 +563,12 @@
 									</div>
 									<div class="project-detail__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -580,7 +579,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -592,7 +596,10 @@
 							<div class="project-detail card" id="project-1">
 								<div class="project-detail__image-wrap">
 									<picture>
-										<source srcset="images/projects/bot.webp" type="image/webp" />
+										<source
+											srcset="images/projects/bot.webp"
+											type="image/webp"
+										/>
 										<img
 											src="images/projects/bot.jpg"
 											alt="Скриншот проекта Telegram Bot + n8n"
@@ -616,7 +623,12 @@
 									</div>
 									<div class="project-detail__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -627,7 +639,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -639,7 +656,10 @@
 							<div class="project-detail card" id="project-2">
 								<div class="project-detail__image-wrap">
 									<picture>
-										<source srcset="images/projects/landing.webp" type="image/webp" />
+										<source
+											srcset="images/projects/landing.webp"
+											type="image/webp"
+										/>
 										<img
 											src="images/projects/landing.jpg"
 											alt="Скриншот Landing page"
@@ -663,7 +683,12 @@
 									</div>
 									<div class="project-detail__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -674,7 +699,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -686,7 +716,10 @@
 							<div class="project-detail card" id="project-3">
 								<div class="project-detail__image-wrap">
 									<picture>
-										<source srcset="images/projects/landing.webp" type="image/webp" />
+										<source
+											srcset="images/projects/landing.webp"
+											type="image/webp"
+										/>
 										<img
 											src="images/projects/landing.jpg"
 											alt="Скриншот Landing page"
@@ -710,7 +743,12 @@
 									</div>
 									<div class="project-detail__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -721,7 +759,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -733,7 +776,10 @@
 							<div class="project-detail card" id="project-4">
 								<div class="project-detail__image-wrap">
 									<picture>
-										<source srcset="images/projects/landing.webp" type="image/webp" />
+										<source
+											srcset="images/projects/landing.webp"
+											type="image/webp"
+										/>
 										<img
 											src="images/projects/landing.jpg"
 											alt="Скриншот Landing page"
@@ -757,7 +803,12 @@
 									</div>
 									<div class="project-detail__actions">
 										<a href="#" class="btn btn--outline btn--sm">
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
@@ -768,7 +819,12 @@
 											rel="noopener noreferrer"
 											class="btn btn--primary btn--sm"
 										>
-											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
 												<use href="./icons/sprites.svg#demo"></use>
 											</svg>
 											Demo
@@ -832,14 +888,30 @@
 									Telegram Bot API.
 								</p>
 								<div class="experience__tags">
-									<span class="badge badge--outline badge__experience">Python</span>
-									<span class="badge badge--outline badge__experience">HTML</span>
-									<span class="badge badge--outline badge__experience">CSS</span>
-									<span class="badge badge--outline badge__experience">Laravel</span>
-									<span class="badge badge--outline badge__experience">PostgreSQL</span>
-									<span class="badge badge--outline badge__experience">Nginx</span>
-									<span class="badge badge--outline badge__experience">Docker</span>
-									<span class="badge badge--outline badge__experience">n8n</span>
+									<span class="badge badge--outline badge__experience"
+										>Python</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>HTML</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>CSS</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Laravel</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>PostgreSQL</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Nginx</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Docker</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>n8n</span
+									>
 								</div>
 							</div>
 						</div>
@@ -911,10 +983,18 @@
 									пользователь взаимодействует с интерфейсом.
 								</p>
 								<div class="experience__tags">
-									<span class="badge badge--outline badge__experience">СБИС</span>
-									<span class="badge badge--outline badge__experience">1С Предприятие</span>
-									<span class="badge badge--outline badge__experience">Инфо-Предприятие</span>
-									<span class="badge badge--outline badge__experience">Wordpress</span>
+									<span class="badge badge--outline badge__experience"
+										>СБИС</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>1С Предприятие</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Инфо-Предприятие</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Wordpress</span
+									>
 								</div>
 							</div>
 						</div>
@@ -960,7 +1040,9 @@
 										<svg class="sprites badge__icon" aria-hidden="true">
 											<use href="./icons/sprites.svg#calendar"></use>
 										</svg>
-										<time class="blog-card__date" datetime="2025-03-10">10 марта 2025</time>
+										<time class="blog-card__date" datetime="2025-03-10"
+											>10 марта 2025</time
+										>
 									</span>
 								</div>
 								<h3 class="blog-card__title">Как я поднял свой первый VPS</h3>
@@ -996,7 +1078,9 @@
 										<svg class="sprites badge__icon" aria-hidden="true">
 											<use href="./icons/sprites.svg#calendar"></use>
 										</svg>
-										<time class="blog-card__date" datetime="2025-02-20">20 февраля 2025</time>
+										<time class="blog-card__date" datetime="2025-02-20"
+											>20 февраля 2025</time
+										>
 									</span>
 								</div>
 								<h3 class="blog-card__title">
@@ -1034,7 +1118,9 @@
 										<svg class="sprites badge__icon" aria-hidden="true">
 											<use href="./icons/sprites.svg#calendar"></use>
 										</svg>
-										<time class="blog-card__date" datetime="2025-01-15">15 января 2025</time>
+										<time class="blog-card__date" datetime="2025-01-15"
+											>15 января 2025</time
+										>
 									</span>
 								</div>
 								<h3 class="blog-card__title">Книга: Чистый код</h3>
@@ -1071,7 +1157,10 @@
 							<div class="card">
 								<div class="card__body">
 									<div class="contact__info-row">
-										<svg class="sprites badge__icon contact__info-icon" aria-hidden="true">
+										<svg
+											class="sprites badge__icon contact__info-icon"
+											aria-hidden="true"
+										>
 											<use href="./icons/sprites.svg#email"></use>
 										</svg>
 										<div>
@@ -1084,7 +1173,10 @@
 							<div class="card">
 								<div class="card__body">
 									<div class="contact__info-row">
-										<svg class="sprites badge__icon contact__info-icon" aria-hidden="true">
+										<svg
+											class="sprites badge__icon contact__info-icon"
+											aria-hidden="true"
+										>
 											<use href="./icons/sprites.svg#phone"></use>
 										</svg>
 										<div>
@@ -1097,12 +1189,19 @@
 							<div class="card">
 								<div class="card__body">
 									<div class="contact__info-row">
-										<svg class="sprites badge__icon contact__info-icon" aria-hidden="true">
+										<svg
+											class="sprites badge__icon contact__info-icon"
+											aria-hidden="true"
+										>
 											<use href="./icons/sprites.svg#location"></use>
 										</svg>
 										<div>
-											<h4 class="contact__info-label">Текущее местоположение</h4>
-											<p class="contact__info-value">Пермь, Россия · Удалённая работа</p>
+											<h4 class="contact__info-label">
+												Текущее местоположение
+											</h4>
+											<p class="contact__info-value">
+												Пермь, Россия · Удалённая работа
+											</p>
 										</div>
 									</div>
 								</div>
@@ -1183,16 +1282,7 @@
 			</section>
 		</main>
 
-		<!-- Footer -->
-		<footer class="footer">
-			<div class="footer__container">
-				<h3 class="footer__name">Михаил Божеслав</h3>
-				<p class="footer__role">Разработчик | DevOps Инженер</p>
-				<p class="footer__copy">© 2026 Copyright. Михаил Анкудинов. Сайт разработан на Laravel · Развёрнут на собственном VPS</p>
-			</div>
-		</footer>
-
-		<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+		<div id="footer"></div>
 		<script defer src="./js/index.js" type="module"></script>
 	</body>
 </html>
