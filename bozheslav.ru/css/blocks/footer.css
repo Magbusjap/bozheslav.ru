@@ -1,4 +1,17 @@
 /* ==========================================================================
+   Sticky footer layout
+   ========================================================================== */
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1;
+}
+
+/* ==========================================================================
    BLOCK: footer
    ========================================================================== */
 
@@ -14,10 +27,22 @@
 	text-align: center;
 }
 
-.footer__name {
+.footer__logo {
+	color: #1e1e30;
+	flex-shrink: 0;
 	margin-bottom: 1rem;
 	font-size: 1.325rem;
 	font-weight: 500;
+
+	transition:
+		color var(--transition-time) ease,
+		background-color var(--transition-time) ease,
+		border-color var(--transition-time) ease;
+}
+
+.footer__logo:hover {
+	color: #6e6e77;
+	/* color: var(--fg); */
 }
 
 .footer__role {

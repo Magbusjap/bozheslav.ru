@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
+		<title>Статья — Михаил Божеслав</title>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<main class="main">
+			<article class="section article-page" id="article">
+				<div class="container article-page__container">
+					<!-- Breadcrumbs -->
+					<nav class="article-page__breadcrumb" aria-label="Навигация">
+						<a href="../blog-page.html" class="article-page__breadcrumb-link"
+							>← Блог</a
+						>
+					</nav>
+
+					<!-- Meta -->
+					<div class="article-page__meta" id="articleMeta"></div>
+
+					<!-- Title -->
+					<h1 class="article-page__title" id="articleTitle"></h1>
+
+					<!-- Cover -->
+					<div class="article-page__cover" id="articleCover"></div>
+
+					<!-- Content -->
+					<div class="article-page__content" id="articleContent"></div>
+
+					<!-- Navigation -->
+					<nav
+						class="article-page__nav"
+						id="articleNav"
+						aria-label="Другие статьи"
+					></nav>
+				</div>
+			</article>
+		</main>
+
+		<div id="footer"></div>
+		<script defer src="./js/index.js" type="module"></script>
+	</body>
+</html>

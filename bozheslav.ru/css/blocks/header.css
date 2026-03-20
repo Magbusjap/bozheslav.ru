@@ -27,11 +27,21 @@
 }
 
 .nav__logo {
+	color: #1e1e30;
 	flex-shrink: 0;
 	font-size: 1.325rem;
 	font-weight: 500;
+
+	transition:
+		color var(--transition-time) ease,
+		background-color var(--transition-time) ease,
+		border-color var(--transition-time) ease;
 }
 
+.nav__logo:hover {
+	color: #6e6e77;
+	/* color: var(--fg); */
+}
 /* === Desktop nav === */
 
 .nav__desktop {
@@ -48,14 +58,21 @@
 
 .nav__link {
 	padding: 0.375rem 0.625rem;
+	border: 1px solid transparent;
 	border-radius: var(--radius-sm);
 	color: var(--muted-fg);
 	font-size: 1.05rem;
-	transition: color var(--transition-time) ease;
+
+	transition:
+		color var(--transition-time) ease,
+		background-color var(--transition-time) ease,
+		border-color var(--transition-time) ease;
 }
 
 .nav__link:hover {
 	color: var(--fg);
+	background-color: var(--secondary);
+	border-color: var(--border);
 }
 
 /* === Mobile controls === */

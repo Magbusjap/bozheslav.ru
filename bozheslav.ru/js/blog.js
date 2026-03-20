@@ -76,14 +76,14 @@ function initFilters() {
 function initTags() {
 	document.querySelectorAll(".badge__blog").forEach((tag) => {
 		tag.addEventListener("click", () => {
-			const filter = tag.dataset.filter; // или tag.textContent.trim()
+			const filter = tag.dataset.filter; // or tag.textContent.trim()
 
-			// Снимаем активный класс с кнопок фильтра
+			// Remove active class from filter buttons
 			document
 				.querySelectorAll(".blog-filter")
 				.forEach((b) => b.classList.remove("active"));
 
-			// Ставим активный на нужную кнопку
+			// Set active class on selected button
 			const matchBtn = [...document.querySelectorAll(".blog-filter")].find(
 				(b) => b.dataset.filter === filter,
 			);

@@ -5,6 +5,10 @@ import { initTyped } from "./typewriter.js";
 import { initProjects } from "./sliding-window.js";
 import { loadComponent } from "./components.js";
 import { initBlog } from "./blog.js";
+import { initPortfolio } from "./portfolio-page.js";
+import { initSkills } from "./skills-page.js";
+import { initExperience } from "./experience-page.js";
+import { initArticle } from "./article.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 	await loadComponent("header", "./components/header.html");
@@ -16,4 +20,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initTyped();
 	initProjects();
 	initBlog();
+	initPortfolio();
+	initSkills();
+	initExperience();
+	initArticle();
 });

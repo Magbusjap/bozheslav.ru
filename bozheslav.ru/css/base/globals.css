@@ -297,6 +297,39 @@ p {
 }
 
 /* ==========================================================================
+   Shared page header styles
+   ========================================================================== */
+
+.blog-page__title,
+.portfolio-page__title,
+.experience-page__title,
+.skills-page__title,
+.contacts-page__title {
+	font-size: 1.875rem;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+	.blog-page__title,
+	.portfolio-page__title,
+	.experience-page__title,
+	.skills-page__title,
+	.contacts-page__title {
+		font-size: 2.25rem;
+	}
+}
+
+.blog-page__desc,
+.portfolio-page__desc,
+.experience-page__desc,
+.skills-page__desc,
+.contacts-page__desc {
+	color: var(--muted-fg);
+	max-width: 42rem;
+	margin: 0 auto;
+}
+
+/* ==========================================================================
    Mobile
    ========================================================================== */
 

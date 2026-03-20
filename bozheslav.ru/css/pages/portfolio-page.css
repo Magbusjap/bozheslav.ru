@@ -1,0 +1,151 @@
+/* ==========================================================================
+   BLOCK: portfolio-page
+   ========================================================================== */
+
+.portfolio-page {
+	padding: 5rem 1rem;
+}
+
+.portfolio-page__header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+/* title and desc styles are in globals.css */
+
+/* === Filters === */
+
+.portfolio-page__filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+	justify-content: center;
+}
+
+.portfolio-filter {
+	padding: 0.4rem 1.25rem;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	background: transparent;
+	font-size: 0.875rem;
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease,
+		color 0.2s ease;
+	color: var(--muted-fg);
+}
+
+.portfolio-filter:hover {
+	border-color: var(--primary);
+	color: var(--primary);
+}
+
+.portfolio-filter.active {
+	border-color: var(--primary);
+	background-color: var(--primary);
+	color: var(--bg);
+}
+
+/* === Clickable tags === */
+
+.portfolio-tag {
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.portfolio-tag:hover {
+	background-color: rgba(var(--primary-rgb), 0.1);
+	color: var(--primary);
+}
+
+/* ==========================================================================
+   BLOCK: portfolio-about
+   ========================================================================== */
+
+.portfolio-about {
+	padding: 5rem 1rem;
+	background-color: var(--secondary);
+}
+
+.portfolio-about__content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 3rem;
+}
+
+.portfolio-about__text {
+	flex: 1;
+}
+
+.portfolio-about__title {
+	font-size: 1.875rem;
+	margin-bottom: 1rem;
+}
+
+.portfolio-about__desc {
+	color: var(--muted-fg);
+	margin-bottom: 1.5rem;
+	max-width: 36rem;
+}
+
+.portfolio-about__stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.portfolio-about__cta {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	flex-shrink: 0;
+}
+
+.portfolio-about__cta-text {
+	color: var(--muted-fg);
+	font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+	.portfolio-about__content {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.portfolio-about__cta {
+		align-items: flex-start;
+		width: 100%;
+	}
+}
+
+/* ==========================================================================
+   BLOCK: portfolio-contacts
+   ========================================================================== */
+
+.portfolio-contacts {
+	padding: 5rem 1rem;
+}
+
+.portfolio-contacts__title {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 1.875rem;
+}
+
+.portfolio-contacts__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+@media (max-width: 768px) {
+	.portfolio-contacts__grid {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,224 @@
+/* ==========================================================================
+   BLOCK: skills-page
+   ========================================================================== */
+
+.skills-page {
+	padding: 5rem 1rem;
+}
+
+.skills-page__header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+/* title and desc styles are in globals.css */
+
+.skills-page__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+	.skills-page__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.skills-page__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ==========================================================================
+   BLOCK: skill-category
+   ========================================================================== */
+
+.skill-category__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.75rem;
+	height: 1.75rem;
+	border-radius: var(--radius);
+	padding: 0.25rem;
+}
+
+.skill-category__icon--frontend {
+	background-color: rgba(59, 130, 246, 0.15);
+	color: #3b82f6;
+}
+.skill-category__icon--backend {
+	background-color: rgba(168, 85, 247, 0.15);
+	color: #a855f7;
+}
+.skill-category__icon--devops {
+	background-color: rgba(34, 197, 94, 0.15);
+	color: #22c55e;
+}
+.skill-category__icon--automation {
+	background-color: rgba(249, 115, 22, 0.15);
+	color: #f97316;
+}
+.skill-category__icon--database {
+	background-color: rgba(20, 184, 166, 0.15);
+	color: #14b8a6;
+}
+.skill-category__icon--other {
+	background-color: rgba(148, 163, 184, 0.15);
+	color: #94a3b8;
+}
+
+.skill-category__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+/* ==========================================================================
+   BLOCK: skill-tag
+   ========================================================================== */
+
+.skill-tag {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.35rem 1rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background-color: var(--secondary);
+	color: var(--fg);
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	overflow: hidden;
+	transition:
+		border-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.skill-tag:hover {
+	border-color: var(--primary);
+	color: var(--primary);
+}
+
+.skill-tag__bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: var(--level);
+	background-color: var(--primary);
+	border-radius: 0 1px 1px 0;
+}
+
+/* ==========================================================================
+   BLOCK: skill-modal
+   ========================================================================== */
+
+.skill-modal {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	align-items: center;
+	justify-content: center;
+}
+
+.skill-modal.active {
+	display: flex;
+}
+
+.skill-modal__overlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
+}
+
+.skill-modal__window {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 480px;
+	margin: 1rem;
+	padding: 2rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-lg);
+	background-color: var(--card-bg);
+	animation: modal-in 0.2s ease;
+}
+
+@keyframes modal-in {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.skill-modal__close {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: transparent;
+	color: var(--muted-fg);
+	cursor: pointer;
+	transition: border-color 0.2s ease;
+}
+
+.skill-modal__close:hover {
+	border-color: var(--primary);
+	color: var(--fg);
+}
+
+.skill-modal__header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.skill-modal__title {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.skill-modal__level {
+	font-size: 0.875rem;
+	color: var(--muted-fg);
+	white-space: nowrap;
+}
+
+.skill-modal__progress {
+	height: 6px;
+	border-radius: 3px;
+	background-color: var(--secondary);
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+}
+
+.skill-modal__progress-bar {
+	height: 100%;
+	border-radius: 3px;
+	background-color: var(--primary);
+	width: 0%;
+	transition: width 0.5s ease;
+}
+
+.skill-modal__desc {
+	color: var(--muted-fg);
+	line-height: 1.6;
+}

@@ -11,24 +11,9 @@
 	margin-bottom: 2rem;
 }
 
-.blog-page__title {
-	font-size: 1.875rem;
-	margin-bottom: 1rem;
-}
+/* title and desc styles are in globals.css */
 
-@media (min-width: 768px) {
-	.blog-page__title {
-		font-size: 2.25rem;
-	}
-}
-
-.blog-page__desc {
-	color: var(--muted-fg);
-	max-width: 42rem;
-	margin: 0 auto;
-}
-
-/* Фильтры */
+/* === Filters === */
 .blog-page__filters {
 	display: flex;
 	flex-wrap: wrap;
@@ -62,7 +47,7 @@
 	color: var(--bg);
 }
 
-/* Сетка */
+/* === Grid === */
 .blog-page__grid {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -86,7 +71,7 @@
 	display: none;
 }
 
-/* Пагинация */
+/* === Pagination === */
 .blog-pagination {
 	display: flex;
 	align-items: center;
@@ -144,4 +129,12 @@
 	border-color: var(--primary);
 	background-color: var(--primary);
 	color: var(--bg);
+}
+
+.badge__blog {
+	cursor: pointer;
+}
+
+.badge__blog:hover {
+	background-color: var(--muted-fg-accent);
 }

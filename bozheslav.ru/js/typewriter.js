@@ -25,12 +25,12 @@ export function initTyped() {
 			let speed = this.isDeleting ? 50 : 100;
 
 			if (!this.isDeleting && this.charIndex === current.length + 1) {
-				speed = 1500; // пауза после печати
+				speed = 1500; // pause after typing
 				this.isDeleting = true;
 			} else if (this.isDeleting && this.charIndex === 0) {
 				this.isDeleting = false;
 				this.index = (this.index + 1) % this.phrases.length;
-				speed = 400; // пауза перед следующей фразой
+				speed = 400; // pause before next phrase
 			}
 
 			setTimeout(() => this.type(), speed);

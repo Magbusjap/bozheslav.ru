@@ -497,6 +497,7 @@
 										class="projects__arrow"
 										id="prevBtn"
 										onclick="prevProject()"
+										aria-label="Предыдущий проект"
 									>
 										<svg
 											class="sprites badge__icon projects__arrow-left"
@@ -512,6 +513,7 @@
 										class="projects__arrow"
 										id="nextBtn"
 										onclick="nextProject()"
+										aria-label="Следующий проект"
 									>
 										<svg
 											class="sprites badge__icon projects__arrow-right"
@@ -521,7 +523,7 @@
 										</svg>
 									</button>
 								</div>
-								<a href="portfolio.html" class="projects__all">
+								<a href="portfolio-page.html" class="projects__all">
 									Смотреть все проекты
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -870,7 +872,7 @@
 											<svg class="sprites badge__icon" aria-hidden="true">
 												<use href="./icons/sprites.svg#calendar"></use>
 											</svg>
-											2024 — Настоящее время
+											2024 — н.в.
 										</div>
 									</div>
 								</div>
@@ -1141,65 +1143,65 @@
 			</section>
 
 			<!-- Contacts -->
-			<section class="section contact" id="contact">
-				<div class="container contact__container">
-					<div class="contact__header">
-						<h2 class="contact__title">Есть задача — давай решим</h2>
-						<p class="contact__desc">
+			<section class="section contacts" id="contacts">
+				<div class="container contacts__container">
+					<div class="contacts__header">
+						<h2 class="contacts__title">Есть задача — давай решим</h2>
+						<p class="contacts__desc">
 							Верстаю, настраиваю серверы, автоматизирую. Если вам нужен человек
 							который разберётся сам — напишите.
 						</p>
 					</div>
 
-					<div class="contact__grid">
+					<div class="contacts__grid">
 						<!-- Info cards -->
-						<div class="contact__info">
+						<div class="contacts__info">
 							<div class="card">
 								<div class="card__body">
-									<div class="contact__info-row">
+									<div class="contacts__info-row">
 										<svg
-											class="sprites badge__icon contact__info-icon"
+											class="sprites badge__icon contacts__info-icon"
 											aria-hidden="true"
 										>
 											<use href="./icons/sprites.svg#email"></use>
 										</svg>
 										<div>
-											<h4 class="contact__info-label">Почта</h4>
-											<p class="contact__info-value">i@mankudinov.ru</p>
+											<h4 class="contacts__info-label">Почта</h4>
+											<p class="contacts__info-value">i@mankudinov.ru</p>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="card">
 								<div class="card__body">
-									<div class="contact__info-row">
+									<div class="contacts__info-row">
 										<svg
-											class="sprites badge__icon contact__info-icon"
+											class="sprites badge__icon contacts__info-icon"
 											aria-hidden="true"
 										>
 											<use href="./icons/sprites.svg#phone"></use>
 										</svg>
 										<div>
-											<h4 class="contact__info-label">Телефон</h4>
-											<p class="contact__info-value">+7 (995) 6907083</p>
+											<h4 class="contacts__info-label">Телефон</h4>
+											<p class="contacts__info-value">+7 (995) 6907083</p>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="card">
 								<div class="card__body">
-									<div class="contact__info-row">
+									<div class="contacts__info-row">
 										<svg
-											class="sprites badge__icon contact__info-icon"
+											class="sprites badge__icon contacts__info-icon"
 											aria-hidden="true"
 										>
 											<use href="./icons/sprites.svg#location"></use>
 										</svg>
 										<div>
-											<h4 class="contact__info-label">
+											<h4 class="contacts__info-label">
 												Текущее местоположение
 											</h4>
-											<p class="contact__info-value">
+											<p class="contacts__info-value">
 												Пермь, Россия · Удалённая работа
 											</p>
 										</div>
@@ -1214,8 +1216,8 @@
 								<h3 class="card__title">Оставить контакты для связи</h3>
 							</div>
 							<div class="card__body">
-								<form class="contact__form" id="contactForm">
-									<div class="contact__form-row">
+								<form class="contacts__form" id="contactForm">
+									<div class="contacts__form-row">
 										<input
 											class="input"
 											type="text"
@@ -1247,7 +1249,7 @@
 					</div>
 
 					<div class="contacts__socials">
-						<strong class="contact__find">Вы можете найти меня здесь:</strong>
+						<strong class="contacts__find">Вы можете найти меня здесь:</strong>
 						<div class="hero__socials">
 							<a
 								href="#"

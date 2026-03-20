@@ -19,7 +19,7 @@ export function selectProject(index) {
 	const total = getTotalProjects();
 	currentProject = index;
 
-	// Сдвигаем окно если нужно
+	// Shift window if needed
 	if (index >= windowStart + VISIBLE) {
 		windowStart = index - VISIBLE + 1;
 	} else if (index < windowStart) {

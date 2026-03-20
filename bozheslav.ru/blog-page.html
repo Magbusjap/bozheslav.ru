@@ -21,7 +21,7 @@
 						</p>
 					</div>
 
-					<!-- Фильтры -->
+					<!-- Filters -->
 					<div class="blog-page__filters" id="blogFilters">
 						<button class="blog-filter active" data-filter="all">Все</button>
 						<button class="blog-filter" data-filter="devops">DevOps</button>
@@ -31,7 +31,7 @@
 						<button class="blog-filter" data-filter="other">Разное</button>
 					</div>
 
-					<!-- Сетка статей -->
+					<!-- Article grid -->
 					<div class="blog-page__grid" id="blogGrid">
 						<article class="card blog-card" data-category="devops">
 							<div class="blog-card__image-wrap">
@@ -64,7 +64,7 @@
 									nginx, Docker, SSL — с нуля до рабочего сервера. Разбираю
 									каждый шаг и подводные камни которые встретил.
 								</p>
-								<a href="#" class="blog-card__link">
+								<a href="/article.html?slug=vps-setup" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -106,7 +106,7 @@
 									Долго не мог принять BEM. Рассказываю что изменилось и почему
 									теперь верстаю только так.
 								</p>
-								<a href="#" class="blog-card__link">
+								<a href="/article.html?slug=vps-setup" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -146,7 +146,7 @@
 									Прочитал «Чистый код» Мартина. Что взял для себя и что
 									показалось спорным — честный разбор.
 								</p>
-								<a href="#" class="blog-card__link">
+								<a href="/article.html?slug=vps-setup" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -186,7 +186,7 @@
 									Как я начал разбираться в Laravel после чистого HTML. Что
 									удивило, что показалось сложным.
 								</p>
-								<a href="#" class="blog-card__link">
+								<a href="/article.html?slug=vps-setup" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -209,7 +209,7 @@
 							</div>
 							<div class="card__body">
 								<div class="blog-card__meta">
-									<span class="badge badge__blog" data-filter="different"
+									<span class="badge badge__blog" data-filter="other"
 										>Разное</span
 									>
 									<span class="blog-card__date-group">
@@ -228,7 +228,7 @@
 									Личная история. Завод, точная механика и решение сменить
 									профессию. Без прикрас.
 								</p>
-								<a href="#" class="blog-card__link">
+								<a href="/article.html?slug=vps-setup" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -270,7 +270,7 @@
 									Объясняю простыми словами зачем нужен Compose и как я
 									использую его на своём сервере.
 								</p>
-								<a href="#" class="blog-card__link">
+								<a href="/article.html?slug=vps-setup" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="./icons/sprites.svg#general-arrow"></use>
@@ -280,7 +280,7 @@
 						</article>
 					</div>
 
-					<!-- Пагинация -->
+					<!-- Pagination -->
 					<nav
 						class="blog-pagination"
 						id="blogPagination"
@@ -290,6 +290,7 @@
 							class="blog-pagination__btn"
 							id="prevPage"
 							onclick="prevPage()"
+							aria-label="Предыдущая страница"
 							disabled
 						>
 							<svg class="sprites badge__icon" aria-hidden="true">
@@ -301,6 +302,7 @@
 							class="blog-pagination__btn"
 							id="nextPage"
 							onclick="nextPage()"
+							aria-label="Следующая страница"
 						>
 							<svg class="sprites badge__icon" aria-hidden="true">
 								<use href="./icons/sprites.svg#arrow-right"></use>
