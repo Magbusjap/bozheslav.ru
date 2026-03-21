@@ -97,11 +97,19 @@ function initTags() {
 }
 
 export function initBlog() {
-	if (!document.getElementById("blogGrid")) return;
-	initFilters();
-	initTags();
-	renderPage();
+    if (!document.getElementById("blogGrid")) return;
+    
+    const params = new URLSearchParams(window.location.search);
+    const categoryParam = params.get('category');
+    if (categoryParam) {
+        currentFilter = categoryParam;
+    }
+    
+    initFilters();
+    initTags();
+    renderPage();
 }
+
 
 window.prevPage = prevPage;
 window.nextPage = nextPage;

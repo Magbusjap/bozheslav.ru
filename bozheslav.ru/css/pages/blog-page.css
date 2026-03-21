@@ -26,14 +26,16 @@
 	padding: 0.4rem 1.25rem;
 	border-radius: var(--radius);
 	border: 1px solid var(--border);
-	background: transparent;
+	/* background: transparent; */
+	background-color: var(--secondary);
 	font-size: 0.875rem;
 	cursor: pointer;
 	transition:
 		border-color 0.2s ease,
 		background-color 0.2s ease,
 		color 0.2s ease;
-	color: var(--muted-fg);
+	/* color: var(--muted-fg); */
+	color: var(--fg);
 }
 
 .blog-filter:hover {
