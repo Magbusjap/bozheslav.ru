@@ -11,7 +11,7 @@
     <div id="header"></div>
 
     <main class="main">
-        <section class="error-page">
+        <section class="error-page" id="error-page" data-path="{{ request()->path() }}">
             <div class="terminal">
                 <div class="terminal__titlebar">
                     <div class="terminal__dot terminal__dot--red"></div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="terminal__footer">
                     <a href="/" class="terminal__back" id="back-btn" style="display:none;">
-                        $ cd / На главную →
+                        $ cd /На главную →
                     </a>
                 </div>
             </div>
@@ -35,3 +35,4 @@
     <script src="/js/index.js" type="module"></script>
 </body>
 </html>
+
