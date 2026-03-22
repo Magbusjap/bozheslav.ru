@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
+		<title>Михаил Божеслав — Разработчик</title>
+	</head>
+	<body>
+		<div id="header"></div>
+
+		<main class="main">
+			<!-- Hero -->
+			<section class="hero section" id="home">
+				<!-- Animated background -->
+				<div class="hero__bg">
+					<div class="hero__blob hero__blob--1"></div>
+					<div class="hero__blob hero__blob--2"></div>
+					<div class="hero__blob hero__blob--3"></div>
+					<div class="hero__grid-bg">
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+						<div class="hero__grid-col"></div>
+					</div>
+				</div>
+
+				<div class="container hero__container">
+					<div class="hero__layout">
+						<!-- Left: text content -->
+						<div class="hero__content">
+							<div class="hero__badge-wrap">
+								<span class="badge badge--primary badge__hero">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#handshake"></use>
+									</svg>
+									Доступен для сотрудничества
+								</span>
+							</div>
+
+							<div class="hero__heading-group">
+								<h1 class="hero__title">
+									<span class="hero__typed">
+										<span class="hero__typed-prefix">&gt;</span>
+										<span class="hero__typed-text"></span>
+										<span class="hero__cursor">|</span>
+									</span>
+									<span class="hero__title-name"
+										>Михаил Анкудинов, Разработчик</span
+									>
+								</h1>
+								<div class="hero__desc-group">
+									<p class="hero__lead">
+										Верстаю сайты, настраиваю серверы, автоматизирую рутину.
+										Открыт к новым проектам.
+									</p>
+								</div>
+							</div>
+
+							<div class="hero__actions">
+								<a href="#" class="btn btn--primary btn--lg">
+									<svg
+										class="btn__icon"
+										width="20"
+										height="20"
+										aria-hidden="true"
+									>
+										<use href="/icons/sprites.svg#download"></use>
+									</svg>
+									Скачать моё резюме
+								</a>
+								<a href="#projects" class="btn btn--outline btn--lg">
+									<svg
+										class="btn__icon"
+										width="20"
+										height="20"
+										aria-hidden="true"
+									>
+										<use href="/icons/sprites.svg#folder-data-storage"></use>
+									</svg>
+									Посмотреть мои работы
+								</a>
+							</div>
+
+							<div class="hero__socials">
+								<a
+									href="#"
+									class="btn btn--ghost btn--icon btn--circle"
+									aria-label="GitHub"
+								>
+									<svg class="sprites" aria-hidden="true">
+										<use href="/icons/sprites.svg#github"></use>
+									</svg>
+								</a>
+								<a
+									href="#"
+									class="btn btn--ghost btn--icon btn--circle"
+									aria-label="Telegram"
+								>
+									<svg class="sprites" aria-hidden="true">
+										<use href="/icons/sprites.svg#telegram"></use>
+									</svg>
+								</a>
+								<a
+									href="#"
+									class="btn btn--ghost btn--icon btn--circle"
+									aria-label="Email"
+								>
+									<svg class="sprites" aria-hidden="true">
+										<use href="/icons/sprites.svg#email"></use>
+									</svg>
+								</a>
+							</div>
+
+							<div class="hero__stats">
+								<div class="stat">
+									<div class="stat__value">5+</div>
+									<p class="stat__label">Проектов</p>
+								</div>
+								<div class="stat">
+									<div class="stat__value">1+</div>
+									<p class="stat__label">Год в IT (и не только)</p>
+								</div>
+								<div class="stat">
+									<div class="stat__value">✓ отзывы</div>
+									<p class="stat__label">На Kwork</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right: photo -->
+						<div class="hero__image-wrap">
+							<div class="hero__image-container">
+								<div class="hero__glow hero__glow--top"></div>
+								<div class="hero__glow hero__glow--bottom"></div>
+
+								<div class="hero__avatar-group">
+									<div class="hero__avatar">
+										<picture>
+											<source
+												srcset="/images/mikhail-ankudinov-developer.webp"
+												type="image/webp"
+											/>
+											<img
+												class="hero__photo"
+												src="/images/mikhail-ankudinov-developer.jpg"
+												loading="lazy"
+												alt="Михаил Анкудинов — Разработчик"
+											/>
+										</picture>
+										<div class="hero__avatar-overlay"></div>
+									</div>
+
+									<div class="hero__status">
+										<span class="hero__status-dot"></span>
+										<span class="hero__status-text">Нанять на проект</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Scroll indicator -->
+				<a class="hero__scroll" href="#skills">
+					<span class="hero__scroll-text">Вниз</span>
+					<svg class="sprites badge__icon hero__scroll-icon" aria-hidden="true">
+						<use href="/icons/sprites.svg#general-arrow"></use>
+					</svg>
+				</a>
+			</section>
+
+			<!-- Skills -->
+			<section class="skills section" id="skills">
+				<div class="container skills__container">
+					<div class="skills__header">
+						<h2 class="skills__title">Мой стек</h2>
+						<p class="skills__desc">
+							Представляю вам свой стек технологий, которым я овладел за все
+							время своего профессионального обучения.
+						</p>
+					</div>
+
+					<div class="skills__grid">
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#programming"></use>
+									</svg>
+									Frontend
+								</h3>
+							</div>
+							<div class="card__body">
+								<div class="skills__tags">
+									<span class="badge badge__skills">HTML</span>
+									<span class="badge badge__skills">CSS</span>
+									<span class="badge badge__skills">BEM</span>
+									<span class="badge badge__skills">JavaScript</span>
+									<span class="badge badge__skills">Tailwind CSS</span>
+									<span class="badge badge__skills">Responsive Design</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#programming"></use>
+									</svg>
+									Backend
+								</h3>
+							</div>
+							<div class="card__body">
+								<div class="skills__tags">
+									<span class="badge badge__skills">Laravel</span>
+									<span class="badge badge__skills">PHP</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#devops"></use>
+									</svg>
+									DevOps & Tools
+								</h3>
+							</div>
+							<div class="card__body">
+								<div class="skills__tags">
+									<span class="badge badge__skills">Linux (Ubuntu)</span>
+									<span class="badge badge__skills">Nginx</span>
+									<span class="badge badge__skills">Docker</span>
+									<span class="badge badge__skills">Docker Compose</span>
+									<span class="badge badge__skills">Git</span>
+									<span class="badge badge__skills">VS Code</span>
+									<span class="badge badge__skills">Figma</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#frameworks"></use>
+									</svg>
+									Автоматизация
+								</h3>
+							</div>
+							<div class="card__body">
+								<div class="skills__tags">
+									<span class="badge badge__skills">n8n</span>
+									<span class="badge badge__skills">Telegram Bot API</span>
+									<span class="badge badge__skills">OpenAI API</span>
+									<span class="badge badge__skills">Claude API</span>
+									<span class="badge badge__skills">AI</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#base-data"></use>
+									</svg>
+									Базы данных
+								</h3>
+							</div>
+							<div class="card__body">
+								<div class="skills__tags">
+									<span class="badge badge__skills">MySQL</span>
+									<span class="badge badge__skills">PostgreSQL</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#cloud"></use>
+									</svg>
+									Ранее
+								</h3>
+							</div>
+							<div class="card__body">
+								<div class="skills__tags">
+									<span class="badge badge__skills">WordPress</span>
+									<span class="badge badge__skills">C#</span>
+									<span class="badge badge__skills">Python</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Portfolio -->
+			<section class="section projects" id="projects">
+				<div class="container projects__container">
+					<div class="projects__header">
+						<h2 class="projects__title">Портфолио</h2>
+						<p class="projects__desc">
+							Проекты, которые я реализовал — от вёрстки до деплоя на
+							собственном сервере.
+						</p>
+					</div>
+
+					<div class="projects__layout">
+						<!-- 1/3 -->
+						<div class="projects__sidebar">
+							<div class="projects__list" id="projectsList">
+								<div class="project-item active" onclick="selectProject(0)">
+									<h3 class="project-item__name">bozheslav.ru</h3>
+									<div class="project-item__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="https://bozheslav.ru"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+
+								<div class="project-item" onclick="selectProject(1)">
+									<h3 class="project-item__name">Telegram Bot + n8n</h3>
+									<div class="project-item__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+
+								<div class="project-item" onclick="selectProject(2)">
+									<h3 class="project-item__name">Landing page</h3>
+									<div class="project-item__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+
+								<div class="project-item" onclick="selectProject(3)">
+									<h3 class="project-item__name">Landing page</h3>
+									<div class="project-item__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+
+								<div class="project-item" onclick="selectProject(4)">
+									<h3 class="project-item__name">Landing page</h3>
+									<div class="project-item__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Nav and links -->
+							<div class="projects__nav">
+								<div class="projects__arrows">
+									<button
+										class="projects__arrow"
+										id="prevBtn"
+										onclick="prevProject()"
+										aria-label="Предыдущий проект"
+									>
+										<svg
+											class="sprites badge__icon projects__arrow-left"
+											aria-hidden="true"
+										>
+											<use href="/icons/sprites.svg#arrow-left"></use>
+										</svg>
+									</button>
+									<span class="projects__counter" id="projectsCounter"
+										>1 / 3</span
+									>
+									<button
+										class="projects__arrow"
+										id="nextBtn"
+										onclick="nextProject()"
+										aria-label="Следующий проект"
+									>
+										<svg
+											class="sprites badge__icon projects__arrow-right"
+											aria-hidden="true"
+										>
+											<use href="/icons/sprites.svg#arrow-right"></use>
+										</svg>
+									</button>
+								</div>
+								<a href="portfolio-page.html" class="projects__all">
+									Смотреть все проекты
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+
+						<!-- 2/3 -->
+						<div class="projects__detail">
+							<div class="project-detail card active" id="project-0">
+								<div class="project-detail__image-wrap">
+									<picture>
+										<source
+											srcset="images/projects/bozheslav.webp"
+											type="image/webp"
+										/>
+										<img
+											src="images/projects/bozheslav.jpg"
+											alt="Скриншот проекта bozheslav.ru"
+											class="project-detail__image"
+											loading="lazy"
+										/>
+									</picture>
+								</div>
+								<div class="card__body">
+									<h3 class="project-detail__title">bozheslav.ru</h3>
+									<p class="project-detail__desc">
+										Личный сайт-портфолио с блогом. Полный цикл от вёрстки до
+										деплоя на собственном VPS. Настроен nginx, Docker,
+										SSL-сертификат.
+									</p>
+									<div class="project-detail__tags">
+										<span class="badge badge__portfolio">Laravel</span>
+										<span class="badge badge__portfolio">PostgreSQL</span>
+										<span class="badge badge__portfolio">Docker</span>
+										<span class="badge badge__portfolio">nginx</span>
+										<span class="badge badge__portfolio">Tailwind CSS</span>
+									</div>
+									<div class="project-detail__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="https://bozheslav.ru"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="project-detail card" id="project-1">
+								<div class="project-detail__image-wrap">
+									<picture>
+										<source
+											srcset="images/projects/bot.webp"
+											type="image/webp"
+										/>
+										<img
+											src="images/projects/bot.jpg"
+											alt="Скриншот проекта Telegram Bot + n8n"
+											class="project-detail__image"
+											loading="lazy"
+										/>
+									</picture>
+								</div>
+								<div class="card__body">
+									<h3 class="project-detail__title">Telegram Bot + n8n</h3>
+									<p class="project-detail__desc">
+										Автоматизация на базе n8n с интеграцией Telegram Bot API и
+										OpenAI. Бот принимает сообщения и отвечает с помощью GPT.
+										Развёрнут на собственном сервере через Docker Compose.
+									</p>
+									<div class="project-detail__tags">
+										<span class="badge badge__portfolio">n8n</span>
+										<span class="badge badge__portfolio">Telegram Bot API</span>
+										<span class="badge badge__portfolio">OpenAI API</span>
+										<span class="badge badge__portfolio">Docker</span>
+									</div>
+									<div class="project-detail__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="project-detail card" id="project-2">
+								<div class="project-detail__image-wrap">
+									<picture>
+										<source
+											srcset="images/projects/landing.webp"
+											type="image/webp"
+										/>
+										<img
+											src="images/projects/landing.jpg"
+											alt="Скриншот Landing page"
+											class="project-detail__image"
+											loading="lazy"
+										/>
+									</picture>
+								</div>
+								<div class="card__body">
+									<h3 class="project-detail__title">Landing page</h3>
+									<p class="project-detail__desc">
+										Дипломная работа модуля 2. Вёрстка по Figma-макету,
+										адаптивный дизайн, BEM-методология. Hover-эффекты
+										реализованы самостоятельно.
+									</p>
+									<div class="project-detail__tags">
+										<span class="badge badge__portfolio">HTML</span>
+										<span class="badge badge__portfolio">CSS</span>
+										<span class="badge badge__portfolio">BEM</span>
+										<span class="badge badge__portfolio">JavaScript</span>
+									</div>
+									<div class="project-detail__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="project-detail card" id="project-3">
+								<div class="project-detail__image-wrap">
+									<picture>
+										<source
+											srcset="images/projects/landing.webp"
+											type="image/webp"
+										/>
+										<img
+											src="images/projects/landing.jpg"
+											alt="Скриншот Landing page"
+											class="project-detail__image"
+											loading="lazy"
+										/>
+									</picture>
+								</div>
+								<div class="card__body">
+									<h3 class="project-detail__title">Landing page</h3>
+									<p class="project-detail__desc">
+										Дипломная работа модуля 2. Вёрстка по Figma-макету,
+										адаптивный дизайн, BEM-методология. Hover-эффекты
+										реализованы самостоятельно.
+									</p>
+									<div class="project-detail__tags">
+										<span class="badge badge__portfolio">HTML</span>
+										<span class="badge badge__portfolio">CSS</span>
+										<span class="badge badge__portfolio">BEM</span>
+										<span class="badge badge__portfolio">JavaScript</span>
+									</div>
+									<div class="project-detail__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="project-detail card" id="project-4">
+								<div class="project-detail__image-wrap">
+									<picture>
+										<source
+											srcset="images/projects/landing.webp"
+											type="image/webp"
+										/>
+										<img
+											src="images/projects/landing.jpg"
+											alt="Скриншот Landing page"
+											class="project-detail__image"
+											loading="lazy"
+										/>
+									</picture>
+								</div>
+								<div class="card__body">
+									<h3 class="project-detail__title">Landing page</h3>
+									<p class="project-detail__desc">
+										Дипломная работа модуля 2. Вёрстка по Figma-макету,
+										адаптивный дизайн, BEM-методология. Hover-эффекты
+										реализованы самостоятельно.
+									</p>
+									<div class="project-detail__tags">
+										<span class="badge badge__portfolio">HTML</span>
+										<span class="badge badge__portfolio">CSS</span>
+										<span class="badge badge__portfolio">BEM</span>
+										<span class="badge badge__portfolio">JavaScript</span>
+									</div>
+									<div class="project-detail__actions">
+										<a href="#" class="btn btn--outline btn--sm">
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#github"></use>
+											</svg>
+											GitHub
+										</a>
+										<a
+											href="#"
+											target="_blank"
+											rel="noopener noreferrer"
+											class="btn btn--primary btn--sm"
+										>
+											<svg
+												class="btn__icon"
+												width="20"
+												height="20"
+												aria-hidden="true"
+											>
+												<use href="/icons/sprites.svg#demo"></use>
+											</svg>
+											Demo
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Experience -->
+			<section class="section experience" id="experience">
+				<div class="container experience__container">
+					<div class="experience__header">
+						<h2 class="experience__title">
+							Опыт: От доводки металла к чистоте кода <br />
+							Путь инженера-самоучки
+						</h2>
+						<p class="experience__desc">
+							Мой путь в IT начался не с теории, а с практики: от первых правок
+							в шаблонах WordPress в 2013-м до осознанного изучения алгоритмов
+							на C# и Python. Я не просто учу синтаксис — я строю системы. Что я
+							принес из «реального сектора» в разработку:
+						</p>
+					</div>
+
+					<div class="experience__list">
+						<div class="card">
+							<div class="card__header">
+								<div class="experience__card-top">
+									<div>
+										<h3 class="card__title">
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="/icons/sprites.svg#portfolio"></use>
+											</svg>
+											Self-Taught Developer / Lab
+										</h3>
+									</div>
+									<div class="experience__meta">
+										<div class="experience__meta-item">
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="/icons/sprites.svg#calendar"></use>
+											</svg>
+											2024 — н.в.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card__body">
+								<p class="experience__text">
+									<span class="text-bold">Стек:</span> Python, HTML, CSS,
+									Laravel, PostgreSQL, Nginx, Docker, n8n. <br /><span
+										class="text-bold"
+										>Достижения:</span
+									>
+									Самостоятельное развертывание и администрирование
+									Linux-сервера (Ubuntu). Настройка CI/CD процессов через Docker
+									Compose. Разработка личных проектов с интеграцией OpenAI и
+									Telegram Bot API.
+								</p>
+								<div class="experience__tags">
+									<span class="badge badge--outline badge__experience"
+										>Python</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>HTML</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>CSS</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Laravel</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>PostgreSQL</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Nginx</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Docker</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>n8n</span
+									>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<div class="experience__card-top">
+									<div>
+										<h3 class="card__title">
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="/icons/sprites.svg#portfolio"></use>
+											</svg>
+											Производственный инженер
+										</h3>
+									</div>
+									<div class="experience__meta">
+										<div class="experience__meta-item">
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="/icons/sprites.svg#calendar"></use>
+											</svg>
+											2022 — 2024
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card__body">
+								<p class="experience__text">
+									<span class="text-bold">Обязанности:</span> Ремонтировал и
+									доводил измерительные инструменты: от штангенциркулей до
+									микрометров. <br /><span class="text-bold">IT-связь:</span>
+									Вовлеченным и упрямство в работе за 2 года помогло мне развить
+									предельную концентрацию и прийти к системному подходу, что
+									послужило к будущей диагностике неисправностей. Благодаря
+									этому я понял, что монотонный труд в программировании — это
+									как глоток свежего воздуха
+								</p>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card__header">
+								<div class="experience__card-top">
+									<div>
+										<h3 class="card__title">
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="/icons/sprites.svg#portfolio"></use>
+											</svg>
+											Специалист по системам и данным
+										</h3>
+										<p class="experience__company">Витамилк / Ростелеком</p>
+									</div>
+									<div class="experience__meta">
+										<div class="experience__meta-item">
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="/icons/sprites.svg#calendar"></use>
+											</svg>
+											2016 — 2022
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card__body">
+								<p class="experience__text">
+									<span class="text-bold">Обязанности:</span> Работал в CRM (1С,
+									СБИС, Инфо-Предприятие), обрабатывал претензии, занимался
+									логистикой. <br /><span class="text-bold">IT-связь:</span>
+									Создавал корпоративный сайт на WordPress. Глубокое понимание
+									того, как данные движутся по системе и как конечный
+									пользователь взаимодействует с интерфейсом.
+								</p>
+								<div class="experience__tags">
+									<span class="badge badge--outline badge__experience"
+										>СБИС</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>1С Предприятие</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Инфо-Предприятие</span
+									>
+									<span class="badge badge--outline badge__experience"
+										>Wordpress</span
+									>
+								</div>
+							</div>
+						</div>
+
+						<h3 class="experience__strong"><strong>Текущий фокус:</strong></h3>
+						<p>
+							Сейчас я глубоко погружен в экосистему Laravel + PostgreSQL. Моя
+							цель — создавать высокопроизводительные веб-сервисы, где каждый
+							компонент работает так же четко, как откалиброванный измерительный
+							прибор.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Blog -->
+			<section class="section blog" id="blog">
+				<div class="container blog__container">
+					<div class="blog__header">
+						<h2 class="blog__title">Блог</h2>
+						<p class="blog__desc">
+							Пишу о разработке, инструментах, книгах и профессиональном росте.
+						</p>
+					</div>
+
+					<div class="blog__grid">
+						<article class="card blog-card">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-1.webp" type="image/webp" />
+									<img
+										src="images/blog/post-1.jpg"
+										alt="Как я поднял свой первый VPS"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog">DevOps</span>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="/icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-03-10"
+											>10 марта 2025</time
+										>
+									</span>
+								</div>
+								<h3 class="blog-card__title">Как я поднял свой первый VPS</h3>
+								<p class="blog-card__desc">
+									nginx, Docker, SSL — с нуля до рабочего сервера. Разбираю
+									каждый шаг и подводные камни которые встретил.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-2.webp" type="image/webp" />
+									<img
+										src="images/blog/post-2.jpg"
+										alt="BEM: почему я наконец понял методологию"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog">Frontend</span>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="/icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-02-20"
+											>20 февраля 2025</time
+										>
+									</span>
+								</div>
+								<h3 class="blog-card__title">
+									BEM: почему я наконец понял методологию
+								</h3>
+								<p class="blog-card__desc">
+									Долго не мог принять BEM. Рассказываю что изменилось и почему
+									теперь верстаю только так.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+
+						<article class="card blog-card">
+							<div class="blog-card__image-wrap">
+								<picture>
+									<source srcset="images/blog/post-3.webp" type="image/webp" />
+									<img
+										src="images/blog/post-3.jpg"
+										alt="Книга: Чистый код"
+										class="blog-card__image"
+										loading="lazy"
+									/>
+								</picture>
+							</div>
+							<div class="card__body">
+								<div class="blog-card__meta">
+									<span class="badge badge__blog">Книги</span>
+									<span class="blog-card__date-group">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="/icons/sprites.svg#calendar"></use>
+										</svg>
+										<time class="blog-card__date" datetime="2025-01-15"
+											>15 января 2025</time
+										>
+									</span>
+								</div>
+								<h3 class="blog-card__title">Книга: Чистый код</h3>
+								<p class="blog-card__desc">
+									Прочитал «Чистый код» Мартина. Что взял для себя и что
+									показалось спорным — честный разбор.
+								</p>
+								<a href="#" class="blog-card__link">
+									Читать далее
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#general-arrow"></use>
+									</svg>
+								</a>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contacts -->
+			<section class="section contacts" id="contacts">
+				<div class="container contacts__container">
+					<div class="contacts__header">
+						<h2 class="contacts__title">Есть задача — давай решим</h2>
+						<p class="contacts__desc">
+							Верстаю, настраиваю серверы, автоматизирую. Если вам нужен человек
+							который разберётся сам — напишите.
+						</p>
+					</div>
+
+					<div class="contacts__grid">
+						<!-- Info cards -->
+						<div class="contacts__info">
+							<div class="card">
+								<div class="card__body">
+									<div class="contacts__info-row">
+										<svg
+											class="sprites badge__icon contacts__info-icon"
+											aria-hidden="true"
+										>
+											<use href="/icons/sprites.svg#email"></use>
+										</svg>
+										<div>
+											<h4 class="contacts__info-label">Почта</h4>
+											<p class="contacts__info-value">i@mankudinov.ru</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__body">
+									<div class="contacts__info-row">
+										<svg
+											class="sprites badge__icon contacts__info-icon"
+											aria-hidden="true"
+										>
+											<use href="/icons/sprites.svg#phone"></use>
+										</svg>
+										<div>
+											<h4 class="contacts__info-label">Телефон</h4>
+											<p class="contacts__info-value">+7 (995) 6907083</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__body">
+									<div class="contacts__info-row">
+										<svg
+											class="sprites badge__icon contacts__info-icon"
+											aria-hidden="true"
+										>
+											<use href="/icons/sprites.svg#location"></use>
+										</svg>
+										<div>
+											<h4 class="contacts__info-label">
+												Текущее местоположение
+											</h4>
+											<p class="contacts__info-value">
+												Пермь, Россия · Удалённая работа
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Form card -->
+						<div class="card">
+							<div class="card__header">
+								<h3 class="card__title">Оставить контакты для связи</h3>
+							</div>
+							<div class="card__body">
+								<form class="contacts__form" id="contactForm">
+									<div class="contacts__form-row">
+										<input
+											class="input"
+											type="text"
+											placeholder="Ваше имя"
+											required
+										/>
+										<input
+											class="input"
+											type="email"
+											placeholder="Ваша почта"
+											required
+										/>
+									</div>
+									<input class="input" type="text" placeholder="Тема письма" />
+									<textarea
+										class="input input--textarea"
+										placeholder="Ваше сообщение"
+										rows="5"
+									></textarea>
+									<button type="submit" class="btn btn--primary btn--full">
+										<svg class="sprites badge__icon" aria-hidden="true">
+											<use href="/icons/sprites.svg#telegram"></use>
+										</svg>
+										Отправить
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="contacts__socials">
+						<strong class="contacts__find">Вы можете найти меня здесь:</strong>
+						<div class="hero__socials">
+							<a
+								href="#"
+								class="btn btn--ghost btn--icon btn--circle"
+								aria-label="GitHub"
+							>
+								<svg class="sprites" aria-hidden="true">
+									<use href="/icons/sprites.svg#github"></use>
+								</svg>
+							</a>
+							<a
+								href="#"
+								class="btn btn--ghost btn--icon btn--circle"
+								aria-label="Telegram"
+							>
+								<svg class="sprites" aria-hidden="true">
+									<use href="/icons/sprites.svg#telegram"></use>
+								</svg>
+							</a>
+							<a
+								href="#"
+								class="btn btn--ghost btn--icon btn--circle"
+								aria-label="Email"
+							>
+								<svg class="sprites" aria-hidden="true">
+									<use href="/icons/sprites.svg#email"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<div id="footer"></div>
+		<script defer src="/js/index.js" type="module"></script>
+	</body>
+</html>
