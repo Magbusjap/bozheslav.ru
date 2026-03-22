@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
@@ -98,8 +100,8 @@ class PostResource extends Resource
 	            ]),
 	    ])
 	    ->columnSpanFull(),
-                Forms\Components\FileUpload::make('cover_image')
-                    ->image(),
+                CuratorPicker::make('cover_image')
+					->buttonLabel('Выбрать обложку'),
                 Forms\Components\Select::make('status')
 					->options([
 						'draft' => 'Черновик',
