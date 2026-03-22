@@ -2,7 +2,7 @@
    Filament: Media
    ========================================================================== */
 
-/* Curator picker controls */
+/* --- Curator picker controls --- */
 .curator-media-picker .absolute.top-0.right-0 {
     right: 0px;
     background: rgba(0, 0, 0, 0.6) !important;
@@ -17,4 +17,67 @@
     color: #ffffff !important;
     width: 2rem;
     height: 2rem;
+}
+
+/* --- Curator picker modal - grid layout --- */
+.curator-panel .curator-panel__items {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+    gap: 0.75rem !important;
+}
+
+.curator-panel .curator-panel__item img {
+    width: 100% !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+}
+
+/* --- Size of modal window --- */
+.fi-modal-window {
+    max-width: 1500px !important;
+    max-height: 1000px !important;
+}
+
+/* --- Grid of modal window --- */
+.curator-picker-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+    gap: 0.75rem !important;
+}
+
+
+/* --- Hide buttons by default; show on hover --- */
+
+.curator-grid-column {
+    aspect-ratio: 1 / 1 !important;
+}
+
+.fi-ta-record .fi-ta-actions {
+    opacity: 0;
+    transition: opacity 0.2s;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 4px 8px;
+    border-radius: 0 0 0.75rem 0.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+}
+
+.fi-ta-record:hover .fi-ta-actions {
+    opacity: 1;
+}
+
+/* --- Square cards --- */
+.fi-ta-record {
+    aspect-ratio: 1 / 1 !important
+}
+
+/* --- Remove unnecessary indents --- */
+.fi-ta-record .flex.w-full.flex-col {
+    padding: 0 !important;
+    /* height: 150px !important;
+    gap: 0.5rem !important; */
 }

@@ -37,7 +37,10 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->extraAttributes(['style' => 'cursor: pointer; text-decoration: none;'])
+                    ->extraAttributes(['onmouseover' => 'this.style.textDecoration="underline"', 
+                    'onmouseout' => 'this.style.textDecoration="none"']),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
