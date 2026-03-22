@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/vendor/highlight.min.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Портфолио — Михаил Божеслав</title>
 	</head>
@@ -775,6 +776,8 @@
 		</main>
 
 		<div id="footer"></div>
+		<script src="/js/vendor/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer src="/js/index.js" type="module"></script>
 	</body>
 </html>

@@ -107,6 +107,33 @@ class PostResource extends Resource
 	                Forms\Components\TextInput::make('author')
 	                    ->label('Автор'),
 	            ]),
+			Forms\Components\Builder\Block::make('image_text')
+				->label('Изображение + текст')
+				->schema([
+					CuratorPicker::make('url')
+						->label('Изображение')
+						->buttonLabel('Выбрать изображение')
+						->required(),
+					Forms\Components\Select::make('position')
+						->label('Расположение изображения')
+						->options([
+							'left' => 'Слева',
+							'right' => 'Справа',
+						])
+						->default('left')
+						->required(),
+					Forms\Components\TextInput::make('width')
+						->label('Ширина изображения (px)')
+						->numeric()
+						->default(300),
+					// Forms\Components\Textarea::make('text')
+					// 	->label('Текст')
+					// 	->required()
+					// 	->rows(5),
+					TiptapEditor::make('text')
+						->label('Текст')
+						->required(),
+				]),
 	    ])
 	    ->columnSpanFull(),
                 CuratorPicker::make('cover_image')
@@ -136,7 +163,9 @@ class PostResource extends Resource
 				Tables\Columns\TextColumn::make('slug')
 					->searchable(),
 				Tables\Columns\ImageColumn::make('cover_image')
-    				->getStateUsing(fn ($record) => $record->cover_url),
+    				->getStateUsing(fn ($record) => $record->cover_url)
+					->width(85)
+   					->height(65),
 				Tables\Columns\SelectColumn::make('status')
 					->options([
 						'draft' => 'Черновик',
