@@ -43,4 +43,7 @@
     </form>
 </div>
 <div style="height: 36px;"></div>
+<script>
+    document.body.classList.add('has-admin-bar');
+</script>
 @endauth

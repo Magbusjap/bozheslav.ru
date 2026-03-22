@@ -8,10 +8,13 @@
 		<title>Статья — Михаил Божеслав</title>
 	</head>
 	<body>
+		@auth
 		<x-admin-bar 
-			:editUrl="auth()->check() ? '/admin/posts/' . $post->id . '/edit' : null"
-			editLabel="Редактировать запись"
+			:editUrl="isset($post) ? '/admin/posts/' . $post->id . '/edit' : null"
+			:editLabel="isset($post) && $post->status === 'draft' ? 'Редактировать черновик' : 'Редактировать запись'"
 		/>
+		@endauth
+
 		<div id="header"></div>
 
 		<main class="main">

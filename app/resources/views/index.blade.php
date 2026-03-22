@@ -8,10 +8,12 @@
 		<title>Михаил Божеслав — Разработчик</title>
 	</head>
 	<body>
+		@auth
 		<x-admin-bar 
 			:editUrl="'/admin'"
 			editLabel="Редактировать страницу"
 		/>
+		@endauth
 
 		<div id="header"></div>
 

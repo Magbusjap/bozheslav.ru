@@ -16,6 +16,13 @@ class EditPost extends EditRecord
                 ->icon('heroicon-o-arrow-top-right-on-square')
                 ->color('gray')
                 ->visible(fn () => $this->record->status === 'published'),
+            Actions\Action::make('preview')
+                ->label('Просмотр черновика')
+                ->url(fn () => '/' . $this->record->slug)
+                ->openUrlInNewTab()
+                ->icon('heroicon-o-eye')
+                ->color('warning')
+                ->visible(fn () => $this->record->status === 'draft'),
             Actions\DeleteAction::make(),
         ];
     }
