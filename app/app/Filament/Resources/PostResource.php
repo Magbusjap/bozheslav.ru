@@ -101,58 +101,63 @@ class PostResource extends Resource
                 Forms\Components\FileUpload::make('cover_image')
                     ->image(),
                 Forms\Components\Select::make('status')
-		    ->options([
-		        'draft' => 'Черновик',
-		        'published' => 'Опубликован',
-		    ])
-		    ->default('draft')
-		    ->required(),
-            ]);
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('title')
-					->searchable()
-					->url(fn ($record) => '/' . $record->slug)
-					->openUrlInNewTab(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('cover_image'),
-                Tables\Columns\SelectColumn::make('status')
 					->options([
 						'draft' => 'Черновик',
 						'published' => 'Опубликован',
-					]),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-	    Tables\Actions\EditAction::make(),
-	    Tables\Actions\Action::make('view')
-	        ->label('Просмотр')
-	        ->icon('heroicon-o-arrow-top-right-on-square')
-	        ->url(fn ($record) => '/' . $record->slug)
-	        ->openUrlInNewTab()
-	        ->color('gray'),
-	    ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+					])
+					->selectablePlaceholder(false)
+					->default('draft')
+					->required(),
+					]);
     }
+
+	public static function table(Table $table): Table
+	{
+		return $table
+			->columns([
+				Tables\Columns\TextColumn::make('title')
+					->searchable()
+					->extraAttributes(['style' => 'cursor: pointer; text-decoration: none;'])
+    				->extraAttributes(['onmouseover' => 'this.style.textDecoration="underline"', 'onmouseout' => 'this.style.textDecoration="none"']),
+				Tables\Columns\TextColumn::make('slug')
+					->searchable(),
+				Tables\Columns\ImageColumn::make('cover_image'),
+				Tables\Columns\SelectColumn::make('status')
+					->options([
+						'draft' => 'Черновик',
+						'published' => 'Опубликован',
+					])
+					->selectablePlaceholder(false),
+				Tables\Columns\TextColumn::make('created_at')
+					->dateTime()
+					->sortable()
+					->toggleable(isToggledHiddenByDefault: true),
+				Tables\Columns\TextColumn::make('updated_at')
+					->dateTime()
+					->sortable()
+					->toggleable(isToggledHiddenByDefault: true),
+			])
+			->recordUrl(
+				fn ($record) => Pages\EditPost::getUrl(['record' => $record])
+			)
+			->filters([
+				//
+			])
+			->actions([
+				Tables\Actions\EditAction::make(),
+				Tables\Actions\Action::make('view')
+					->label('Просмотр')
+					->icon('heroicon-o-arrow-top-right-on-square')
+					->url(fn ($record) => '/' . $record->slug)
+					->openUrlInNewTab()
+					->color('gray'),
+			])
+			->bulkActions([
+				Tables\Actions\BulkActionGroup::make([
+					Tables\Actions\DeleteBulkAction::make(),
+				]),
+			]);
+	}
 
     public static function getRelations(): array
     {

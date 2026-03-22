@@ -22,12 +22,16 @@ Route::get('/blog', function () {
 
 // Блог — отдельная статья
 Route::get('/{slug}', function ($slug) {
-    $post = \App\Models\Post::where('slug', $slug)
-        ->where('status', 'published')
-        ->first();
+    $query = \App\Models\Post::where('slug', $slug);
+    
+    if (!auth()->check()) {
+        $query->where('status', 'published');
+    }
+    
+    $post = $query->first();
     
     if (!$post) {
-    abort(404);
+        abort(404);
     }
     
     return view('article', compact('post'));
