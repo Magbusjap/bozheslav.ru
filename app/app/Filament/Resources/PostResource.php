@@ -115,17 +115,17 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
+					->searchable()
+					->url(fn ($record) => '/' . $record->slug)
+					->openUrlInNewTab(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('cover_image'),
-                Tables\Columns\TextColumn::make('status')
-		    ->badge()
-		    ->color(fn (string $state): string => match ($state) {
-		        'published' => 'success',
-		        'draft' => 'gray',
-		        default => 'gray',
-		    }),
+                Tables\Columns\SelectColumn::make('status')
+					->options([
+						'draft' => 'Черновик',
+						'published' => 'Опубликован',
+					]),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
