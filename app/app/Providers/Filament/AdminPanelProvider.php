@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\View\PanelsRenderHook;
 use Awcodes\Curator\CuratorPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -34,6 +35,10 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 CuratorPlugin::make(),
             ])
+            ->renderHook(
+                'panels::head.end',
+                fn () => '<link rel="stylesheet" href="/css/filament/media.css">',
+            )
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

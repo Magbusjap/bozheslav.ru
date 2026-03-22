@@ -28,4 +28,19 @@ class Post extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function getCoverUrlAttribute(): ?string
+    {
+        if (!$this->cover_image) return null;
+        
+        $media = \Awcodes\Curator\Models\Media::find($this->cover_image);
+        return $media ? $media->url : null;
+    }
+
+    public static function getMediaUrl(?int $id): ?string
+    {
+        if (!$id) return null;
+        $media = \Awcodes\Curator\Models\Media::find($id);
+        return $media?->url;
+    }
 }

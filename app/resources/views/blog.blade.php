@@ -42,7 +42,7 @@
 					<article class="card blog-card" data-category="{{ $post->category->slug ?? 'other' }}">
 						<div class="blog-card__image-wrap">
 							<img
-								src="{{ $post->cover_image ? '/storage/'.$post->cover_image : '/images/blog/default.jpg' }}"
+								src="{{ $post->cover_url ?? '/images/blog/default.jpg' }}"
 								alt="{{ $post->title }}"
 								class="blog-card__image"
 								loading="lazy"

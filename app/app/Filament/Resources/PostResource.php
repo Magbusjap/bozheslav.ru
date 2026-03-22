@@ -82,12 +82,21 @@ class PostResource extends Resource
 	        Forms\Components\Builder\Block::make('image')
 	            ->label('Изображение')
 	            ->schema([
-	                Forms\Components\FileUpload::make('url')
-	                    ->label('Изображение')
-	                    ->image()
-	                    ->required(),
+	                CuratorPicker::make('url')
+						->label('Изображение')
+						->buttonLabel('Выбрать изображение')
+						->required(),
 	                Forms\Components\TextInput::make('caption')
 	                    ->label('Подпись'),
+					Forms\Components\Toggle::make('proportional')
+						->label('Пропорционально')
+						->default(true),
+					Forms\Components\TextInput::make('width')
+						->label('Ширина (px)')
+						->numeric(),
+					Forms\Components\TextInput::make('height')
+						->label('Высота (px)')
+						->numeric(),
 	            ]),
 	        Forms\Components\Builder\Block::make('quote')
 	            ->label('Цитата')
@@ -101,7 +110,10 @@ class PostResource extends Resource
 	    ])
 	    ->columnSpanFull(),
                 CuratorPicker::make('cover_image')
-					->buttonLabel('Выбрать обложку'),
+					->label('Обложка')
+					->buttonLabel('Выбрать обложку')
+					->nullable()
+					->maxItems(1),
                 Forms\Components\Select::make('status')
 					->options([
 						'draft' => 'Черновик',
@@ -123,7 +135,8 @@ class PostResource extends Resource
     				->extraAttributes(['onmouseover' => 'this.style.textDecoration="underline"', 'onmouseout' => 'this.style.textDecoration="none"']),
 				Tables\Columns\TextColumn::make('slug')
 					->searchable(),
-				Tables\Columns\ImageColumn::make('cover_image'),
+				Tables\Columns\ImageColumn::make('cover_image')
+    				->getStateUsing(fn ($record) => $record->cover_url),
 				Tables\Columns\SelectColumn::make('status')
 					->options([
 						'draft' => 'Черновик',

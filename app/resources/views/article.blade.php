@@ -40,7 +40,7 @@
 					<!-- Cover -->
 					@if($post->cover_image)
 					<div class="article-page__cover">
-						<img src="/storage/{{ $post->cover_image }}" alt="{{ $post->title }}" />
+						<img src="{{ $post->cover_url }}" alt="{{ $post->title }}" />
 					</div>
 					@endif
 					
@@ -63,7 +63,16 @@
 									@break
 								@case('image')
 									<figure>
-										<img src="/storage/{{ $block['data']['url'] }}" alt="{{ $block['data']['caption'] ?? '' }}" />
+								@php
+									$media = \Awcodes\Curator\Models\Media::find($block['data']['url']);
+								@endphp
+									<img src="{{ \App\Models\Post::getMediaUrl($block['data']['url']) }}" 
+										alt="{{ $block['data']['caption'] ?? '' }}"
+										style="
+											@if(!empty($block['data']['width'])) width: {{ $block['data']['width'] }}px; @endif
+											@if(!empty($block['data']['height'])) height: {{ $block['data']['height'] }}px; @endif
+										"
+									/>
 										@if(!empty($block['data']['caption']))
 											<figcaption>{{ $block['data']['caption'] }}</figcaption>
 										@endif

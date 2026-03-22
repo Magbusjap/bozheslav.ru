@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Filament: Media
+   ========================================================================== */
+
+/* Curator picker controls */
+.curator-media-picker .absolute.top-0.right-0 {
+    right: 0px;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 0 0 0 8px;
+}
+
+.curator-media-picker .fi-icon-btn {
+    color: #ffffff !important;
+}
+
+.curator-media-picker .fi-icon-btn svg {
+    color: #ffffff !important;
+    width: 2rem;
+    height: 2rem;
+}

@@ -1,0 +1,17 @@
+.curator-media-picker .fi-dropdown-trigger {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.curator-media-picker .fi-icon-btn-group {
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 6px;
+    color: #fff !important;
+    width: 28px;
+    height: 28px;
+}
+
+.curator-media-picker .fi-icon-btn-group svg {
+    color: #fff !important;
+}
