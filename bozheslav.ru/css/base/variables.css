@@ -23,6 +23,7 @@
 
 	/* === Nav === */
 	--nav-bg: rgba(255, 255, 255, 0.95); /* translucent background for blur effect */
+	--nav-logo-color: #1e1e30;
 
 	/* === Border radius === */
 	--radius-sm: 0.375rem; /* 6px  */
@@ -50,6 +51,11 @@
 	/* === Container === */
 	--container-width: 1294px;
 	--container-padding: 20px;
+
+	/* === Code block === */
+	--code-bg: #1C1C1C;
+	--code-fg: #cdd6f4;
+	--code-border: rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================================================
@@ -73,4 +79,10 @@
 
 	/* === Nav === */
 	--nav-bg: rgba(28, 28, 28, 0.95);
+	--nav-logo-color: #fafafa; 
+
+	/* === Code block === */
+	--code-bg: #1A1A1A;
+	--code-fg: #cdd6f4;
+	--code-border: #313244;
 }

@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/css/index.css" />
+		<link rel="stylesheet" href="/css/vendor/highlight.min.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Статья — Михаил Божеслав</title>
 	</head>
@@ -59,7 +60,10 @@
 									{!! $block['data']['content'] !!}
 									@break
 								@case('code')
-									<pre><code class="language-{{ $block['data']['language'] }}">{{ $block['data']['code'] }}</code></pre>
+									<div class="article-page__code-wrapper">
+										<span class="article-page__code-lang">{{ $block['data']['language'] }}</span>
+										<pre><code class="language-{{ $block['data']['language'] }}">{{ $block['data']['code'] }}</code></pre>
+									</div>
 									@break
 								@case('image')
 									<figure>
@@ -86,6 +90,16 @@
 										@endif
 									</blockquote>
 									@break
+								@case('image_text')
+									<div class="article-page__image-text article-page__image-text--{{ $block['data']['position'] }}">
+										<figure class="article-page__image-text-img" style="width: {{ $block['data']['width'] ?? 300 }}px;">
+											<img src="{{ \App\Models\Post::getMediaUrl($block['data']['url']) }}" alt="" />
+										</figure>
+										<div class="article-page__image-text-body">
+											{!! $block['data']['text'] !!}
+										</div>
+									</div>
+									@break
 							@endswitch
 						@endforeach
 					</div>
@@ -104,6 +118,8 @@
 		</main>
 
 		<div id="footer"></div>
+		<script src="/js/vendor/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer src="/js/index.js" type="module"></script>
 	</body>
 </html>

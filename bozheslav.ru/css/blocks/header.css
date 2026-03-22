@@ -27,7 +27,7 @@
 }
 
 .nav__logo {
-	color: #1e1e30;
+	color: var(--nav-logo-color);
 	flex-shrink: 0;
 	font-size: 1.325rem;
 	font-weight: 500;
