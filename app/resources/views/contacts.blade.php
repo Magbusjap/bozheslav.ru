@@ -8,6 +8,11 @@
 		<title>Контакты — Михаил Божеслав</title>
 	</head>
 	<body>
+		<x-admin-bar 
+			:editUrl="'/admin'"
+			editLabel="Редактировать страницу"
+		/>
+
 		<div id="header"></div>
 
 		<main class="main">

@@ -8,6 +8,10 @@
 		<title>Статья — Михаил Божеслав</title>
 	</head>
 	<body>
+		<x-admin-bar 
+			:editUrl="auth()->check() ? '/admin/posts/' . $post->id . '/edit' : null"
+			editLabel="Редактировать запись"
+		/>
 		<div id="header"></div>
 
 		<main class="main">
