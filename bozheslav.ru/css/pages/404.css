@@ -38,7 +38,7 @@
 
         .terminal__title {
             margin-left: 0.5rem;
-            font-size: 0.8rem;
+            font-size: 1rem;
             color: var(--muted-fg);
             font-family: "Courier New", monospace;
         }
