@@ -39,7 +39,7 @@ class OptionResource extends Resource
                 ->required()
                 ->unique(ignoreRecord: true),
             Forms\Components\Textarea::make('value')
-                ->label('Значение')
+                ->label('Ссылка')
                 ->rows(2),
         ]);
     }
@@ -59,7 +59,7 @@ class OptionResource extends Resource
                     ->label('Ключ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('value')
-                    ->label('Значение')
+                    ->label('Ссылка')
                     ->limit(50),
             ])
             ->defaultSort('group')

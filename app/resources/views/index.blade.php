@@ -74,7 +74,7 @@
 							</div>
 
 							<div class="hero__actions">
-								<a href="#" class="btn btn--primary btn--lg">
+								<a href="{{ option('hero_resume_url', '#') }}" class="btn btn--primary btn--lg">
 									<svg
 										class="btn__icon"
 										width="20"
@@ -85,7 +85,7 @@
 									</svg>
 									Скачать моё резюме
 								</a>
-								<a href="#projects" class="btn btn--outline btn--lg">
+								<a href="{{ option('hero_portfolio_url', '#projects') }}" class="btn btn--outline btn--lg">
 									<svg
 										class="btn__icon"
 										width="20"
@@ -99,27 +99,27 @@
 							</div>
 
 							<div class="hero__socials">
-								<a
-									href="#"
-									class="btn btn--ghost btn--icon btn--circle"
+								<a 
+									href="{{ option('social_github', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
 									aria-label="GitHub"
 								>
 									<svg class="sprites" aria-hidden="true">
 										<use href="/icons/sprites.svg#github"></use>
 									</svg>
 								</a>
-								<a
-									href="#"
-									class="btn btn--ghost btn--icon btn--circle"
-									aria-label="Telegram"
+								<a 
+									href="{{ option('social_github', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
+									aria-label="GitHub"
 								>
 									<svg class="sprites" aria-hidden="true">
 										<use href="/icons/sprites.svg#telegram"></use>
 									</svg>
 								</a>
-								<a
-									href="#"
-									class="btn btn--ghost btn--icon btn--circle"
+								<a 
+									href="{{ option('social_email', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
 									aria-label="Email"
 								>
 									<svg class="sprites" aria-hidden="true">
@@ -169,7 +169,9 @@
 
 									<div class="hero__status">
 										<span class="hero__status-dot"></span>
-										<span class="hero__status-text">Нанять на проект</span>
+										<a href="{{ option('hero_hire_url', '#contacts') }}" class="hero__status-link">
+											<span class="hero__status-text">Нанять на проект</span>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -1174,7 +1176,7 @@
 										</svg>
 										<div>
 											<h4 class="contacts__info-label">Почта</h4>
-											<p class="contacts__info-value">i@mankudinov.ru</p>
+											<p class="contacts__info-value">{{ option('contact_email', 'i@mankudinov.ru') }}</p>
 										</div>
 									</div>
 								</div>
@@ -1190,7 +1192,7 @@
 										</svg>
 										<div>
 											<h4 class="contacts__info-label">Телефон</h4>
-											<p class="contacts__info-value">+7 (995) 6907083</p>
+											<p class="contacts__info-value">{{ option('contact_phone', '+7 (995) 6907083') }}</p>
 										</div>
 									</div>
 								</div>
@@ -1208,9 +1210,7 @@
 											<h4 class="contacts__info-label">
 												Текущее местоположение
 											</h4>
-											<p class="contacts__info-value">
-												Пермь, Россия · Удалённая работа
-											</p>
+											<p class="contacts__info-value">{{ option('contact_city', 'Пермь, Россия · Удалённая работа') }}</p>
 										</div>
 									</div>
 								</div>

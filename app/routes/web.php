@@ -3,7 +3,13 @@
 use Illuminate\Support\Facades\Route;
 
 // Главная
-Route::get('/', fn() => view('index'));
+Route::get('/', function () {
+    $posts = \App\Models\Post::where('status', 'published')
+        ->orderBy('created_at', 'desc')
+        ->take(3)
+        ->get();
+    return view('index', compact('posts'));
+});
 
 // Страницы
 Route::get('/skills', fn() => view('skills'));
