@@ -103,6 +103,8 @@
 									href="{{ option('social_github', '#') }}" 
 									class="btn btn--ghost btn--icon btn--circle" 
 									aria-label="GitHub"
+									target="_blank"
+    								rel="noopener noreferrer"
 								>
 									<svg class="sprites" aria-hidden="true">
 										<use href="/icons/sprites.svg#github"></use>
@@ -112,6 +114,8 @@
 									href="{{ option('social_telegram', '#') }}" 
 									class="btn btn--ghost btn--icon btn--circle" 
 									aria-label="Telegram"
+									target="_blank"
+    								rel="noopener noreferrer"
 								>
 									<svg class="sprites" aria-hidden="true">
 										<use href="/icons/sprites.svg#telegram"></use>
@@ -1184,6 +1188,8 @@
 								href="{{ option('social_github', '#') }}" 
 								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="GitHub"
+								target="_blank"
+    							rel="noopener noreferrer"
 							>
 								<svg class="sprites" aria-hidden="true">
 									<use href="/icons/sprites.svg#github"></use>
@@ -1193,6 +1199,8 @@
 								href="{{ option('social_telegram', '#') }}" 
 								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="Telegram"
+								target="_blank"
+    							rel="noopener noreferrer"
 							>
 								<svg class="sprites" aria-hidden="true">
 									<use href="/icons/sprites.svg#telegram"></use>

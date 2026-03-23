@@ -43,7 +43,7 @@
 										</svg>
 										<div>
 											<h4 class="contacts-page__info-label">Почта</h4>
-											<p class="contacts-page__info-value">i@mankudinov.ru</p>
+											<p class="contacts__info-value">{{ option('contact_email', 'i@mankudinov.ru') }}</p>
 										</div>
 									</div>
 								</div>
@@ -59,7 +59,7 @@
 										</svg>
 										<div>
 											<h4 class="contacts-page__info-label">Телефон</h4>
-											<p class="contacts-page__info-value">+7 (995) 6907083</p>
+											<p class="contacts__info-value">{{ option('contact_phone', '+7 (995) 6907083') }}</p>
 										</div>
 									</div>
 								</div>
@@ -77,9 +77,7 @@
 											<h4 class="contacts-page__info-label">
 												Текущее местоположение
 											</h4>
-											<p class="contacts-page__info-value">
-												Пермь, Россия · Удалённая работа
-											</p>
+											<p class="contacts__info-value">{{ option('contact_city', 'Пермь, Россия · Удалённая работа') }}</p>
 										</div>
 									</div>
 								</div>
@@ -127,27 +125,31 @@
 					<div class="contacts-page__socials">
 						<strong class="contacts-page__find">Вы можете найти меня здесь:</strong>
 						<div class="hero__socials">
-							<a
-								href="#"
-								class="btn btn--ghost btn--icon btn--circle"
+							<a 
+								href="{{ option('social_github', '#') }}" 
+								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="GitHub"
+								target="_blank"
+    							rel="noopener noreferrer"
 							>
 								<svg class="sprites" aria-hidden="true">
 									<use href="/icons/sprites.svg#github"></use>
 								</svg>
 							</a>
-							<a
-								href="#"
-								class="btn btn--ghost btn--icon btn--circle"
+							<a 
+								href="{{ option('social_telegram', '#') }}" 
+								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="Telegram"
+								target="_blank"
+    							rel="noopener noreferrer"
 							>
 								<svg class="sprites" aria-hidden="true">
 									<use href="/icons/sprites.svg#telegram"></use>
 								</svg>
 							</a>
-							<a
-								href="#"
-								class="btn btn--ghost btn--icon btn--circle"
+							<a 
+								href="{{ option('social_email', '#') }}" 
+								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="Email"
 							>
 								<svg class="sprites" aria-hidden="true">

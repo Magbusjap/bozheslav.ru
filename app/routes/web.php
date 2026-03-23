@@ -42,3 +42,25 @@ Route::get('/{slug}', function ($slug) {
     
     return view('article', compact('post'));
 });
+
+
+// Форма обратной связи
+Route::post('/contacts', function (\Illuminate\Http\Request $request) {
+    $request->validate([
+        'name'    => 'required|string|max:100',
+        'email'   => 'required|email|max:100',
+        'subject' => 'nullable|string|max:200',
+        'message' => 'required|string|max:2000',
+        'honeypot' => 'max:0', // защита от спамботов
+    ]);
+
+    \Illuminate\Support\Facades\Mail::to('i@mankudinov.ru')
+        ->send(new \App\Mail\ContactFormMail(
+            senderName:  $request->name,
+            senderEmail: $request->email,
+            subject:     $request->subject ?? 'Без темы',
+            message:     $request->message,
+        ));
+
+    return response()->json(['success' => true]);
+})->middleware('throttle:5,1'); // максимум 5 отправок в минуту
