@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="stylesheet" href="/css/index.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Контакты — Михаил Божеслав</title>
@@ -91,23 +92,29 @@
 							</div>
 							<div class="card__body">
 								<form class="contacts-page__form" id="contactForm">
+									@csrf
+									<input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+									
 									<div class="contacts-page__form-row">
 										<input
 											class="input"
 											type="text"
-											placeholder="Ваше имя"
+											name="name"
+											placeholder="Ваше имя *"
 											required
 										/>
 										<input
 											class="input"
 											type="email"
-											placeholder="Ваша почта"
+											name="email"
+											placeholder="Ваша почта *"
 											required
 										/>
 									</div>
-									<input class="input" type="text" placeholder="Тема письма" />
+									<input class="input" type="text" name="subject" placeholder="Тема письма *" required />
 									<textarea
 										class="input input--textarea"
+										name="message"
 										placeholder="Ваше сообщение"
 										rows="5"
 									></textarea>

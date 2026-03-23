@@ -49,17 +49,17 @@ Route::post('/contacts', function (\Illuminate\Http\Request $request) {
     $request->validate([
         'name'    => 'required|string|max:100',
         'email'   => 'required|email|max:100',
-        'subject' => 'nullable|string|max:200',
-        'message' => 'required|string|max:2000',
+        'subject' => 'required|string|max:200',
+        'message' => 'nullable|string|max:2000',
         'honeypot' => 'max:0', // защита от спамботов
     ]);
 
     \Illuminate\Support\Facades\Mail::to('i@mankudinov.ru')
         ->send(new \App\Mail\ContactFormMail(
-            senderName:  $request->name,
-            senderEmail: $request->email,
-            subject:     $request->subject ?? 'Без темы',
-            message:     $request->message,
+            senderName:   $request->name,
+            senderEmail:  $request->email,
+            mailSubject:  $request->subject ?? 'Без темы',
+            mailMessage:  $request->message,
         ));
 
     return response()->json(['success' => true]);

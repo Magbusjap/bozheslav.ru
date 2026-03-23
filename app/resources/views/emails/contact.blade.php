@@ -18,11 +18,11 @@
         </tr>
         <tr>
             <td style="padding: 8px 0; font-weight: bold;">Тема:</td>
-            <td style="padding: 8px 0;">{{ $subject }}</td>
+            <td style="padding: 8px 0;">{{ $mailSubject }}</td>
         </tr>
         <tr>
             <td style="padding: 8px 0; font-weight: bold; vertical-align: top;">Сообщение:</td>
-            <td style="padding: 8px 0;">{{ $message }}</td>
+            <td style="padding: 8px 0;">{{ $mailMessage ?? 'Не указано' }}</td>
         </tr>
     </table>
 </body>

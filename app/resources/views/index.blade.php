@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="stylesheet" href="/css/index.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Михаил Божеслав — Разработчик</title>
@@ -1159,18 +1160,18 @@
 											class="input"
 											type="text"
 											name="name"
-											placeholder="Ваше имя"
+											placeholder="Ваше имя *"
 											required
 										/>
 										<input
 											class="input"
 											type="email"
 											name="email"
-											placeholder="Ваша почта"
+											placeholder="Ваша почта *"
 											required
 										/>
 									</div>
-									<input class="input" type="text" name="subject" placeholder="Тема письма" />
+									<input class="input" type="text" name="subject" placeholder="Тема письма *" />
 									<textarea
 										class="input input--textarea"
 										name="message"
