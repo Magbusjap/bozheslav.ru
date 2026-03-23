@@ -28,3 +28,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initArticleTags();
 	init404();
 });
+
+
+// Scroll to the anchor when the page loads
+if (window.location.hash) {
+    setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 500);
+}
