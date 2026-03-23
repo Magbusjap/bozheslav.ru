@@ -109,9 +109,9 @@
 									</svg>
 								</a>
 								<a 
-									href="{{ option('social_github', '#') }}" 
+									href="{{ option('social_telegram', '#') }}" 
 									class="btn btn--ghost btn--icon btn--circle" 
-									aria-label="GitHub"
+									aria-label="Telegram"
 								>
 									<svg class="sprites" aria-hidden="true">
 										<use href="/icons/sprites.svg#telegram"></use>
@@ -1032,36 +1032,33 @@
 					</div>
 
 					<div class="blog__grid">
+						@forelse($posts as $post)
 						<article class="card blog-card">
 							<div class="blog-card__image-wrap">
-								<picture>
-									<source srcset="images/blog/post-1.webp" type="image/webp" />
-									<img
-										src="images/blog/post-1.jpg"
-										alt="Как я поднял свой первый VPS"
-										class="blog-card__image"
-										loading="lazy"
-									/>
-								</picture>
+								<img
+									src="{{ $post->cover_url ?? '/images/blog/default.jpg' }}"
+									alt="{{ $post->title }}"
+									class="blog-card__image"
+									loading="lazy"
+								/>
 							</div>
 							<div class="card__body">
 								<div class="blog-card__meta">
-									<span class="badge badge__blog">DevOps</span>
+									<a href="/blog?category={{ $post->category->slug ?? '' }}" class="badge badge__blog">
+										{{ $post->category->name ?? 'Разное' }}
+									</a>
 									<span class="blog-card__date-group">
 										<svg class="sprites badge__icon" aria-hidden="true">
 											<use href="/icons/sprites.svg#calendar"></use>
 										</svg>
-										<time class="blog-card__date" datetime="2025-03-10"
-											>10 марта 2025</time
-										>
+										<time class="blog-card__date" datetime="{{ $post->created_at->format('Y-m-d') }}">
+											{{ $post->created_at->translatedFormat('d F Y') }}
+										</time>
 									</span>
 								</div>
-								<h3 class="blog-card__title">Как я поднял свой первый VPS</h3>
-								<p class="blog-card__desc">
-									nginx, Docker, SSL — с нуля до рабочего сервера. Разбираю
-									каждый шаг и подводные камни которые встретил.
-								</p>
-								<a href="#" class="blog-card__link">
+								<h3 class="blog-card__title">{{ $post->title }}</h3>
+								<p class="blog-card__desc">{{ $post->excerpt }}</p>
+								<a href="/{{ $post->slug }}" class="blog-card__link">
 									Читать далее
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="/icons/sprites.svg#general-arrow"></use>
@@ -1069,84 +1066,9 @@
 								</a>
 							</div>
 						</article>
-
-						<article class="card blog-card">
-							<div class="blog-card__image-wrap">
-								<picture>
-									<source srcset="images/blog/post-2.webp" type="image/webp" />
-									<img
-										src="images/blog/post-2.jpg"
-										alt="BEM: почему я наконец понял методологию"
-										class="blog-card__image"
-										loading="lazy"
-									/>
-								</picture>
-							</div>
-							<div class="card__body">
-								<div class="blog-card__meta">
-									<span class="badge badge__blog">Frontend</span>
-									<span class="blog-card__date-group">
-										<svg class="sprites badge__icon" aria-hidden="true">
-											<use href="/icons/sprites.svg#calendar"></use>
-										</svg>
-										<time class="blog-card__date" datetime="2025-02-20"
-											>20 февраля 2025</time
-										>
-									</span>
-								</div>
-								<h3 class="blog-card__title">
-									BEM: почему я наконец понял методологию
-								</h3>
-								<p class="blog-card__desc">
-									Долго не мог принять BEM. Рассказываю что изменилось и почему
-									теперь верстаю только так.
-								</p>
-								<a href="#" class="blog-card__link">
-									Читать далее
-									<svg class="sprites badge__icon" aria-hidden="true">
-										<use href="/icons/sprites.svg#general-arrow"></use>
-									</svg>
-								</a>
-							</div>
-						</article>
-
-						<article class="card blog-card">
-							<div class="blog-card__image-wrap">
-								<picture>
-									<source srcset="images/blog/post-3.webp" type="image/webp" />
-									<img
-										src="images/blog/post-3.jpg"
-										alt="Книга: Чистый код"
-										class="blog-card__image"
-										loading="lazy"
-									/>
-								</picture>
-							</div>
-							<div class="card__body">
-								<div class="blog-card__meta">
-									<span class="badge badge__blog">Книги</span>
-									<span class="blog-card__date-group">
-										<svg class="sprites badge__icon" aria-hidden="true">
-											<use href="/icons/sprites.svg#calendar"></use>
-										</svg>
-										<time class="blog-card__date" datetime="2025-01-15"
-											>15 января 2025</time
-										>
-									</span>
-								</div>
-								<h3 class="blog-card__title">Книга: Чистый код</h3>
-								<p class="blog-card__desc">
-									Прочитал «Чистый код» Мартина. Что взял для себя и что
-									показалось спорным — честный разбор.
-								</p>
-								<a href="#" class="blog-card__link">
-									Читать далее
-									<svg class="sprites badge__icon" aria-hidden="true">
-										<use href="/icons/sprites.svg#general-arrow"></use>
-									</svg>
-								</a>
-							</div>
-						</article>
+						@empty
+						<p>Пока нет публикаций.</p>
+						@endforelse
 					</div>
 				</div>
 			</section>
@@ -1258,27 +1180,27 @@
 					<div class="contacts__socials">
 						<strong class="contacts__find">Вы можете найти меня здесь:</strong>
 						<div class="hero__socials">
-							<a
-								href="#"
-								class="btn btn--ghost btn--icon btn--circle"
+							<a 
+								href="{{ option('social_github', '#') }}" 
+								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="GitHub"
 							>
 								<svg class="sprites" aria-hidden="true">
 									<use href="/icons/sprites.svg#github"></use>
 								</svg>
 							</a>
-							<a
-								href="#"
-								class="btn btn--ghost btn--icon btn--circle"
+							<a 
+								href="{{ option('social_telegram', '#') }}" 
+								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="Telegram"
 							>
 								<svg class="sprites" aria-hidden="true">
 									<use href="/icons/sprites.svg#telegram"></use>
 								</svg>
 							</a>
-							<a
-								href="#"
-								class="btn btn--ghost btn--icon btn--circle"
+							<a 
+								href="{{ option('social_email', '#') }}" 
+								class="btn btn--ghost btn--icon btn--circle" 
 								aria-label="Email"
 							>
 								<svg class="sprites" aria-hidden="true">

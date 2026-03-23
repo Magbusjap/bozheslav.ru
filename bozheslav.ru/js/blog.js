@@ -108,6 +108,17 @@ export function initBlog() {
     initFilters();
     initTags();
     renderPage();
+
+	// Enable the filter button 
+    if (categoryParam) {
+        const matchBtn = [...document.querySelectorAll(".blog-filter")].find(
+            (b) => b.dataset.filter === categoryParam
+        );
+        if (matchBtn) {
+            document.querySelectorAll(".blog-filter").forEach((b) => b.classList.remove("active"));
+            matchBtn.classList.add("active");
+        }
+    }
 }
 
 

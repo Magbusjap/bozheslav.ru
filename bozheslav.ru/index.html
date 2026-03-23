@@ -1044,7 +1044,9 @@
 							</div>
 							<div class="card__body">
 								<div class="blog-card__meta">
-									<span class="badge badge__blog">{{ $post->category->name ?? 'Разное' }}</span>
+									<a href="/blog?category={{ $post->category->slug ?? '' }}" class="badge badge__blog">
+										{{ $post->category->name ?? 'Разное' }}
+									</a>
 									<span class="blog-card__date-group">
 										<svg class="sprites badge__icon" aria-hidden="true">
 											<use href="/icons/sprites.svg#calendar"></use>
