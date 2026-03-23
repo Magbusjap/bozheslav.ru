@@ -1150,23 +1150,30 @@
 							</div>
 							<div class="card__body">
 								<form class="contacts__form" id="contactForm">
+									@csrf
+									<!-- Honeypot — скрытое поле, боты заполняют, люди нет -->
+									<input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+									
 									<div class="contacts__form-row">
 										<input
 											class="input"
 											type="text"
+											name="name"
 											placeholder="Ваше имя"
 											required
 										/>
 										<input
 											class="input"
 											type="email"
+											name="email"
 											placeholder="Ваша почта"
 											required
 										/>
 									</div>
-									<input class="input" type="text" placeholder="Тема письма" />
+									<input class="input" type="text" name="subject" placeholder="Тема письма" />
 									<textarea
 										class="input input--textarea"
+										name="message"
 										placeholder="Ваше сообщение"
 										rows="5"
 									></textarea>
