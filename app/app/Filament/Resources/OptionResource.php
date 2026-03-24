@@ -14,10 +14,11 @@ class OptionResource extends Resource
 {
     protected static ?string $model = Option::class;
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
-    protected static ?string $navigationLabel = 'Настройки';
+    protected static ?string $navigationGroup = 'Настройки';
+    protected static ?string $navigationLabel = 'SEO и Мета-данные';
+    protected static ?int $navigationSort = 1;
     protected static ?string $pluralLabel = 'Настройки';
     protected static ?string $modelLabel = 'Настройка';
-    protected static ?int $navigationSort = 10;
 
     public static function form(Form $form): Form
     {
@@ -35,7 +36,7 @@ class OptionResource extends Resource
                 ->label('Название')
                 ->required(),
             Forms\Components\TextInput::make('key')
-                ->label('Ключ')
+                ->label('Ключ(id')
                 ->required()
                 ->unique(ignoreRecord: true),
             Forms\Components\Textarea::make('value')
@@ -56,7 +57,7 @@ class OptionResource extends Resource
                     ->label('Название')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('key')
-                    ->label('Ключ')
+                    ->label('Ключ(id)')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('value')
                     ->label('Ссылка')

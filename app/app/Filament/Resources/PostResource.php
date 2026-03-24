@@ -172,8 +172,8 @@ class PostResource extends Resource
 					->rows(3)
 					->live(debounce: 500)
 					->helperText(fn ($state) => strlen($state ?? '') . ' / 160 символов'),
-					]),
-							]);
+				]),
+		]);
     }
 
 	public static function table(Table $table): Table
