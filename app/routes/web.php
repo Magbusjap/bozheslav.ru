@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 // Главная
 Route::get('/', function () {
@@ -46,6 +47,7 @@ Route::get('/{slug}', function ($slug) {
 
 // Форма обратной связи
 Route::post('/contacts', function (\Illuminate\Http\Request $request) {
+
     $request->validate([
         'name'    => 'required|string|max:100',
         'email'   => 'required|email|max:100',
@@ -62,5 +64,29 @@ Route::post('/contacts', function (\Illuminate\Http\Request $request) {
             mailMessage:  $request->message,
         ));
 
+
+    // Отправка в Telegram
+    try {
+    $text = "📩 Новое сообщение с bozheslav.ru\n\n"
+        . "👤 Имя: " . $request->name . "\n"
+        . "📧 Email: " . $request->email . "\n"
+        . "📌 Тема: " . ($request->subject ?? 'Без темы') . "\n"
+        . "💬 Сообщение: " . ($request->message ?? 'Не указано');
+
+    $response = Http::post(
+        'https://api.telegram.org/bot' . env('TELEGRAM_BOT_TOKEN') . '/sendMessage',
+        [
+            'chat_id'    => env('TELEGRAM_CHAT_ID'),
+            'text'       => $text,
+            'parse_mode' => 'HTML',
+        ]
+    );
+    \Illuminate\Support\Facades\Log::info('Telegram response: ' . $response->body());
+    } catch (\Exception $e) {
+        \Illuminate\Support\Facades\Log::error('Telegram error: ' . $e->getMessage());
+    }
+
+    
     return response()->json(['success' => true]);
-})->middleware('throttle:5,1'); // максимум 5 отправок в минуту
+});
+// максимум 5 отправок в минуту

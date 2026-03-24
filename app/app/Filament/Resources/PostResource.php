@@ -28,12 +28,21 @@ class PostResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('slug')
-		    ->required()
-		    ->maxLength(255),
+		Forms\Components\TextInput::make('title')
+			->required()
+			->maxLength(255)
+			->live(debounce: 800)
+			->afterStateUpdated(function (?string $state, callable $set) {
+				if ($state === null || $state === '') {
+					$set('slug', '');
+					return;
+				}
+				$set('slug', \Illuminate\Support\Str::slug(transliterate($state)));
+			}),
+		Forms\Components\TextInput::make('slug')
+			->required()
+			->maxLength(255)
+			->unique(ignoreRecord: true),
 		Forms\Components\Select::make('category_id')
 		        ->label('Category')
 			->relationship('category', 'name')
