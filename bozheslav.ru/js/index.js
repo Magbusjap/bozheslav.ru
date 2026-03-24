@@ -10,6 +10,7 @@ import { initSkills } from "/js/skills-page.js";
 import { initExperience } from "/js/experience-page.js";
 import { initArticle, initArticleTags } from "/js/article.js";
 import { init404 } from "./404.js";
+import { initCookieBanner } from "./cookie-banner.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 	await loadComponent("header", "/components/header.html");
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initArticle();
 	initArticleTags();
 	init404();
+	initCookieBanner();
 });
 
 

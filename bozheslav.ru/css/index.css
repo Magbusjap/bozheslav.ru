@@ -15,6 +15,7 @@
 @import url("./blocks/experience.css");
 @import url("./blocks/contacts.css");
 @import url("./blocks/footer.css");
+@import url("./blocks/cookie-banner.css");
 
 /* === PAGES === */
 @import url("./pages/blog-page.css");

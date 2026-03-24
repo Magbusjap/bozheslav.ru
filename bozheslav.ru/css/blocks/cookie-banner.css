@@ -1,0 +1,31 @@
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: var(--primary-fg);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-banner__text {
+    font-size: 0.9rem;
+}
+
+.cookie-banner__link {
+    color: var(--primary-fg);
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    #cookie-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
