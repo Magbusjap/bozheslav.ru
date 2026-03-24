@@ -5,7 +5,7 @@ export function initCookieBanner() {
     banner.id = 'cookie-banner';
     banner.innerHTML = `
         <div class="cookie-banner__text">
-            Мы используем файлы cookie для улучшения работы сайта. 
+            Для улучшения работы сайта используются cookie файлы. Пожалуйста, прочитте: 
             <a href="/privacy" class="cookie-banner__link">Политика конфиденциальности</a>
         </div>
         <button class="cookie-banner__btn btn btn--primary btn--sm" id="cookieAccept">
