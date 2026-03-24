@@ -27,8 +27,9 @@ Route::get('/blog', function () {
     return view('blog', compact('posts', 'categories'));
 });
 
+
 // Блог — отдельная статья
-Route::get('/{slug}', function ($slug) {
+Route::get('/blog/{slug}', function ($slug) {
     $query = \App\Models\Post::where('slug', $slug);
     
     if (!auth()->check()) {
@@ -44,6 +45,22 @@ Route::get('/{slug}', function ($slug) {
     return view('article', compact('post'));
 });
 
+// Страницы
+Route::get('/{slug}', function ($slug) {
+    $query = \App\Models\Page::where('slug', $slug);
+    
+    if (!auth()->check()) {
+        $query->where('status', 'published');
+    }
+    
+    $page = $query->first();
+    
+    if (!$page) {
+        abort(404);
+    }
+    
+    return view('page', compact('page'));
+});
 
 // Форма обратной связи
 Route::post('/contacts', function (\Illuminate\Http\Request $request) {

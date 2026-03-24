@@ -62,7 +62,7 @@
 							</div>
 							<h2 class="blog-card__title">{{ $post->title }}</h2>
 							<p class="blog-card__desc">{{ $post->excerpt }}</p>
-							<a href="/{{ $post->slug }}" class="blog-card__link">
+							<a href="/blog/{{ $post->slug }}" class="blog-card__link">
 								Читать далее
 								<svg class="sprites badge__icon" aria-hidden="true">
 									<use href="/icons/sprites.svg#general-arrow"></use>

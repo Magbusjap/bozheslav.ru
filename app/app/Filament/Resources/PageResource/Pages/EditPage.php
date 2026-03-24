@@ -1,24 +1,28 @@
 <?php
-namespace App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource;
+
+namespace App\Filament\Resources\PageResource\Pages;
+
+use App\Filament\Resources\PageResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-class EditPost extends EditRecord
+
+class EditPage extends EditRecord
 {
-    protected static string $resource = PostResource::class;
+    protected static string $resource = PageResource::class;
+
     protected function getHeaderActions(): array
     {
         return [
             Actions\Action::make('view')
                 ->label('Перейти к просмотру')
-                ->url(fn () => '/blog/' . $this->record->slug)
+                ->url(fn () => '/' . $this->record->slug)
                 ->openUrlInNewTab()
                 ->icon('heroicon-o-arrow-top-right-on-square')
                 ->color('gray')
                 ->visible(fn () => $this->record->status === 'published'),
             Actions\Action::make('preview')
                 ->label('Просмотр черновика')
-                ->url(fn () => '/blog/' . $this->record->slug)
+                ->url(fn () => '/' . $this->record->slug)
                 ->openUrlInNewTab()
                 ->icon('heroicon-o-eye')
                 ->color('warning')

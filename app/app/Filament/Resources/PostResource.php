@@ -216,7 +216,7 @@ class PostResource extends Resource
 				Tables\Actions\Action::make('view')
 					->label('Просмотр')
 					->icon('heroicon-o-arrow-top-right-on-square')
-					->url(fn ($record) => '/' . $record->slug)
+					->url(fn ($record) => '/blog/' . $record->slug)
 					->openUrlInNewTab()
 					->color('gray'),
 			])
