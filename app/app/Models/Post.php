@@ -18,6 +18,8 @@ class Post extends Model implements HasMedia
         'cover_image',
         'status',
         'category_id',
+        'seo_title',
+        'seo_description',
     ];
 
     protected $casts = [

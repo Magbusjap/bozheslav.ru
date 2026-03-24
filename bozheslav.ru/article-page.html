@@ -7,6 +7,12 @@
 		<link rel="stylesheet" href="/css/vendor/highlight.min.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Статья — Михаил Божеслав</title>
+		<title>{{ $post->seo_title ?? $post->title . ' — Михаил Божеслав' }}</title>
+		<meta name="description" content="{{ $post->seo_description ?? $post->excerpt }}">
+		<meta property="og:title" content="{{ $post->seo_title ?? $post->title }}">
+		<meta property="og:description" content="{{ $post->seo_description ?? $post->excerpt }}">
+		<meta property="og:image" content="{{ $post->cover_url ?? '' }}">
+		<meta property="og:type" content="article">
 	</head>
 	<body>
 		@auth

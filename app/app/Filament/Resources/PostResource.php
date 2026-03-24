@@ -158,7 +158,22 @@ class PostResource extends Resource
 					->selectablePlaceholder(false)
 					->default('draft')
 					->required(),
-					]);
+				Forms\Components\Section::make('SEO')
+					->collapsed()
+					->schema([
+				Forms\Components\TextInput::make('seo_title')
+					->label('SEO Title')
+					->maxLength(60)
+					->live(debounce: 500)
+					->helperText(fn ($state) => strlen($state ?? '') . ' / 60 символов'),
+				Forms\Components\Textarea::make('seo_description')
+					->label('SEO Description')
+					->maxLength(160)
+					->rows(3)
+					->live(debounce: 500)
+					->helperText(fn ($state) => strlen($state ?? '') . ' / 160 символов'),
+					]),
+							]);
     }
 
 	public static function table(Table $table): Table
