@@ -163,7 +163,6 @@ export function initPortfolio() {
 	if (!document.getElementById("projectsList")) return;
 	filteredProjects = getFilteredProjects();
 	initFilters();
-	initTags();
 	updateList();
 	updateDetail();
 	updateCounter();

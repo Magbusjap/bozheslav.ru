@@ -50,7 +50,7 @@
 
 /* === Clickable tags === */
 
-.portfolio-tag {
+/* .portfolio-tag {
 	cursor: pointer;
 	transition:
 		background-color 0.2s ease,
@@ -60,7 +60,7 @@
 .portfolio-tag:hover {
 	background-color: rgba(var(--primary-rgb), 0.1);
 	color: var(--primary);
-}
+} */
 
 /* ==========================================================================
    BLOCK: portfolio-about

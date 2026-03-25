@@ -42,6 +42,15 @@ class PortfolioCategoryResource extends Resource
                 ->label('Порядок сортировки')
                 ->numeric()
                 ->default(0),
+
+            Forms\Components\Select::make('status')
+                ->label('Статус')
+                ->options([
+                    'published' => 'Опубликована',
+                    'draft'     => 'Черновик',
+                ])
+                ->default('published')
+                ->required(),
         ]);
     }
 
@@ -51,18 +60,29 @@ class PortfolioCategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->label('Название')
-                    ->searchable(),
+                    ->searchable()
+                    ->extraAttributes(['style' => 'cursor: pointer; 
+                     text-decoration: none;'])
+                    ->extraAttributes(['onmouseover' => 'this.style.textDecoration="underline"',
+                     'onmouseout' => 'this.style.textDecoration="none"']),
                 Tables\Columns\TextColumn::make('slug')
                     ->label('Slug'),
                 Tables\Columns\TextColumn::make('sort_order')
                     ->label('Порядок')
                     ->sortable(),
+                Tables\Columns\SelectColumn::make('status')
+                    ->label('Статус')
+                    ->options([
+                        'published' => 'Опубликована',
+                        'draft'     => 'Черновик',
+                    ]),
             ])
             ->defaultSort('sort_order')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ]);
+
     }
 
     public static function getPages(): array

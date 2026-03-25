@@ -14,7 +14,16 @@ Route::get('/', function () {
 
 // Страницы
 Route::get('/skills', fn() => view('skills'));
-Route::get('/portfolio', fn() => view('portfolio'));
+Route::get('/portfolio', function () {
+    $projects = \App\Models\PortfolioProject::where('status', 'published')
+        ->orderBy('sort_order')
+        ->get();
+    $categories = \App\Models\PortfolioCategory::orderBy('sort_order')->get();
+    $categories = \App\Models\PortfolioCategory::where('status', 'published')
+        ->orderBy('sort_order')
+        ->get();
+    return view('portfolio', compact('projects', 'categories'));
+});
 Route::get('/experience', fn() => view('experience'));
 Route::get('/contacts', fn() => view('contacts'));
 

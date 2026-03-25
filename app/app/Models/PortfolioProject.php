@@ -19,6 +19,7 @@ class PortfolioProject extends Model
         'cover_image',
         'sort_order',
         'status',
+        'name',
     ];
 
     protected $casts = [
@@ -27,7 +28,7 @@ class PortfolioProject extends Model
 
     public function category()
     {
-        return $this->belongsTo(PortfolioCategory::class);
+        return $this->belongsTo(PortfolioCategory::class, 'portfolio_category_id');
     }
 
     public function getCoverUrlAttribute(): ?string
