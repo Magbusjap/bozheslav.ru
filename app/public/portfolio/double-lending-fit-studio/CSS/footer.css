@@ -1,0 +1,121 @@
+/* === FOOTER === */
+.footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	margin-top: auto;
+	padding: 60px 0 40px;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(rgba(73, 169, 255, 0.2)),
+		to(rgba(252, 124, 217, 0.2))
+	);
+	background-image: -o-linear-gradient(
+		left,
+		rgba(73, 169, 255, 0.2) 0%,
+		rgba(252, 124, 217, 0.2) 100%
+	);
+	background-image: linear-gradient(
+		90deg,
+		rgba(73, 169, 255, 0.2) 0%,
+		rgba(252, 124, 217, 0.2) 100%
+	);
+}
+
+.footer__top {
+	width: 100%;
+	border-bottom: 1px solid var(--color-stroke);
+}
+
+.footer__top .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.footer__logo {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+.footer__nav-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 60px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.footer__nav-link {
+	font-family: var(--second-family);
+	color: var(--color-text-body);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	-webkit-transition: color 0.2s;
+	-o-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.footer__nav-link:hover {
+	color: var(--color-accent);
+}
+
+.footer__copy {
+	margin-top: 40px;
+	font-family: var(--second-family);
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 0.04em;
+	color: var(--color-text-caption);
+}
+
+@media (max-width: 900px) {
+	.footer__nav-list {
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+}
+
+@media (width <= 768px) {
+	.footer__nav ul {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		gap: 25px;
+	}
+}
+
+@media (width <= 576px) {
+	.footer {
+		padding-top: 40px;
+	}
+}

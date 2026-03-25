@@ -1,0 +1,16 @@
+:root {
+	/* === ШРИФТЫ === */
+	--second-family: "Ubuntu", sans-serif;
+	/* for */
+	--font-family: "Oswald", sans-serif;
+	/* second */
+
+	/* === ЦВЕТА === */
+	--color-text-primary: #2c332f; /*Акцент*/
+	--color-text-body: #535755; /*Наборный*/
+	--color-text-caption: #858e8a; /*Подпись*/
+	--color-accent: #3596ed; /*Акцент*/
+	--color-accent-active: #3486ce; /*active*/
+	--color-bg-light: #f2f2f3; /*Светлый*/
+	--color-stroke: #d3cbd9; /*Для полосы отступа*/
+}

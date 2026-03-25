@@ -76,9 +76,9 @@ class PortfolioProjectResource extends Resource
                 ->label('URL ссылки')
                 ->nullable()
                 ->helperText(fn ($get) => match($get('link_type')) {
-                    'demo'     => 'Например: /portfolio/nike-template/',
+                    'demo'     => 'Например: https://bozheslav.ru/portfolio/double-lending-fit-studio/',
                     'page'     => 'Например: /portfolio/n8n',
-                    'external' => 'Полный URL с https://',
+                    'external' => 'Например: https://github.com/username/project',
                     default    => ''
                 }),
             Forms\Components\TextInput::make('link_label')
@@ -106,6 +106,7 @@ class PortfolioProjectResource extends Resource
     {
         return $table
             ->columns([
+
                 Tables\Columns\ImageColumn::make('cover_image')
                     ->label('Обложка')
                     ->getStateUsing(fn ($record) => $record->cover_url)
@@ -113,7 +114,8 @@ class PortfolioProjectResource extends Resource
                     ->height(60),
                 Tables\Columns\TextColumn::make('title')
                     ->label('Название')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(fn ($record) => Pages\EditPortfolioProject::getUrl(['record' => $record])),
                 Tables\Columns\TextColumn::make('category.name')
                     ->label('Категория'),
                 Tables\Columns\TextColumn::make('link_type')
@@ -135,6 +137,9 @@ class PortfolioProjectResource extends Resource
                     ->label('Порядок')
                     ->sortable(),
             ])
+            ->recordUrl(
+                fn ($record) => Pages\EditPortfolioProject::getUrl(['record' => $record])
+            )
             ->defaultSort('sort_order')
             ->actions([
                 Tables\Actions\EditAction::make(),
