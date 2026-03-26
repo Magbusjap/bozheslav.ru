@@ -148,6 +148,11 @@ class PortfolioPageResource extends Resource
                                 ->numeric()
                                 ->default(500)
                                 ->suffix('px'),
+
+                            Forms\Components\TextInput::make('width')
+                                ->label('Ширина (px или %)')
+                                ->default('100%')
+                                ->helperText('Например: 800px или 70%'),
                         ]),
                 ])
                 ->columnSpanFull(),

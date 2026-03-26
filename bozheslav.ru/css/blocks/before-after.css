@@ -1,0 +1,92 @@
+/* ==========================================================================
+   BLOCK: Before | After
+   ========================================================================== */
+
+/* === Main container === */
+.before-after {
+    position: relative;
+    width: var(--ba-width, 100%) !important;
+    max-width: 100%;
+    
+    height: var(--ba-height);
+    aspect-ratio: 16 / 9;
+
+    min-height: 200px;
+
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: ew-resize;
+    user-select: none;
+    background-color: #f0f0f0; 
+}
+
+/* === image after=== */
+.before-after__img-after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* === BEFORE coat (trimmable) === */
+.before-after__layer {
+    position: absolute;
+    inset: 0;
+    width: 50%; 
+    height: 100%;
+    overflow: hidden;
+    border-right: 2px solid white;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* === image BEFORE === */
+.before-after__img-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: none;
+    pointer-events: none;
+}
+
+/* === sliding line === */
+.before-after__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; 
+    width: 4px;
+    background: white;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* === circle with arrows === */
+.before-after__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+}
+
+
+@media (max-width: 768px) {
+    .before-after {
+        aspect-ratio: 4 / 3;
+        margin: 1rem auto;
+    }
+}

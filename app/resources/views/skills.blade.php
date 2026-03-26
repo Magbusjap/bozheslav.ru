@@ -256,7 +256,7 @@
 					aria-label="Закрыть"
 				>
 					<svg class="sprites badge__icon" aria-hidden="true">
-						<use href="/icons/sprites.svg#close"></use>
+						<use href="/icons/sprites.svg#cross"></use>
 					</svg>
 				</button>
 				<div class="skill-modal__header">
