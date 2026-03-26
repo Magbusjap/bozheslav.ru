@@ -1,120 +1,72 @@
 const SKILLS = {
-	html: {
-		title: "HTML",
-		level: 90,
-		desc: "Уверенно верстаю семантическую разметку. Знаю структуру документа, работаю с формами, таблицами, медиа-элементами. Использую picture/source для WebP. Понимаю доступность (aria-атрибуты).",
-	},
-	css: {
-		title: "CSS",
-		level: 85,
-		desc: "Flexbox, Grid, CSS-переменные, анимации, псевдоэлементы. Работаю с адаптивной вёрсткой через media queries. Пишу по методологии BEM, CSS разбит на блоки.",
-	},
-	bem: {
-		title: "BEM",
-		level: 80,
-		desc: "Применяю методологию БЭМ на всех проектах. Понимаю разницу между блоком, элементом и модификатором. CSS-файлы организованы по блокам.",
-	},
-	javascript: {
-		title: "JavaScript",
-		level: 55,
-		desc: "Прохожу курс, нахожусь в середине. Умею работать с DOM, событиями, fetch, ES-модулями. Реализовал typewriter-эффект, sliding window, фильтрацию с пагинацией.",
-	},
-	tailwind: {
-		title: "Tailwind CSS",
-		level: 50,
-		desc: "Знаком с утилитарным подходом, использовал в Laravel-проектах. Понимаю конфигурацию и кастомизацию через tailwind.config.",
-	},
-	responsive: {
-		title: "Responsive Design",
-		level: 80,
-		desc: "Верстаю mobile-first или desktop-first в зависимости от задачи. Работаю с breakpoints, fluid-сетками, адаптивными изображениями.",
-	},
-	laravel: {
-		title: "Laravel",
-		level: 45,
-		desc: "Развернул Laravel на VPS с php-fpm и nginx. Понимаю маршрутизацию, Blade-шаблоны, Eloquent ORM. Планирую интеграцию Filament для admin-панели.",
-	},
-	php: {
-		title: "PHP",
-		level: 40,
-		desc: "Базовый PHP — синтаксис, функции, работа с массивами и строками. Использую в контексте Laravel, не как самостоятельный язык.",
-	},
-	linux: {
-		title: "Linux (Ubuntu)",
-		level: 65,
-		desc: "Администрирую VPS на Ubuntu 24.04. Работаю с SSH, systemd, правами доступа, cron. Настраивал nginx, php-fpm, PostgreSQL, Let's Encrypt.",
-	},
-	nginx: {
-		title: "Nginx",
-		level: 60,
-		desc: "Настраиваю виртуальные хосты, SSL-сертификаты, проксирование на php-fpm. Понимаю конфигурацию server block и location.",
-	},
-	docker: {
-		title: "Docker",
-		level: 55,
-		desc: "Понимаю концепцию контейнеров, умею писать Dockerfile. Использовал для деплоя n8n и других сервисов на сервере.",
-	},
-	"docker-compose": {
-		title: "Docker Compose",
-		level: 55,
-		desc: "Описываю многоконтейнерные приложения через docker-compose.yml. Настраивал сети, volumes, переменные окружения.",
-	},
-	git: {
-		title: "Git",
-		level: 60,
-		desc: "Ежедневно использую Git для версионирования. Понимаю ветки, merge, rebase. Проекты выложены на GitHub с осмысленными коммитами.",
-	},
-	figma: {
-		title: "Figma",
-		level: 50,
-		desc: "Читаю макеты, извлекаю отступы, цвета, шрифты. Использовал для создания собственного дизайна портфолио на основе шаблонов.",
-	},
-	n8n: {
-		title: "n8n",
-		level: 65,
-		desc: "Строил автоматизации с Telegram Bot API и OpenAI. Понимаю ноды, вебхуки, HTTP-запросы, обработку данных внутри workflow.",
-	},
-	"telegram-bot": {
-		title: "Telegram Bot API",
-		level: 60,
-		desc: "Создавал ботов с обработкой сообщений, командами, вебхуками. Интегрировал с n8n и OpenAI API.",
-	},
-	openai: {
-		title: "OpenAI API",
-		level: 55,
-		desc: "Работал с Chat Completions API. Настраивал system prompt, передавал контекст диалога, управлял параметрами модели.",
-	},
-	"claude-api": {
-		title: "Claude API",
-		level: 50,
-		desc: "Знаком с Anthropic API, понимаю отличия от OpenAI. Использовал в экспериментальных проектах.",
-	},
-	postgresql: {
-		title: "PostgreSQL",
-		level: 55,
-		desc: "Настраивал PostgreSQL 16 на VPS. Понимаю схемы, роли, права доступа. Работаю через Laravel Eloquent и напрямую через psql.",
-	},
-	mysql: {
-		title: "MySQL",
-		level: 40,
-		desc: "Базовый опыт — SELECT, INSERT, JOIN, индексы. Использовал в учебных проектах и WordPress.",
-	},
-	wordpress: {
-		title: "WordPress",
-		level: 50,
-		desc: "Создавал корпоративный сайт, работал с темами и плагинами. Сейчас не использую — перешёл на Laravel.",
-	},
-	csharp: {
-		title: "C#",
-		level: 30,
-		desc: "Изучал самостоятельно — синтаксис, ООП, базовые алгоритмы. Не применял в продакшне, знания базовые.",
-	},
-	python: {
-		title: "Python",
-		level: 35,
-		desc: "Изучал основы — синтаксис, функции, работа с файлами. Планирую вернуться для автоматизации и написания ботов.",
-	},
+    html: {
+        title: "HTML5",
+        level: 90,
+        desc: "Семантическая разметка, доступность (ARIA). Глубокое понимание структуры DOM и оптимизации ресурсов (WebP, picture/source).",
+    },
+    css: {
+        title: "CSS3 / SCSS",
+        level: 85,
+        desc: "Сложные макеты (Grid, Flexbox), анимации. Строгое следование методологии BEM. Адаптивная вёрстка под любые устройства (Mobile First).",
+    },
+    javascript: {
+        title: "JavaScript (ES6+)",
+        level: 60,
+        desc: "Асинхронное программирование, работа с API (Fetch). Уверенное манипулирование DOM. Реализация сложной логики фильтрации и пагинации на фронтенде.",
+    },
+    laravel: {
+        title: "Laravel 11",
+        level: 55,
+        desc: "Полноценная разработка Fullstack-приложений. Маршрутизация, Eloquent ORM, создание кастомных Blade-компонентов и сервис-провайдеров.",
+    },
+    filament: {
+        title: "Filament PHP",
+        level: 65,
+        desc: "Разработка сложных админ-панелей. Создание кастомных страниц, виджетов и Actions. Реализовал систему автоматизированного деплоя ZIP-архивов.",
+    },
+    postgresql: {
+        title: "PostgreSQL",
+        level: 60,
+        desc: "Администрирование БД на VPS. Проектирование схем данных, работа со связями (Foreign Keys), оптимизация запросов и миграции.",
+    },
+    linux: {
+        title: "Linux (Ubuntu Server)",
+        level: 75,
+        desc: "Администрирование через SSH. Настройка системных прав доступа, работа с systemd и cron. Опыт развертывания проектов с нуля.",
+    },
+    security: {
+        title: "Server Security",
+        level: 70,
+        desc: "Защита сервера: настройка Fail2Ban, аутентификация строго по SSH-ключам, конфигурация межсетевого экрана (UFW).",
+    },
+    nginx: {
+        title: "Nginx",
+        level: 65,
+        desc: "Тонкая настройка Server Blocks, оптимизация лимитов загрузки, настройка проксирования на PHP-FPM. Управление SSL (Certbot).",
+    },
+    docker: {
+        title: "Docker / Compose",
+        level: 60,
+        desc: "Контейнеризация приложений и сервисов (n8n, БД). Написание Dockerfile и конфигурация многоконтейнерных сред.",
+    },
+    git: {
+        title: "Git / GitHub",
+        level: 70,
+        desc: "Управление версиями, работа с ветками, разрешение конфликтов. Ведение истории коммитов согласно стандартам индустрии.",
+    },
+    n8n: {
+        title: "n8n / Automation",
+        level: 70,
+        desc: "Создание сложных цепочек автоматизации. Интеграция Telegram Bot API, OpenAI и внутренних сервисов через вебхуки.",
+    },
+    english: {
+        title: "English (B1+)",
+        level: 55,
+        desc: "Свободное чтение технической документации. Способность вести переписку и описывать технические решения на английском языке.",
+    }
 };
+
+
 
 function getLevelLabel(level) {
 	if (level >= 80) return "Уверенно";

@@ -55,10 +55,13 @@ export function nextProject() {
 }
 
 export function initProjects() {
-	if (!document.getElementById("projectsCounter")) return;
-	selectProject(0);
+    if (!document.getElementById("projectsCounter")) return;
+    if (document.querySelector(".portfolio-filter")) return; // не главная
+    selectProject(0);
 }
 
-window.selectProject = selectProject;
-window.prevProject = prevProject;
-window.nextProject = nextProject;
+if (!document.querySelector(".portfolio-filter")) {
+    window.selectProject = selectProject;
+    window.prevProject = prevProject;
+    window.nextProject = nextProject;
+}
