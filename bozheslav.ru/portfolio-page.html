@@ -75,7 +75,7 @@
 
 							<div class="projects__nav">
 								<div class="projects__arrows">
-									<button class="projects__arrow" id="prevBtn" onclick="prevProject()" aria-label="Предыдущий проект" disabled>
+									<button class="projects__arrow" id="prevBtn" onclick="prevProject()" aria-label="Предыдущий проект">
 										<svg class="sprites badge__icon projects__arrow-left" aria-hidden="true">
 											<use href="/icons/sprites.svg#arrow-left"></use>
 										</svg>

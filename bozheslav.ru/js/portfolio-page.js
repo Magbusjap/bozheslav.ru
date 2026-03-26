@@ -62,57 +62,60 @@ function updateCounter() {
 }
 
 function updateButtons() {
-    if (!document.querySelector(".portfolio-filter")) return; // не портфолио-страница
-    const total = filteredProjects.length;
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
-    if (prevBtn) prevBtn.disabled = currentIndex === 0;
-    if (nextBtn) nextBtn.disabled = currentIndex >= total - 1 || total === 0;
+    if (prevBtn) prevBtn.disabled = false;
+    if (nextBtn) nextBtn.disabled = false;
 }
 
 export function selectProject(globalIndex) {
-	const all = getAllProjects();
-	const item = all[globalIndex];
-	const filteredIndex = filteredProjects.indexOf(item);
+    const all = getAllProjects();
+    const item = all[globalIndex];
+    const filteredIndex = filteredProjects.indexOf(item);
 
-	if (filteredIndex === -1) return;
+    if (filteredIndex === -1) return;
 
-	currentIndex = filteredIndex;
+    currentIndex = filteredIndex;
 
-	// Shift window if needed
-	if (currentIndex >= windowStart + VISIBLE) {
-		windowStart = currentIndex - VISIBLE + 1;
-	} else if (currentIndex < windowStart) {
-		windowStart = currentIndex;
-	}
+    // Shift window if needed
+    if (currentIndex >= windowStart + VISIBLE) {
+        windowStart = currentIndex - VISIBLE + 1;
+    } else if (currentIndex < windowStart) {
+        windowStart = currentIndex;
+    }
 
-	updateList();
-	updateDetail();
-	updateCounter();
-	updateButtons();
+    if (windowStart < 0) windowStart = 0;
+
+    updateList();
+    updateDetail();
+    updateCounter();
+    updateButtons();
 }
 
 export function prevProject() {
-	if (currentIndex > 0) {
-		currentIndex--;
-		if (currentIndex < windowStart) windowStart = currentIndex;
-		updateList();
-		updateDetail();
-		updateCounter();
-		updateButtons();
-	}
+    const total = filteredProjects.length;
+    currentIndex = (currentIndex - 1 + total) % total;
+    
+    if (currentIndex < windowStart) windowStart = currentIndex;
+    if (windowStart + VISIBLE > total) windowStart = Math.max(0, total - VISIBLE);
+    
+    updateList();
+    updateDetail();
+    updateCounter();
+    updateButtons();
 }
 
 export function nextProject() {
-	if (currentIndex < filteredProjects.length - 1) {
-		currentIndex++;
-		if (currentIndex >= windowStart + VISIBLE)
-			windowStart = currentIndex - VISIBLE + 1;
-		updateList();
-		updateDetail();
-		updateCounter();
-		updateButtons();
-	}
+    const total = filteredProjects.length;
+    currentIndex = (currentIndex + 1) % total;
+    
+    if (currentIndex >= windowStart + VISIBLE) windowStart = currentIndex - VISIBLE + 1;
+    if (windowStart < 0) windowStart = 0;
+    
+    updateList();
+    updateDetail();
+    updateCounter();
+    updateButtons();
 }
 
 function initFilters() {
@@ -161,17 +164,18 @@ function initTags() {
 }
 
 export function initPortfolio() {
-	if (!document.getElementById("projectsList")) return;
-	filteredProjects = getFilteredProjects();
-	initFilters();
-	updateList();
-	updateDetail();
-	updateCounter();
-	updateButtons();
-}
+     if (!document.getElementById("projectsList")) return;
+    filteredProjects = getFilteredProjects();
+    initFilters();
+    currentIndex = 0;
+    windowStart = 0;
+    updateList();
+    updateDetail();
+    updateCounter();
+    updateButtons();
 
-if (document.querySelector(".portfolio-filter")) {
-	window.selectProject = selectProject;
-	window.prevProject = prevProject;
-	window.nextProject = nextProject;
+    //  override the window function only on the portfolio page
+    window.selectProject = selectProject;
+    window.prevProject = prevProject;
+    window.nextProject = nextProject;
 }
