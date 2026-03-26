@@ -111,6 +111,26 @@ class PortfolioPageResource extends Resource
                             Forms\Components\TextInput::make('author')
                                 ->label('Автор'),
                         ]),
+                    Forms\Components\Builder\Block::make('image_text')
+                        ->label('Изображение + текст')
+                        ->schema([
+                            CuratorPicker::make('url')
+                                ->label('Изображение')
+                                ->buttonLabel('Выбрать изображение')
+                                ->required(),
+                            Forms\Components\Select::make('position')
+                                ->label('Расположение')
+                                ->options(['left' => 'Слева', 'right' => 'Справа'])
+                                ->default('left')
+                                ->required(),
+                            Forms\Components\TextInput::make('width')
+                                ->label('Ширина изображения (px)')
+                                ->numeric()
+                                ->default(300),
+                            TiptapEditor::make('text')
+                                ->label('Текст')
+                                ->required(),
+                        ]),
                 ])
                 ->columnSpanFull(),
             Forms\Components\Section::make('SEO')
@@ -137,7 +157,8 @@ class PortfolioPageResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->label('Заголовок')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(fn ($record) => Pages\EditPortfolioPage::getUrl(['record' => $record])),
                 Tables\Columns\TextColumn::make('slug')
                     ->label('URL')
                     ->searchable(),
@@ -161,9 +182,9 @@ class PortfolioPageResource extends Resource
                 Tables\Actions\Action::make('view')
                     ->label('Просмотр')
                     ->icon('heroicon-o-arrow-top-right-on-square')
-                    ->url(fn ($record) => '/' . $record->slug)
+                    ->url(fn ($record) => '/portfolio/pages/' . $record->slug)
                     ->openUrlInNewTab()
-                    ->color('gray'),
+                    ->color('gray')
             ]);
     }
 

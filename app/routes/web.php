@@ -54,6 +54,23 @@ Route::get('/blog/{slug}', function ($slug) {
     return view('article', compact('post'));
 });
 
+// Страницы проектов портфолио
+Route::get('/portfolio/pages/{slug}', function ($slug) {
+    $query = \App\Models\PortfolioPage::where('slug', $slug);
+
+    if (!auth()->check()) {
+        $query->where('status', 'published');
+    }
+
+    $page = $query->first();
+
+    if (!$page) {
+        abort(404);
+    }
+
+    return view('page', compact('page'));
+});
+
 // Страницы
 Route::get('/{slug}', function ($slug) {
     $query = \App\Models\Page::where('slug', $slug);

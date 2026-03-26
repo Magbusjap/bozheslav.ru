@@ -201,9 +201,10 @@ class PostResource extends Resource
 					->sortable()
 					->toggleable(isToggledHiddenByDefault: true),
 				Tables\Columns\TextColumn::make('updated_at')
+					->label('Обновлено')
 					->dateTime()
-					->sortable()
-					->toggleable(isToggledHiddenByDefault: true),
+					->sortable(),
+					// ->toggleable(isToggledHiddenByDefault: true),
 			])
 			->recordUrl(
 				fn ($record) => Pages\EditPost::getUrl(['record' => $record])
@@ -213,6 +214,7 @@ class PostResource extends Resource
 			])
 			->actions([
 				Tables\Actions\EditAction::make(),
+				Tables\Actions\DeleteAction::make(),
 				Tables\Actions\Action::make('view')
 					->label('Просмотр')
 					->icon('heroicon-o-arrow-top-right-on-square')
