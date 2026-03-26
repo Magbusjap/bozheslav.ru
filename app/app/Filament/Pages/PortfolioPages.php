@@ -7,10 +7,12 @@ use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Notifications\Notification;
-use App\Models\Page as PageModel;
+use App\Models\PortfolioPage as PageModel;
 
 class PortfolioPages extends Page
 {
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationLabel = 'Page-проекты';
     protected static ?string $navigationGroup = 'Портфолио';
@@ -26,27 +28,20 @@ class PortfolioPages extends Page
 
     public function loadPages(): void
     {
-        $this->pages = PageModel::where('type', 'portfolio')
-            ->orderBy('created_at', 'desc')
+        $this->pages = PageModel::orderBy('created_at', 'desc')
             ->get()
             ->toArray();
     }
 
     public function createPage(array $data): void
     {
-        PageModel::create([
+        $page = PageModel::create([
             'title'  => $data['title'],
             'slug'   => \Illuminate\Support\Str::slug(transliterate($data['title'])),
             'status' => 'draft',
-            'type'   => 'portfolio',
         ]);
 
-        $this->loadPages();
-
-        Notification::make()
-            ->title('Страница создана: ' . $data['title'])
-            ->success()
-            ->send();
+        $this->redirect('/admin/site-pages/' . $page->id . '/edit');
     }
 
     public function deletePage(int $id): void

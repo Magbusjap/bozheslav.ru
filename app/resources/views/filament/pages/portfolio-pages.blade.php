@@ -1,6 +1,3 @@
-<x-filament-panels::page :with-header="false">
-
-</x-filament-panels::page>
 <x-filament-panels::page>
     <x-filament::section>
         <x-slot name="heading">Страницы проектов</x-slot>
