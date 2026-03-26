@@ -9,7 +9,10 @@ Route::get('/', function () {
         ->orderBy('created_at', 'desc')
         ->take(3)
         ->get();
-    return view('index', compact('posts'));
+    $projects = \App\Models\PortfolioProject::where('status', 'published')
+        ->orderBy('sort_order')
+        ->get();
+    return view('index', compact('posts', 'projects'));
 });
 
 // Страницы

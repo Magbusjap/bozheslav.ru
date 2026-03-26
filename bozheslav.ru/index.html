@@ -338,170 +338,31 @@
 						<!-- 1/3 -->
 						<div class="projects__sidebar">
 							<div class="projects__list" id="projectsList">
-								<div class="project-item active" onclick="selectProject(0)">
-									<h3 class="project-item__name">bozheslav.ru</h3>
+								@foreach($projects as $index => $project)
+								<div class="project-item {{ $index === 0 ? 'active' : '' }}" 
+									data-category="{{ $project->category->slug ?? 'other' }}"
+									onclick="selectProject({{ $index }})">
+									<h3 class="project-item__name">{{ $project->title }}</h3>
 									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
+										@if($project->github_url)
+										<a href="{{ $project->github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
+											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
 												<use href="/icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
 										</a>
-										<a
-											href="https://bozheslav.ru"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
+										@endif
+										@if($project->link_url)
+										<a href="{{ $project->link_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
 												<use href="/icons/sprites.svg#demo"></use>
 											</svg>
-											Demo
+											{{ $project->link_label ?? 'Demo' }}
 										</a>
+										@endif
 									</div>
 								</div>
-
-								<div class="project-item" onclick="selectProject(1)">
-									<h3 class="project-item__name">Telegram Bot + n8n</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-
-								<div class="project-item" onclick="selectProject(2)">
-									<h3 class="project-item__name">Landing page</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-
-								<div class="project-item" onclick="selectProject(3)">
-									<h3 class="project-item__name">Landing page</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-
-								<div class="project-item" onclick="selectProject(4)">
-									<h3 class="project-item__name">Landing page</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
+								@endforeach
 							</div>
 
 							<!-- Nav and links -->
@@ -520,9 +381,7 @@
 											<use href="/icons/sprites.svg#arrow-left"></use>
 										</svg>
 									</button>
-									<span class="projects__counter" id="projectsCounter"
-										>1 / 3</span
-									>
+									<span class="projects__counter" id="projectsCounter">1 / {{ count($projects) }}</span>
 									<button
 										class="projects__arrow"
 										id="nextBtn"
@@ -537,7 +396,7 @@
 										</svg>
 									</button>
 								</div>
-								<a href="portfolio-page.html" class="projects__all">
+								<a href="/portfolio" class="projects__all">
 									Смотреть все проекты
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="/icons/sprites.svg#general-arrow"></use>
