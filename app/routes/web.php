@@ -71,7 +71,12 @@ Route::get('/portfolio/pages/{slug}', function ($slug) {
         abort(404);
     }
 
-    return view('page', compact('page'));
+    $related = \App\Models\PortfolioProject::where('status', 'published')
+        ->inRandomOrder()
+        ->take(10)
+        ->get();
+
+    return view('page', compact('page', 'related'));
 });
 
 // Страницы

@@ -12,6 +12,7 @@ import { initArticle, initArticleTags } from "/js/article.js";
 import { init404 } from "./404.js";
 import { initCookieBanner } from "./cookie-banner.js";
 import { initBeforeAfter } from './before-after.js';
+import { initCarousel } from "./carousel.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 	await loadComponent("header", "/components/header.html");
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	init404();
 	initCookieBanner();
 	initBeforeAfter();
+	initCarousel();
 });
 
 

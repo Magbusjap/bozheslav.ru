@@ -110,6 +110,69 @@
                     </div>
                 </div>
             </section>
+
+            @if(isset($related) && $related->count() > 0)
+            <section class="section carousel-section">
+                <div class="container">
+                    <h2 class="carousel-section__title">Другие проекты</h2>
+                    <div class="carousel-wrapper">
+                        <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Назад">
+                            <svg class="sprites badge__icon" aria-hidden="true">
+                                <use href="/icons/sprites.svg#arrow-left"></use>
+                            </svg>
+                        </button>
+                        <div class="carousel-track-wrap">
+                            <div class="carousel-track" id="carouselTrack">
+                                @foreach($related as $project)
+                                <div class="carousel-card card">
+                                    <div class="carousel-card__image-wrap">
+                                        <img
+                                            src="{{ $project->cover_url ?? '/images/projects/default.jpg' }}"
+                                            alt="{{ $project->title }}"
+                                            class="carousel-card__image"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div class="card__body">
+                                        <h3 class="carousel-card__title">{{ $project->title }}</h3>
+                                        <div class="carousel-card__tags">
+                                            @foreach($project->stack_tags ?? [] as $tag)
+                                            <span class="badge badge__portfolio">{{ $tag }}</span>
+                                            @endforeach
+                                        </div>
+                                        <div class="carousel-card__actions">
+                                            @if($project->github_url)
+                                            <a href="{{ $project->github_url }}" class="btn btn--outline btn--sm">
+                                                <svg class="btn__icon" width="20" height="20" aria-hidden="true">
+                                                    <use href="/icons/sprites.svg#github"></use>
+                                                </svg>
+                                                GitHub
+                                            </a>
+                                            @endif
+                                            @if($project->link_url)
+                                            <a href="{{ $project->link_url }}" class="btn btn--primary btn--sm">
+                                                <svg class="btn__icon" width="20" height="20" aria-hidden="true">
+                                                    <use href="/icons/sprites.svg#demo"></use>
+                                                </svg>
+                                                {{ $project->link_label ?? 'Demo' }}
+                                            </a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Вперёд">
+                            <svg class="sprites badge__icon" aria-hidden="true">
+                                <use href="/icons/sprites.svg#arrow-right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            @endif
+
         </main>
 
         <div id="footer"></div>
