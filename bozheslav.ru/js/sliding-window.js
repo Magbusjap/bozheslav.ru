@@ -16,36 +16,42 @@ function updateList() {
 }
 
 export function selectProject(index) {
-	const total = getTotalProjects();
-	currentProject = index;
+    const total = getTotalProjects();
+    currentProject = ((index % total) + total) % total; // цикличность
 
-	// Shift window if needed
-	if (index >= windowStart + VISIBLE) {
-		windowStart = index - VISIBLE + 1;
-	} else if (index < windowStart) {
-		windowStart = index;
-	}
+    // Shift window if needed
+    if (currentProject >= windowStart + VISIBLE) {
+        windowStart = currentProject - VISIBLE + 1;
+    } else if (currentProject < windowStart) {
+        windowStart = currentProject;
+    }
 
-	updateList();
+    // Wrap window
+    if (windowStart < 0) windowStart = 0;
+    if (windowStart + VISIBLE > total) windowStart = Math.max(0, total - VISIBLE);
 
-	document.querySelectorAll(".project-detail").forEach((detail, i) => {
-		detail.classList.toggle("active", i === index);
-	});
+    updateList();
 
-	document.getElementById("projectsCounter").textContent =
-		`${index + 1} / ${total}`;
+    document.querySelectorAll(".project-detail").forEach((detail, i) => {
+        detail.classList.toggle("active", i === currentProject);
+    });
 
-	document.getElementById("prevBtn").disabled = index === 0;
-	document.getElementById("nextBtn").disabled = index === total - 1;
+    document.getElementById("projectsCounter").textContent =
+        `${currentProject + 1} / ${total}`;
+
+    // The buttons are always active
+    document.getElementById("prevBtn").disabled = false;
+    document.getElementById("nextBtn").disabled = false;
 }
 
 export function prevProject() {
-	if (currentProject > 0) selectProject(currentProject - 1);
+    const total = getTotalProjects();
+    selectProject((currentProject - 1 + total) % total);
 }
 
 export function nextProject() {
-	const total = getTotalProjects();
-	if (currentProject < total - 1) selectProject(currentProject + 1);
+    const total = getTotalProjects();
+    selectProject((currentProject + 1) % total);
 }
 
 export function initProjects() {

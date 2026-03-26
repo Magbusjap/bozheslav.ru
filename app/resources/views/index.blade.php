@@ -338,170 +338,31 @@
 						<!-- 1/3 -->
 						<div class="projects__sidebar">
 							<div class="projects__list" id="projectsList">
-								<div class="project-item active" onclick="selectProject(0)">
-									<h3 class="project-item__name">bozheslav.ru</h3>
+								@foreach($projects as $index => $project)
+								<div class="project-item {{ $index === 0 ? 'active' : '' }}" 
+									data-category="{{ $project->category->slug ?? 'other' }}"
+									onclick="selectProject({{ $index }})">
+									<h3 class="project-item__name">{{ $project->title }}</h3>
 									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
+										@if($project->github_url)
+										<a href="{{ $project->github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
+											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
 												<use href="/icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
 										</a>
-										<a
-											href="https://bozheslav.ru"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
+										@endif
+										@if($project->link_url)
+										<a href="{{ $project->link_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
 												<use href="/icons/sprites.svg#demo"></use>
 											</svg>
-											Demo
+											{{ $project->link_label ?? 'Demo' }}
 										</a>
+										@endif
 									</div>
 								</div>
-
-								<div class="project-item" onclick="selectProject(1)">
-									<h3 class="project-item__name">Telegram Bot + n8n</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-
-								<div class="project-item" onclick="selectProject(2)">
-									<h3 class="project-item__name">Landing page</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-
-								<div class="project-item" onclick="selectProject(3)">
-									<h3 class="project-item__name">Landing page</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-
-								<div class="project-item" onclick="selectProject(4)">
-									<h3 class="project-item__name">Landing page</h3>
-									<div class="project-item__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
+								@endforeach
 							</div>
 
 							<!-- Nav and links -->
@@ -520,9 +381,7 @@
 											<use href="/icons/sprites.svg#arrow-left"></use>
 										</svg>
 									</button>
-									<span class="projects__counter" id="projectsCounter"
-										>1 / 3</span
-									>
+									<span class="projects__counter" id="projectsCounter">1 / {{ count($projects) }}</span>
 									<button
 										class="projects__arrow"
 										id="nextBtn"
@@ -537,7 +396,7 @@
 										</svg>
 									</button>
 								</div>
-								<a href="portfolio-page.html" class="projects__all">
+								<a href="/portfolio" class="projects__all">
 									Смотреть все проекты
 									<svg class="sprites badge__icon" aria-hidden="true">
 										<use href="/icons/sprites.svg#general-arrow"></use>
@@ -548,306 +407,45 @@
 
 						<!-- 2/3 -->
 						<div class="projects__detail">
-							<div class="project-detail card active" id="project-0">
+							@foreach($projects as $index => $project)
+							<div class="project-detail card {{ $index === 0 ? 'active' : '' }}" id="project-{{ $index }}">
 								<div class="project-detail__image-wrap">
-									<picture>
-										<source
-											srcset="images/projects/bozheslav.webp"
-											type="image/webp"
-										/>
-										<img
-											src="images/projects/bozheslav.jpg"
-											alt="Скриншот проекта bozheslav.ru"
-											class="project-detail__image"
-											loading="lazy"
-										/>
-									</picture>
+									<img
+										src="{{ $project->cover_url ?? '/images/projects/default.jpg' }}"
+										alt="Скриншот проекта {{ $project->title }}"
+										class="project-detail__image"
+										loading="lazy"
+									/>
 								</div>
 								<div class="card__body">
-									<h3 class="project-detail__title">bozheslav.ru</h3>
-									<p class="project-detail__desc">
-										Личный сайт-портфолио с блогом. Полный цикл от вёрстки до
-										деплоя на собственном VPS. Настроен nginx, Docker,
-										SSL-сертификат.
-									</p>
+									<h3 class="project-detail__title">{{ $project->title }}</h3>
+									<p class="project-detail__desc">{{ $project->description }}</p>
 									<div class="project-detail__tags">
-										<span class="badge badge__portfolio">Laravel</span>
-										<span class="badge badge__portfolio">PostgreSQL</span>
-										<span class="badge badge__portfolio">Docker</span>
-										<span class="badge badge__portfolio">nginx</span>
-										<span class="badge badge__portfolio">Tailwind CSS</span>
+										@foreach($project->stack_tags ?? [] as $tag)
+										<span class="badge badge__portfolio">{{ $tag }}</span>
+										@endforeach
 									</div>
 									<div class="project-detail__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
+										@if($project->github_url)
+										<a href="{{ $project->github_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">
+											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
 												<use href="/icons/sprites.svg#github"></use>
 											</svg>
 											GitHub
 										</a>
-										<a
-											href="https://bozheslav.ru"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
+										@endif
+										@if($project->link_url)
+										<a href="{{ $project->link_url }}" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">
+											<svg class="btn__icon" width="20" height="20" aria-hidden="true">
 												<use href="/icons/sprites.svg#demo"></use>
 											</svg>
-											Demo
+											{{ $project->link_label ?? 'Demo' }}
 										</a>
+										@endif
 									</div>
 								</div>
 							</div>
-
-							<div class="project-detail card" id="project-1">
-								<div class="project-detail__image-wrap">
-									<picture>
-										<source
-											srcset="images/projects/bot.webp"
-											type="image/webp"
-										/>
-										<img
-											src="images/projects/bot.jpg"
-											alt="Скриншот проекта Telegram Bot + n8n"
-											class="project-detail__image"
-											loading="lazy"
-										/>
-									</picture>
-								</div>
-								<div class="card__body">
-									<h3 class="project-detail__title">Telegram Bot + n8n</h3>
-									<p class="project-detail__desc">
-										Автоматизация на базе n8n с интеграцией Telegram Bot API и
-										OpenAI. Бот принимает сообщения и отвечает с помощью GPT.
-										Развёрнут на собственном сервере через Docker Compose.
-									</p>
-									<div class="project-detail__tags">
-										<span class="badge badge__portfolio">n8n</span>
-										<span class="badge badge__portfolio">Telegram Bot API</span>
-										<span class="badge badge__portfolio">OpenAI API</span>
-										<span class="badge badge__portfolio">Docker</span>
-									</div>
-									<div class="project-detail__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="project-detail card" id="project-2">
-								<div class="project-detail__image-wrap">
-									<picture>
-										<source
-											srcset="images/projects/landing.webp"
-											type="image/webp"
-										/>
-										<img
-											src="images/projects/landing.jpg"
-											alt="Скриншот Landing page"
-											class="project-detail__image"
-											loading="lazy"
-										/>
-									</picture>
-								</div>
-								<div class="card__body">
-									<h3 class="project-detail__title">Landing page</h3>
-									<p class="project-detail__desc">
-										Дипломная работа модуля 2. Вёрстка по Figma-макету,
-										адаптивный дизайн, BEM-методология. Hover-эффекты
-										реализованы самостоятельно.
-									</p>
-									<div class="project-detail__tags">
-										<span class="badge badge__portfolio">HTML</span>
-										<span class="badge badge__portfolio">CSS</span>
-										<span class="badge badge__portfolio">BEM</span>
-										<span class="badge badge__portfolio">JavaScript</span>
-									</div>
-									<div class="project-detail__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="project-detail card" id="project-3">
-								<div class="project-detail__image-wrap">
-									<picture>
-										<source
-											srcset="images/projects/landing.webp"
-											type="image/webp"
-										/>
-										<img
-											src="images/projects/landing.jpg"
-											alt="Скриншот Landing page"
-											class="project-detail__image"
-											loading="lazy"
-										/>
-									</picture>
-								</div>
-								<div class="card__body">
-									<h3 class="project-detail__title">Landing page</h3>
-									<p class="project-detail__desc">
-										Дипломная работа модуля 2. Вёрстка по Figma-макету,
-										адаптивный дизайн, BEM-методология. Hover-эффекты
-										реализованы самостоятельно.
-									</p>
-									<div class="project-detail__tags">
-										<span class="badge badge__portfolio">HTML</span>
-										<span class="badge badge__portfolio">CSS</span>
-										<span class="badge badge__portfolio">BEM</span>
-										<span class="badge badge__portfolio">JavaScript</span>
-									</div>
-									<div class="project-detail__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-							</div>
-
-							<div class="project-detail card" id="project-4">
-								<div class="project-detail__image-wrap">
-									<picture>
-										<source
-											srcset="images/projects/landing.webp"
-											type="image/webp"
-										/>
-										<img
-											src="images/projects/landing.jpg"
-											alt="Скриншот Landing page"
-											class="project-detail__image"
-											loading="lazy"
-										/>
-									</picture>
-								</div>
-								<div class="card__body">
-									<h3 class="project-detail__title">Landing page</h3>
-									<p class="project-detail__desc">
-										Дипломная работа модуля 2. Вёрстка по Figma-макету,
-										адаптивный дизайн, BEM-методология. Hover-эффекты
-										реализованы самостоятельно.
-									</p>
-									<div class="project-detail__tags">
-										<span class="badge badge__portfolio">HTML</span>
-										<span class="badge badge__portfolio">CSS</span>
-										<span class="badge badge__portfolio">BEM</span>
-										<span class="badge badge__portfolio">JavaScript</span>
-									</div>
-									<div class="project-detail__actions">
-										<a href="#" class="btn btn--outline btn--sm">
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#github"></use>
-											</svg>
-											GitHub
-										</a>
-										<a
-											href="#"
-											target="_blank"
-											rel="noopener noreferrer"
-											class="btn btn--primary btn--sm"
-										>
-											<svg
-												class="btn__icon"
-												width="20"
-												height="20"
-												aria-hidden="true"
-											>
-												<use href="/icons/sprites.svg#demo"></use>
-											</svg>
-											Demo
-										</a>
-									</div>
-								</div>
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</div>
