@@ -94,10 +94,16 @@ export function selectProject(globalIndex) {
 
 export function prevProject() {
     const total = filteredProjects.length;
-    currentIndex = (currentIndex - 1 + total) % total;
+    const prevIndex = currentIndex - 1;
     
-    if (currentIndex < windowStart) windowStart = currentIndex;
-    if (windowStart + VISIBLE > total) windowStart = Math.max(0, total - VISIBLE);
+    if (prevIndex < 0) {
+        //  Loop to the last one
+        currentIndex = total - 1;
+        windowStart = Math.max(0, total - VISIBLE);
+    } else {
+        currentIndex = prevIndex;
+        if (currentIndex < windowStart) windowStart = currentIndex;
+    }
     
     updateList();
     updateDetail();
@@ -107,10 +113,16 @@ export function prevProject() {
 
 export function nextProject() {
     const total = filteredProjects.length;
-    currentIndex = (currentIndex + 1) % total;
+    const nextIndex = currentIndex + 1;
     
-    if (currentIndex >= windowStart + VISIBLE) windowStart = currentIndex - VISIBLE + 1;
-    if (windowStart < 0) windowStart = 0;
+    if (nextIndex >= total) {
+        // Loop to the first
+        currentIndex = 0;
+        windowStart = 0;
+    } else {
+        currentIndex = nextIndex;
+        if (currentIndex >= windowStart + VISIBLE) windowStart = currentIndex - VISIBLE + 1;
+    }
     
     updateList();
     updateDetail();
