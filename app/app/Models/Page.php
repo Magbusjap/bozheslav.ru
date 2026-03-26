@@ -14,6 +14,7 @@ class Page extends Model
         'status',
         'seo_title',
         'seo_description',
+        'type',
     ];
 
     protected $casts = [

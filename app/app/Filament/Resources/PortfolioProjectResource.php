@@ -137,9 +137,7 @@ class PortfolioProjectResource extends Resource
                     ->label('Порядок')
                     ->sortable(),
             ])
-            ->recordUrl(
-                fn ($record) => Pages\EditPortfolioProject::getUrl(['record' => $record])
-            )
+            ->recordUrl(fn ($record) => Pages\EditPortfolioProject::getUrl(['record' => $record]))
             ->defaultSort('sort_order')
             ->actions([
                 Tables\Actions\EditAction::make(),
