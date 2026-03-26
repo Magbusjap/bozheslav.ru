@@ -341,7 +341,8 @@
 								@foreach($projects as $index => $project)
 								<div class="project-item {{ $index === 0 ? 'active' : '' }}" 
 									data-category="{{ $project->category->slug ?? 'other' }}"
-									onclick="selectProject({{ $index }})">
+									onclick="selectProject({{ $index }})"
+									style="{{ $index >= 5 ? 'display:none' : '' }}">
 									<h3 class="project-item__name">{{ $project->title }}</h3>
 									<div class="project-item__actions">
 										@if($project->github_url)
