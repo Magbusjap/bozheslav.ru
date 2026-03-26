@@ -131,6 +131,24 @@ class PortfolioPageResource extends Resource
                                 ->label('Текст')
                                 ->required(),
                         ]),
+                    Forms\Components\Builder\Block::make('before_after')
+                        ->label('Before | After')
+                        ->icon('heroicon-o-adjustments-horizontal')
+                        ->schema([
+                            CuratorPicker::make('before_url')
+                                ->label('Изображение ДО')
+                                ->buttonLabel('Выбрать До')
+                                ->required(),
+                            CuratorPicker::make('after_url')
+                                ->label('Изображение ПОСЛЕ')
+                                ->buttonLabel('Выбрать После')
+                                ->required(),
+                            Forms\Components\TextInput::make('height')
+                                ->label('Высота блока (px)')
+                                ->numeric()
+                                ->default(500)
+                                ->suffix('px'),
+                        ]),
                 ])
                 ->columnSpanFull(),
             Forms\Components\Section::make('SEO')

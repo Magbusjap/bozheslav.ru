@@ -72,6 +72,26 @@
                                                 {!! $block['data']['text'] !!}
                                             </div>
                                         </div>
+                                        @case('before_after')
+                                        @php
+                                            $before = \Awcodes\Curator\Models\Media::find($block['data']['before_url'])?->url;
+                                            $after = \Awcodes\Curator\Models\Media::find($block['data']['after_url'])?->url;
+                                            $h = $block['data']['height'] ?? 500;
+                                        @endphp
+
+                                        @if($before && $after)
+                                            <div class="js-before-after" style="position: relative; width: 100%; height: {{ $h }}px; overflow: hidden; border-radius: 12px; margin: 2rem 0; cursor: ew-resize; user-select: none;">
+                                                <img src="{{ $after }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+                                                <div class="js-before-layer" style="position: absolute; inset: 0; width: 50%; height: 100%; overflow: hidden; border-right: 2px solid white; pointer-events: none;">
+                                                    <img src="{{ $before }}" class="js-before-img" style="position: absolute; top: 0; left: 0; height: 100%; max-width: none; pointer-events: none;">
+                                                </div>
+                                                <div class="js-handle" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: white; transform: translateX(-50%); pointer-events: none;">
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: white; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M18 8L22 12L18 16M6 8L2 12L6 16"/></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
                                         @break
                                 @endswitch
                             @endforeach

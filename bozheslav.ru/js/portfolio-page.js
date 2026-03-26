@@ -62,11 +62,12 @@ function updateCounter() {
 }
 
 function updateButtons() {
-	const total = filteredProjects.length;
-	const prevBtn = document.getElementById("prevBtn");
-	const nextBtn = document.getElementById("nextBtn");
-	if (prevBtn) prevBtn.disabled = currentIndex === 0;
-	if (nextBtn) nextBtn.disabled = currentIndex >= total - 1 || total === 0;
+    if (!document.querySelector(".portfolio-filter")) return; // не портфолио-страница
+    const total = filteredProjects.length;
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    if (prevBtn) prevBtn.disabled = currentIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentIndex >= total - 1 || total === 0;
 }
 
 export function selectProject(globalIndex) {
@@ -169,6 +170,8 @@ export function initPortfolio() {
 	updateButtons();
 }
 
-window.selectProject = selectProject;
-window.prevProject = prevProject;
-window.nextProject = nextProject;
+if (document.querySelector(".portfolio-filter")) {
+	window.selectProject = selectProject;
+	window.prevProject = prevProject;
+	window.nextProject = nextProject;
+}

@@ -11,6 +11,7 @@ import { initExperience } from "/js/experience-page.js";
 import { initArticle, initArticleTags } from "/js/article.js";
 import { init404 } from "./404.js";
 import { initCookieBanner } from "./cookie-banner.js";
+import { initBeforeAfter } from './before-after.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
 	await loadComponent("header", "/components/header.html");
@@ -20,15 +21,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initMenu();
 	initForm();
 	initTyped();
-	initProjects();
 	initBlog();
 	initPortfolio();
+	initProjects();
 	initSkills();
 	initExperience();
 	initArticle();
 	initArticleTags();
 	init404();
 	initCookieBanner();
+	initBeforeAfter();
 });
 
 
