@@ -67,7 +67,11 @@ class ProfileSettings extends Page implements HasForms
         foreach (['github_url', 'telegram_url', 'email'] as $key) {
             Option::updateOrCreate(
                 ['key' => $key],
-                ['value' => $data[$key] ?? null]
+                [
+                    'value' => $data[$key] ?? null,
+                    'label' => $key,
+                    'group' => 'profile',
+                ]
             );
         }
 

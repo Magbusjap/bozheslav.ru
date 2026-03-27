@@ -59,7 +59,11 @@ class ResumeSettings extends Page implements HasForms
 
         Option::updateOrCreate(
             ['key' => 'resume_pdf'],
-            ['value' => $data['resume_pdf'] ?? null]
+            [
+                'value' => $data['resume_pdf'] ?? null,
+                'label' => 'Резюме (PDF)',
+                'group' => 'general',
+            ]
         );
 
         Notification::make()
