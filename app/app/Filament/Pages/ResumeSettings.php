@@ -19,6 +19,7 @@ class ResumeSettings extends Page implements HasForms
     protected static ?string $navigationLabel = 'Резюме';
     protected static ?string $navigationGroup = 'Профиль';
     protected static ?int $navigationSort = 2;
+    protected static ?string $title = 'Резюме';
     protected static string $view = 'filament.pages.resume-settings';
 
     public ?array $data = [];

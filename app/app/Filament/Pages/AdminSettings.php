@@ -10,5 +10,6 @@ class AdminSettings extends Page
     protected static ?string $navigationLabel = 'Настройки админки';
     protected static ?string $navigationGroup = 'Настройки';
     protected static ?int $navigationSort = 3;
+    protected static ?string $title = 'Настройки админки';
     protected static string $view = 'filament.pages.admin-settings';
 }

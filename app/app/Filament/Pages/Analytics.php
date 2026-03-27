@@ -10,5 +10,6 @@ class Analytics extends Page
     protected static ?string $navigationLabel = 'Аналитика';
     protected static ?string $navigationGroup = 'Аналитика';
     protected static ?int $navigationSort = 1;
+    protected static ?string $title = 'Ссылки профиля';
     protected static string $view = 'filament.pages.analytics';
 }
