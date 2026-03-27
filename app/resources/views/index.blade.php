@@ -75,7 +75,8 @@
 							</div>
 
 							<div class="hero__actions">
-								<a href="{{ option('hero_resume_url', '#') }}" class="btn btn--primary btn--lg">
+								 <!-- href="{{ option('hero_resume_url', '#') }}" -->
+								<a href="/resume/download" class="btn btn--primary btn--lg">
 									<svg
 										class="btn__icon"
 										width="20"

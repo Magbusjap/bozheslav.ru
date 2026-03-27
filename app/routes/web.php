@@ -141,6 +141,9 @@ Route::post('/contacts', function (\Illuminate\Http\Request $request) {
     return response()->json(['success' => true]);
 });
 
+// Resume
+Route::get('/resume/download', [App\Http\Controllers\ResumeController::class, 'download'])
+    ->name('resume.download');
 
 
 

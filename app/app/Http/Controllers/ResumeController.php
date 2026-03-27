@@ -12,6 +12,7 @@ class ResumeController extends Controller
     public function download(): StreamedResponse|\Illuminate\Http\RedirectResponse
     {
         // Получаем путь к файлу из таблицы options
+        // Get the file path from the options table
         $resumePath = Option::where('key', 'resume_pdf')->value('value');
 
         if (!$resumePath || !Storage::disk('public')->exists($resumePath)) {
