@@ -311,9 +311,37 @@
 						</div>
 						<!-- 11. Заглушка скриншота — на всю ширину, по центру -->
 						<div class="about-site__admin-image">
-							<div class="about-site__placeholder">
-								<span>Скриншот админ-панели</span>
-							</div>
+							
+								<div class="before-after js-before-after" >
+        
+									<!-- After (нижний слой — изображение "после") -->
+									<img 
+										src="/storage/media/filament-after.webp" 
+										class="before-after__img-after" 
+    									alt="Filament сейчас"
+									/>
+									
+									<!-- Before (верхний слой — изображение "до") -->
+									<div class="before-after__layer js-before-layer">
+										<img 
+											src="/storage/media/filament-before.webp" 
+											class="before-after__img-before js-before-img" 
+    										alt="Filament в начале"
+										/>
+									</div>
+									
+									<!-- Разделитель -->
+									<div class="before-after__handle js-handle">
+										<div class="before-after__circle">
+											<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+												<path d="M18 8L22 12L18 16M6 8L2 12L6 16"/>
+											</svg>
+										</div>
+									</div>
+									
+								</div>
+							<!-- <div class="about-site__placeholder">
+							</div> -->
 						</div>
 
 						<!-- 12. Список возможностей — ниже -->
