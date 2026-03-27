@@ -137,40 +137,197 @@
 				</div>
 			</section>
 
-			<!-- About site -->
+						<!-- About site -->
 			<section class="section portfolio-about" id="about-site">
 				<div class="container portfolio-about__container">
-					<div class="portfolio-about__content">
-						<div class="portfolio-about__text">
-							<h2 class="portfolio-about__title">
-								Этот сайт — тоже мой проект
-							</h2>
-							<p class="portfolio-about__desc">
-								bozheslav.ru написан с нуля и задеплоен на собственном VPS.
-								Никаких конструкторов — только код.
+					<!-- 1. Заголовок, 2. Подзаголовок, 3. Теги стека -->
+					<div class="about-site__header">
+						<h2 class="about-site__title">bozheslav.ru — тоже личный проект</h2>
+						<p class="about-site__subtitle">
+							Построен на Laravel и Filament — от пустого сервера до полноценной
+							CMS
+						</p>
+						<div class="about-site__stack">
+							<span class="badge badge__skills about-site__tag">Laravel</span>
+							<span class="badge badge__skills about-site__tag">Filament</span>
+							<span class="badge badge__skills about-site__tag"
+								>PostgreSQL</span
+							>
+							<span class="badge badge__skills about-site__tag">nginx</span>
+							<span class="badge badge__skills about-site__tag">PHP 8.3</span>
+							<span class="badge badge__skills about-site__tag"
+								>HTML/CSS/JS</span
+							>
+							<span class="badge badge__skills about-site__tag">BEM</span>
+							<span class="badge badge__skills about-site__tag">VPS</span>
+						</div>
+					</div>
+
+					<!-- 4. Философия: 5. текст слева, 6. скриншот справа -->
+					<div class="about-site__philosophy">
+						<div class="about-site__philosophy-text">
+							<h2 class="about-site__section-label">Философия проекта</h2>
+							<p>
+								Первый вопрос, который я задал себе — как быть полезным рынку и
+								бизнесу? Большинство идут по простому пути: WordPress, готовые
+								шаблоны, плагины за $50 в месяц.
 							</p>
-							<div class="portfolio-about__stack">
-								<span class="badge badge--outline">HTML / CSS / JS</span>
-								<span class="badge badge--outline">Laravel</span>
-								<span class="badge badge--outline">PostgreSQL</span>
-								<span class="badge badge--outline">nginx</span>
-								<span class="badge badge--outline">VPS</span>
-								<span class="badge badge--outline">Let's Encrypt</span>
+							<p>
+								Я выбрал другой путь. Собственный VPS, Laravel, PostgreSQL — всё
+								с нуля. Слишком большое воображение не позволяет работать
+								вполсилы.
+							</p>
+							<h4 class="about-site__subsection-title">
+								Почему Laravel, а не WordPress?
+							</h4>
+							<p>
+								Laravel заставляет думать архитектурно. Здесь нет магии плагинов
+								— только код, который ты понимаешь и полностью контролируешь.
+							</p>
+						</div>
+						<!-- 6. Заглушка скриншота -->
+						<div class="about-site__philosophy-image">
+							<div class="about-site__placeholder">
+								<img
+									class="laravel-image"
+									src="/images/Laravel.webp"
+									loading="lazy"
+									alt="laravel-image-1"
+								/>
 							</div>
 						</div>
-						<div class="portfolio-about__cta">
-							<p class="portfolio-about__cta-text">Готов обсудить ваш проект</p>
-							<a href="{{ option('social_telegram', '#') }}" ...>Написать в Telegram</a>
-								<svg
-									class="btn__icon"
-									width="20"
-									height="20"
-									aria-hidden="true"
-								>
-									<use href="/icons/sprites.svg#telegram"></use>
-								</svg>
-								Написать в Telegram
-							</a>
+					</div>
+
+					<!-- 7. Техническая реализация — три карточки -->
+					<div class="about-site__tech">
+						<h2 class="about-site__section-title">Техническая реализация</h2>
+						<div class="about-site__tech-grid">
+							<div class="card">
+								<div class="about-site__card-placeholder" aria-hidden="true">
+									<img
+										class="laravel-image about-site__card-image"
+										src="/images/laravel-image-2.png"
+										loading="lazy"
+										alt="laravel-image-2"
+									/>
+								</div>
+
+								<div class="card__header">
+									<h3 class="card__title">
+										<span
+											class="about-site__card-icon about-site__card-icon--frontend"
+										>
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="./icons/sprites.svg#programming"></use>
+											</svg>
+										</span>
+										Фронтенд с нуля
+									</h3>
+								</div>
+								<div class="card__body">
+									<p class="about-site__card-desc">
+										HTML/CSS/JS без фреймворков. BEM-методология, адаптивный
+										дизайн, тёмная и светлая тема — всё написано руками.
+										JS-скрипты структурированы как ES-модули.
+									</p>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="about-site__card-placeholder" aria-hidden="true">
+									<img
+										class="laravel-image about-site__card-image"
+										src="/images/laravel-image-3.png"
+										loading="lazy"
+										alt="laravel-image-3"
+									/>
+								</div>
+								<div class="card__header">
+									<h3 class="card__title">
+										<span
+											class="about-site__card-icon about-site__card-icon--server"
+										>
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="./icons/sprites.svg#devops"></use>
+											</svg>
+										</span>
+										Серверная инфраструктура
+									</h3>
+								</div>
+								<div class="card__body">
+									<p class="about-site__card-desc">
+										Ubuntu 24.04, nginx с виртуальными хостами, PHP-FPM 8.3,
+										PostgreSQL 16, SSL с автопродлением. Деплой одной командой
+										через bash-скрипт.
+									</p>
+								</div>
+							</div>
+
+							<div class="card">
+								<div class="about-site__card-placeholder" aria-hidden="true">
+									<img
+										class="laravel-image about-site__card-image"
+										src="/images/laravel-image-4.png"
+										loading="lazy"
+										alt="laravel-image-4"
+									/>
+								</div>
+								<div class="card__header">
+									<h3 class="card__title">
+										<span
+											class="about-site__card-icon about-site__card-icon--security"
+										>
+											<svg class="sprites badge__icon" aria-hidden="true">
+												<use href="./icons/sprites.svg#qa"></use>
+											</svg>
+										</span>
+										Безопасность
+									</h3>
+								</div>
+								<div class="card__body">
+									<p class="about-site__card-desc">
+										fail2ban защищает SSH от брутфорса, honeypot и rate limiting
+										на форме обратной связи, HTTP → HTTPS редирект, закрытый
+										порт SSH.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 8. Граница секции -->
+					<hr class="about-site__divider" />
+
+					<!-- 9–12. Возможности админ-панели -->
+					<div class="about-site__admin">
+						<div class="about-site__admin-header">
+							<h2 class="about-site__section-title">
+								Возможности админ-панели
+							</h2>
+							<p class="about-site__admin-subtitle">
+								Filament заменил WordPress полностью — без единого платного
+								плагина
+							</p>
+						</div>
+						<!-- 11. Заглушка скриншота — на всю ширину, по центру -->
+						<div class="about-site__admin-image">
+							<div class="about-site__placeholder">
+								<span>Скриншот админ-панели</span>
+							</div>
+						</div>
+
+						<!-- 12. Список возможностей — ниже -->
+						<div class="card about-site__admin-features">
+							<div class="card__body card__body--pt">
+								<ul class="about-site__features-list">
+									<li>✅ Управление портфолио и проектами</li>
+									<li>✅ Медиабиблиотека с загрузкой ZIP</li>
+									<li>✅ Блог с категориями и SEO-полями</li>
+									<li>✅ Страницы с блочным редактором</li>
+									<li>✅ Настройки сайта из одного места</li>
+									<li>✅ Логи и управление кэшем в панели</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -179,68 +336,82 @@
 			<!-- Contacts -->
 			<section class="section portfolio-contacts" id="contacts">
 				<div class="container portfolio-contacts__container">
-					<h2 class="portfolio-contacts__title">Связаться со мной</h2>
-					<div class="portfolio-contacts__grid">
-						<div class="card">
-							<div class="card__body">
-								<div class="contact__info-row">
+					<!-- 13–15. CTA-блок -->
+					<div class="portfolio-cta card">
+						<div class="portfolio-cta__header">
+							<div class="portfolio-cta__header-left">
+								<!-- 14. Иконка -->
+								<svg class="portfolio-cta__icon sprites" aria-hidden="true">
+									<use href="./icons/sprites.svg#handshake"></use>
+								</svg>
+								<!-- 13. Заголовок -->
+								<h2 class="portfolio-cta__title">Готов обсудить проект</h2>
+							</div>
+							<a
+								href="https://t.me/username"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="portfolio-cta__header-btn"
+							>
+								<svg
+									class="btn__icon"
+									width="18"
+									height="18"
+									aria-hidden="true"
+								>
+									<use href="/icons/sprites.svg#telegram"></use>
+								</svg>
+								Telegram
+							</a>
+						</div>
+						<!-- 15. Текст и кнопки -->
+						<div class="portfolio-cta__body">
+							<p class="portfolio-cta__text">
+								Если вам нужен сайт на Laravel, настройка сервера или
+								автоматизация процессов — напишите мне в Telegram.
+							</p>
+							<div class="portfolio-cta__actions">
+								<a
+									href="https://t.me/username"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="btn btn--outline"
+								>
 									<svg
-										class="sprites badge__icon contact__info-icon"
+										class="btn__icon"
+										width="20"
+										height="20"
 										aria-hidden="true"
 									>
 										<use href="/icons/sprites.svg#telegram"></use>
 									</svg>
-									<div>
-										<h4 class="contact__info-label">Telegram</h4>
-										<p class="contact__info-value">
-											<a href="{{ option('social_telegram', '#') }}">
-												{{ option('contact_telegram', '@username') }}</a>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card__body">
-								<div class="contact__info-row">
-									<svg
-										class="sprites badge__icon contact__info-icon"
-										aria-hidden="true"
-									>
-										<use href="/icons/sprites.svg#email"></use>
-									</svg>
-									<div>
-										<h4 class="contact__info-label">Почта</h4>
-										<p class="contact__info-value">
-											<a href="mailto:{{ option('contact_email', 'mail@bozheslav.ru') }}">
-												{{ option('contact_email', 'mail@bozheslav.ru') }}</a>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card__body">
-								<div class="contact__info-row">
+									Написать в Telegram
+								</a>
+								<a href="portfolio-page.html" class="btn btn--outline">
 									<svg
 										class="sprites badge__icon contact__info-icon"
 										aria-hidden="true"
 									>
 										<use href="/icons/sprites.svg#github"></use>
 									</svg>
-									<div>
-										<h4 class="contact__info-label">GitHub</h4>
-										<p class="contact__info-value">
-											<a href="{{ option('social_github', '#') }}">
-												{{ option('social_github', 'github.com/username') }}</a>
-										</p>
-									</div>
-								</div>
+									GitHub
+								</a>
+
+								<a href="mailto:mail@bozheslav.ru" class="btn btn--outline">
+									<svg
+										class="sprites badge__icon contact__info-icon"
+										aria-hidden="true"
+									>
+										<use href="/icons/sprites.svg#email"></use>
+									</svg>
+									Связаться по email
+								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+
 		</main>
 
 		<div id="footer"></div>

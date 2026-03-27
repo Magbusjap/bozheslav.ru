@@ -116,7 +116,7 @@ Route::post('/contacts', function (\Illuminate\Http\Request $request) {
         ));
 
 
-    // Отправка в Telegram
+    //  Send in the Telegram
     try {
     $text = "📩 Новое сообщение с bozheslav.ru\n\n"
         . "👤 Имя: " . $request->name . "\n"
@@ -141,3 +141,5 @@ Route::post('/contacts', function (\Illuminate\Http\Request $request) {
     return response()->json(['success' => true]);
 });
 // максимум 5 отправок в минуту
+
+

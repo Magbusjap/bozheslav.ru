@@ -149,3 +149,461 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+
+/* ==========================================================================
+   BLOCK: portfolio-about
+   ========================================================================== */
+
+.portfolio-about {
+	padding: 5rem 1rem;
+	background-color: var(--secondary);
+}
+
+/* ==========================================================================
+   BLOCK: About site — header (1, 2, 3)
+   ========================================================================== */
+
+.about-site__header {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.about-site__title {
+	font-size: 1.875rem;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+	.about-site__title {
+		font-size: 2.25rem;
+	}
+}
+
+.about-site__subtitle {
+	color: var(--muted-fg);
+	margin-bottom: 1.5rem;
+	max-width: 40rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about-site__stack {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	justify-content: center;
+}
+
+/* Stack tags with hover — без cursor: pointer */
+.about-site__tag {
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: transparent;
+	transition:
+		border-color 0.2s ease,
+		color 0.2s ease,
+		background-color 0.2s ease;
+}
+
+/* В тёмной теме --border совпадает с --secondary, рамка невидима — усиливаем */
+.dark .about-site__tag {
+	border-color: rgba(var(--primary-rgb), 0.25);
+}
+
+.about-site__tag:hover {
+	border-color: var(--primary);
+	color: var(--primary);
+	background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+/* ==========================================================================
+   BLOCK: About site — philosophy (4, 5, 6)
+   ========================================================================== */
+
+.about-site__philosophy {
+	display: flex;
+	align-items: flex-start;
+	gap: 3rem;
+	margin-top: 3rem;
+	margin-bottom: 4rem;
+}
+
+.about-site__philosophy-text {
+	flex: 1;
+}
+
+.about-site__section-label {
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--primary);
+	border-radius: var(--radius);
+	margin-bottom: 1rem;
+}
+
+.about-site__philosophy-text p {
+	color: var(--muted-fg);
+	margin-bottom: 1rem;
+}
+
+.about-site__subsection-title {
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+}
+
+.about-site__philosophy-image {
+	flex-shrink: 0;
+	width: 40%;
+	max-width: 420px;
+}
+
+/* Заглушка изображения */
+.about-site__placeholder {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	background-color: var(--muted);
+	border: 2px dashed var(--border);
+	border-radius: var(--radius-lg);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--muted-fg);
+	font-size: 0.875rem;
+}
+
+.laravel-image {
+	border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   BLOCK: About site — technical implementation (7)
+   ========================================================================== */
+
+.about-site__tech {
+	margin-bottom: 3rem;
+}
+
+.about-site__section-title {
+	font-size: 1.875rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.about-site__tech-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+}
+
+.about-site__card-image {
+	width: 270px;
+	height: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Заглушка скриншота в карточке */
+.about-site__card-placeholder {
+	height: 320px;
+	background-color: var(--muted);
+	border-bottom: 1px solid var(--border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--muted-fg);
+	font-size: 0.8rem;
+}
+
+/* .about-site__card-placeholder::after {
+	content: "Скриншот";
+} */
+
+/* Иконки карточек — как в skills-page */
+.about-site__card-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.75rem;
+	height: 1.75rem;
+	border-radius: var(--radius);
+	padding: 0.25rem;
+	flex-shrink: 0;
+}
+
+.about-site__card-icon--frontend {
+	background-color: rgba(59, 130, 246, 0.15);
+	color: #3b82f6;
+}
+
+.about-site__card-icon--server {
+	background-color: rgba(34, 197, 94, 0.15);
+	color: #22c55e;
+}
+
+.about-site__card-icon--security {
+	background-color: rgba(168, 85, 247, 0.15);
+	color: #a855f7;
+}
+
+.about-site__card-desc {
+	color: var(--muted-fg);
+}
+
+/* ==========================================================================
+   BLOCK: About site — divider (8)
+   ========================================================================== */
+
+.about-site__divider {
+	border: none;
+	border-top: 1px solid var(--border);
+	margin: 3rem 0;
+}
+
+/* ==========================================================================
+   BLOCK: About site — admin panel (9–12)
+   ========================================================================== */
+
+.about-site__admin-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.about-site__admin-subtitle {
+	color: var(--muted-fg);
+	margin-top: 0.75rem;
+	max-width: 38rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about-site__admin-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	align-items: start;
+}
+
+/* Before / After (11) */
+.about-site__before {
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.about-site__before-label,
+.about-site__after-label {
+	display: inline-block;
+	font-size: 0.8rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 0.2rem 0.75rem;
+	border-radius: var(--radius);
+	margin-bottom: 0.75rem;
+}
+
+.about-site__before-label {
+	background-color: rgba(239, 68, 68, 0.1);
+	color: #ef4444;
+}
+
+.about-site__after-label {
+	background-color: rgba(34, 197, 94, 0.1);
+	color: #22c55e;
+}
+
+.about-site__before-text {
+	color: var(--muted-fg);
+}
+
+.about-site__after-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.about-site__after-list li {
+	color: var(--muted-fg);
+	padding-left: 1.25rem;
+	position: relative;
+}
+
+.about-site__after-list li::before {
+	content: "—";
+	position: absolute;
+	left: 0;
+	color: var(--primary);
+}
+
+/* Широкая заглушка скриншота (11) */
+.about-site__admin-image {
+	width: 90%;
+	margin: 0 auto 2rem;
+}
+
+.about-site__admin-image .about-site__placeholder {
+	aspect-ratio: 16 / 7;
+}
+
+/* Карточка со списком возможностей (12) — ниже */
+.about-site__admin-features {
+	margin-top: 1rem;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Features list (12) */
+.about-site__features-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.about-site__features-list li {
+	color: var(--muted-fg);
+}
+
+/* ==========================================================================
+   BLOCK: portfolio-contacts
+   ========================================================================== */
+
+.portfolio-contacts {
+	padding: 5rem 1rem;
+}
+
+.portfolio-contacts__title {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 1.875rem;
+}
+
+.portfolio-contacts__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+/* ==========================================================================
+   BLOCK: portfolio-cta (13–15)
+   ========================================================================== */
+
+.portfolio-cta {
+	margin-bottom: 3rem;
+	overflow: hidden;
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.portfolio-cta__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1.25rem 1.5rem;
+	background-color: var(--primary);
+	color: var(--primary-fg);
+}
+
+.portfolio-cta__header-left {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.portfolio-cta__icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	flex-shrink: 0;
+}
+
+.portfolio-cta__title {
+	margin: 0;
+	font-size: 1.25rem;
+	color: inherit;
+}
+
+/* Кнопка в шапке (14) — outline на фоне --primary */
+.portfolio-cta__header-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.45rem 1rem;
+	border: 1px solid var(--primary-fg);
+	border-radius: var(--radius);
+	background: transparent;
+	color: var(--primary-fg);
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	opacity: 0.75;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+.portfolio-cta__header-btn:hover {
+	opacity: 1;
+}
+
+.portfolio-cta__body {
+	padding: 1.5rem;
+}
+
+.portfolio-cta__text {
+	color: var(--muted-fg);
+	margin-bottom: 1.5rem;
+}
+
+.portfolio-cta__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+	.about-site__philosophy {
+		flex-direction: column;
+	}
+
+	.about-site__philosophy-image {
+		width: 100%;
+		max-width: none;
+	}
+
+	.about-site__tech-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.about-site__admin-content {
+		grid-template-columns: 1fr;
+	}
+
+	.portfolio-contacts__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.portfolio-cta__header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+	.about-site__tech-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
