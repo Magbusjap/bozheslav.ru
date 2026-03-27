@@ -33,6 +33,11 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
+            ->brandName(fn() => \App\Models\Option::get('admin_name', 'Админка'))
+            ->brandLogo(fn() => \App\Models\Option::get('admin_logo')
+                ? asset('storage/' . \App\Models\Option::get('admin_logo'))
+                : null)
+            ->brandLogoHeight('2rem')
             ->plugins([
                 CuratorPlugin::make(),
             ])

@@ -10,8 +10,9 @@ use Illuminate\Notifications\Notifiable;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use Filament\Models\Contracts\HasAvatar;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
@@ -52,6 +53,12 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
     	return true;
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        $avatar = \App\Models\Option::get('user_avatar');
+        return $avatar ? asset('storage/' . $avatar) : null;
     }
 
 }
