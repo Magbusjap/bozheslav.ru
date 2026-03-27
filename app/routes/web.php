@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 
-// Главная
+// Home
 Route::get('/', function () {
     $posts = \App\Models\Post::where('status', 'published')
         ->orderBy('created_at', 'desc')
@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('index', compact('posts', 'projects'));
 });
 
-// Страницы
+// Pages
 Route::get('/skills', fn() => view('skills'));
 Route::get('/portfolio', function () {
     $projects = \App\Models\PortfolioProject::where('status', 'published')
@@ -30,7 +30,7 @@ Route::get('/portfolio', function () {
 Route::get('/experience', fn() => view('experience'));
 Route::get('/contacts', fn() => view('contacts'));
 
-// Блог — список постов
+// Blog — post list
 Route::get('/blog', function () {
     $posts = \App\Models\Post::where('status', 'published')
         ->orderBy('created_at', 'desc')
@@ -40,7 +40,7 @@ Route::get('/blog', function () {
 });
 
 
-// Блог — отдельная статья
+// Блог — solo article
 Route::get('/blog/{slug}', function ($slug) {
     $query = \App\Models\Post::where('slug', $slug);
     
@@ -57,7 +57,7 @@ Route::get('/blog/{slug}', function ($slug) {
     return view('article', compact('post'));
 });
 
-// Страницы проектов портфолио
+// Portfolio Project Pages
 Route::get('/portfolio/pages/{slug}', function ($slug) {
     $query = \App\Models\PortfolioPage::where('slug', $slug);
 
@@ -79,7 +79,7 @@ Route::get('/portfolio/pages/{slug}', function ($slug) {
     return view('page', compact('page', 'related'));
 });
 
-// Страницы
+// Page two
 Route::get('/{slug}', function ($slug) {
     $query = \App\Models\Page::where('slug', $slug);
     
@@ -96,7 +96,7 @@ Route::get('/{slug}', function ($slug) {
     return view('page', compact('page'));
 });
 
-// Форма обратной связи
+// Feedback
 Route::post('/contacts', function (\Illuminate\Http\Request $request) {
 
     $request->validate([
@@ -140,6 +140,7 @@ Route::post('/contacts', function (\Illuminate\Http\Request $request) {
     
     return response()->json(['success' => true]);
 });
-// максимум 5 отправок в минуту
+
+
 
 
