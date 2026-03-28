@@ -11,6 +11,7 @@ use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Placeholder;
 
 class InfoResources extends Page implements HasForms
 {
@@ -112,6 +113,19 @@ class InfoResources extends Page implements HasForms
                             ->directory('stack-logos')
                             ->image()
                             ->maxSize(512),
+                    ]),
+                
+                Section::make('База данных')
+                    ->icon('heroicon-o-circle-stack')
+                    ->schema([
+                        Placeholder::make('adminer_link')
+                            ->label('Adminer — веб-интерфейс PostgreSQL')
+                            ->content(new \Illuminate\Support\HtmlString(
+                                '<a href="https://bozheslav.ru/adminer.php" target="_blank"
+                                    class="text-primary-500 hover:underline font-medium">
+                                    Открыть Adminer →
+                                </a>'
+                            )),
                     ]),
             ])
             ->statePath('data');

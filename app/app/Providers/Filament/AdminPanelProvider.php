@@ -58,6 +58,7 @@ class AdminPanelProvider extends PanelProvider
                 'Отслеживание',
                 'Профиль',
                 'Настройки',
+                'Система',
                 'Информация',
             ])
             ->middleware([

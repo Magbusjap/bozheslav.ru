@@ -8,12 +8,15 @@ use App\Models\Page;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use App\Traits\HasTrashAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
 
 class PageResource extends Resource
 {
+    use HasTrashAction;
+
     protected static ?string $model = Page::class;
     protected static ?string $navigationIcon = 'heroicon-o-document';
     protected static ?string $navigationLabel = 'Страницы';
@@ -184,7 +187,7 @@ class PageResource extends Resource
             )
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                self::getTrashAction('Страницы'),
                 Tables\Actions\Action::make('view')
                     ->label('Просмотр')
                     ->icon('heroicon-o-arrow-top-right-on-square')

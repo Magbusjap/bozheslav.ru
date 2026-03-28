@@ -8,11 +8,14 @@ use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use App\Traits\HasTrashAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 
 class PortfolioProjectResource extends Resource
 {
+    use HasTrashAction;
+
     protected static ?string $model = PortfolioProject::class;
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
     protected static ?string $navigationLabel = 'Проекты';
@@ -141,7 +144,7 @@ class PortfolioProjectResource extends Resource
             ->defaultSort('sort_order')
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                self::getTrashAction('Проекты'),
             ]);
     }
 

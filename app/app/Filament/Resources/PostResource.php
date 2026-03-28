@@ -12,6 +12,7 @@ use Filament\Infolists\Components\Actions\Action as InfolistAction;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use App\Traits\HasTrashAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
@@ -20,6 +21,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PostResource extends Resource
 {
+	use HasTrashAction;
+
     protected static ?string $model = Post::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -214,7 +217,7 @@ class PostResource extends Resource
 			])
 			->actions([
 				Tables\Actions\EditAction::make(),
-				Tables\Actions\DeleteAction::make(),
+				self::getTrashAction('Posts'),
 				Tables\Actions\Action::make('view')
 					->label('Просмотр')
 					->icon('heroicon-o-arrow-top-right-on-square')
@@ -224,7 +227,7 @@ class PostResource extends Resource
 			])
 			->bulkActions([
 				Tables\Actions\BulkActionGroup::make([
-					Tables\Actions\DeleteBulkAction::make(),
+					self::getTrashBulkAction('Posts'),
 				]),
 			]);
 	}

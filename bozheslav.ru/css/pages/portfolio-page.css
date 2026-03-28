@@ -356,6 +356,11 @@
     justify-content: center;
 }
 
+.about-site__admin-image .before-after__circle svg {
+    color: #333;
+    stroke: #333;
+}
+
 
 /* ==========================================================================
    BLOCK: About site — technical implementation (7)
