@@ -66,6 +66,11 @@
                                             @endif
                                         </blockquote>
                                         @break
+                                    @case('markdown')
+                                        <div class="md-content">
+                                            {!! (new \League\CommonMark\CommonMarkConverter())->convert($block['data']['content']) !!}
+                                        </div>
+                                        @break
                                     @case('image_text')
                                         <div class="article-page__image-text article-page__image-text--{{ $block['data']['position'] }}">
                                             <figure class="article-page__image-text-img" style="width: {{ $block['data']['width'] ?? 300 }}px;">

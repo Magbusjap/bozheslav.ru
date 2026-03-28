@@ -4,6 +4,8 @@
 @import url("./base/variables.css");
 @import url("./base/globals.css");
 @import url("./base/color-theme.css");
+@import url("./base/md-content.css");
+
 
 /* === BLOCKS === */
 @import url("./blocks/header.css");

@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Block: markdown
+   ========================================================================== */
+
+.md-content h2 { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    margin: 1.5rem 0 0.75rem; 
+    color: var(--fg); 
+}
+.md-content h3 { 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    margin: 1.25rem 0 0.5rem; 
+    color: var(--fg); 
+}
+.md-content p { 
+    margin: 0 0 1rem; 
+    line-height: 1.7; 
+    color: var(--fg); 
+}
+.md-content ul, 
+.md-content ol { 
+    margin: 0 0 1rem 1.5rem; 
+    line-height: 1.7; 
+    color: var(--fg); 
+}
+.md-content ul { 
+    list-style: disc; 
+}
+.md-content ol { 
+    list-style: decimal; 
+}
+.md-content li { 
+    margin-bottom: 0.25rem; 
+}
+.md-content strong { 
+    font-weight: 700; 
+}
+.md-content em { 
+    font-style: italic; 
+}
+.md-content a { 
+    color: var(--fg); 
+    text-decoration: underline; 
+}
+.md-content blockquote { 
+    border-left: 3px solid var(--muted-fg); 
+    padding-left: 1rem; 
+    margin: 1rem 0; 
+    color: var(--muted-fg); 
+}
+.md-content hr { 
+    border: none; 
+    border-top: 1px solid var(--border); 
+    margin: 1.5rem 0; 
+}
+
+.md-content pre {
+    background: #383838;
+    color: #e2e2e2;
+    border: 1px solid var(--code-border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+.md-content pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.875rem;
+    color: var(--code-fg);
+}
+.md-content code {
+    background: #383838;
+    color: #e2e2e2;
+    padding: 0.4em 0.4em;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+}

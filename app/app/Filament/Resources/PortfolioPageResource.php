@@ -105,6 +105,14 @@ class PortfolioPageResource extends Resource
                             Forms\Components\TextInput::make('caption')
                                 ->label('Подпись'),
                         ]),
+                    Forms\Components\Builder\Block::make('markdown')
+                        ->label('Markdown')
+                        ->schema([
+                            Forms\Components\Textarea::make('content')
+                                ->label('MD-текст')
+                                ->required()
+                                ->rows(10),
+                        ]),
                     Forms\Components\Builder\Block::make('quote')
                         ->label('Цитата')
                         ->schema([
