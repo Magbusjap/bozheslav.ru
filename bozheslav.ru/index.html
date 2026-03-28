@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="google-site-verification" content="3Ka3wmDabuO6R6kev1UuxPrWy5PKznexHg3VKEZfIGI" />
+		<meta name="yandex-verification" content="102f35d468ef751b" />
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="stylesheet" href="/css/index.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Михаил Божеслав — Разработчик</title>
-	</head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M9GZV0JW3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-2M9GZV0JW3");</script>
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=108285091","ym");ym(108285091,"init",{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108285091" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+</head>
 	<body>
 		@auth
 		<x-admin-bar 

@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="google-site-verification" content="3Ka3wmDabuO6R6kev1UuxPrWy5PKznexHg3VKEZfIGI" />
+		<meta name="yandex-verification" content="102f35d468ef751b" />
 		<link rel="stylesheet" href="/css/index.css" />
 		<link rel="stylesheet" href="/css/vendor/highlight.min.css" />
 		<link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
 		<title>Портфолио — Михаил Божеслав</title>
-	</head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M9GZV0JW3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-2M9GZV0JW3");</script>
+<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=108285091","ym");ym(108285091,"init",{webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108285091" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+</head>
 	<body>
 		@auth
 		<x-admin-bar 
@@ -361,6 +367,7 @@
 				</div>
 			</section>
 
+
 			<!-- Contacts -->
 			<section class="section portfolio-contacts" id="contacts">
 				<div class="container portfolio-contacts__container">
@@ -370,17 +377,16 @@
 							<div class="portfolio-cta__header-left">
 								<!-- 14. Иконка -->
 								<svg class="portfolio-cta__icon sprites" aria-hidden="true">
-									<use href="./icons/sprites.svg#handshake"></use>
+									<use href="/icons/sprites.svg#handshake"></use>
 								</svg>
 								<!-- 13. Заголовок -->
 								<h2 class="portfolio-cta__title">Готов обсудить проект</h2>
 							</div>
-							<a 
-									href="{{ option('social_telegram', '#') }}" 
-									class="btn btn--ghost btn--icon btn--circle" 
-									aria-label="Telegram"
-									target="_blank"
-    								rel="noopener noreferrer"
+							<a	href="{{ option('social_telegram', '#') }}" 
+								class="portfolio-cta__header-btn" 
+								aria-label="Telegram" 
+								target="_blank" 
+								rel="noopener noreferrer"
 							>
 								<svg
 									class="btn__icon"
@@ -400,12 +406,11 @@
 								автоматизация процессов — напишите мне в Telegram.
 							</p>
 							<div class="portfolio-cta__actions">
-								<a 
-									href="{{ option('social_telegram', '#') }}" 
-									class="btn btn--ghost btn--icon btn--circle" 
-									aria-label="Telegram"
-									target="_blank"
-    								rel="noopener noreferrer"
+								<a	href="{{ option('social_telegram', '#') }}" 
+									class="btn btn--outline" 
+									aria-label="Telegram" 
+									target="_blank" 
+									rel="noopener noreferrer"
 								>
 									<svg
 										class="btn__icon"
@@ -419,7 +424,7 @@
 								</a>
 								<a 
 									href="{{ option('social_github', '#') }}" 
-									class="btn btn--ghost btn--icon btn--circle" 
+									class="btn btn--outline" 
 									aria-label="GitHub"
 									target="_blank"
     								rel="noopener noreferrer"
@@ -432,9 +437,10 @@
 									</svg>
 									GitHub
 								</a>
+
 								<a 
 									href="{{ option('social_email', '#') }}" 
-									class="btn btn--ghost btn--icon btn--circle" 
+									class="btn btn--outline" 
 									aria-label="Email"
 								>
 									<svg
