@@ -21,7 +21,7 @@ class LatestProjects extends BaseWidget
                 Tables\Columns\TextColumn::make('title')
                     ->label('Название')
                     ->limit(50),
-                Tables\Columns\TextColumn::make('category.title')
+                Tables\Columns\TextColumn::make('category.name')
                     ->label('Категория'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Дата')

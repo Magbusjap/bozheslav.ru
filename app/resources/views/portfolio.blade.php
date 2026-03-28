@@ -375,11 +375,12 @@
 								<!-- 13. Заголовок -->
 								<h2 class="portfolio-cta__title">Готов обсудить проект</h2>
 							</div>
-							<a
-								href="https://t.me/username"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="portfolio-cta__header-btn"
+							<a 
+									href="{{ option('social_telegram', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
+									aria-label="Telegram"
+									target="_blank"
+    								rel="noopener noreferrer"
 							>
 								<svg
 									class="btn__icon"
@@ -399,11 +400,12 @@
 								автоматизация процессов — напишите мне в Telegram.
 							</p>
 							<div class="portfolio-cta__actions">
-								<a
-									href="https://t.me/username"
+								<a 
+									href="{{ option('social_telegram', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
+									aria-label="Telegram"
 									target="_blank"
-									rel="noopener noreferrer"
-									class="btn btn--outline"
+    								rel="noopener noreferrer"
 								>
 									<svg
 										class="btn__icon"
@@ -415,7 +417,13 @@
 									</svg>
 									Написать в Telegram
 								</a>
-								<a href="portfolio-page.html" class="btn btn--outline">
+								<a 
+									href="{{ option('social_github', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
+									aria-label="GitHub"
+									target="_blank"
+    								rel="noopener noreferrer"
+								>
 									<svg
 										class="sprites badge__icon contact__info-icon"
 										aria-hidden="true"
@@ -424,8 +432,11 @@
 									</svg>
 									GitHub
 								</a>
-
-								<a href="mailto:mail@bozheslav.ru" class="btn btn--outline">
+								<a 
+									href="{{ option('social_email', '#') }}" 
+									class="btn btn--ghost btn--icon btn--circle" 
+									aria-label="Email"
+								>
 									<svg
 										class="sprites badge__icon contact__info-icon"
 										aria-hidden="true"

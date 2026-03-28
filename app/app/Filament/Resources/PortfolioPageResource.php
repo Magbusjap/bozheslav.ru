@@ -104,7 +104,16 @@ class PortfolioPageResource extends Resource
                                 ->required(),
                             Forms\Components\TextInput::make('caption')
                                 ->label('Подпись'),
-                        ]),
+                            Forms\Components\Toggle::make('proportional')
+                                ->label('Пропорционально')
+                                ->default(true),
+                            Forms\Components\TextInput::make('width')
+                                ->label('Ширина (px)')
+                                ->numeric(),
+                            Forms\Components\TextInput::make('height')
+                                ->label('Высота (px)')
+                                ->numeric(),
+                        ]), 
                     Forms\Components\Builder\Block::make('markdown')
                         ->label('Markdown')
                         ->schema([
@@ -192,10 +201,12 @@ class PortfolioPageResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->label('Заголовок')
                     ->searchable()
+                    ->wrap()
                     ->url(fn ($record) => Pages\EditPortfolioPage::getUrl(['record' => $record])),
                 Tables\Columns\TextColumn::make('slug')
                     ->label('URL')
-                    ->searchable(),
+                    ->searchable()
+                    ->wrap(),
                 Tables\Columns\SelectColumn::make('status')
                     ->label('Статус')
                     ->options([

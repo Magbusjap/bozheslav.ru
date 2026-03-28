@@ -102,6 +102,9 @@ class PageResource extends Resource
                                 ->required(),
                             Forms\Components\TextInput::make('caption')
                                 ->label('Подпись'),
+                            Forms\Components\Toggle::make('proportional')
+                                ->label('Пропорционально')
+                                ->default(true),
                             Forms\Components\TextInput::make('width')
                                 ->label('Ширина (px)')
                                 ->numeric(),

@@ -80,7 +80,7 @@ class PortfolioProjectResource extends Resource
                 ->nullable()
                 ->helperText(fn ($get) => match($get('link_type')) {
                     'demo'     => 'Например: https://bozheslav.ru/portfolio/double-lending-fit-studio/',
-                    'page'     => 'Например: /portfolio/n8n',
+                    'page'     => 'Например: https://bozheslav.ru/portfolio/pages/n8n',
                     'external' => 'Например: https://github.com/username/project',
                     default    => ''
                 }),
