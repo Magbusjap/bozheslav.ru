@@ -27,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->path('magbusjap')
             ->login()
             ->profile(isSimple: false)
             ->colors([
