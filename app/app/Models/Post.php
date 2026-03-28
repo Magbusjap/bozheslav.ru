@@ -2,14 +2,10 @@
 
 namespace App\Models;
 
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements HasMedia
+class Post extends Model
 {
-    use InteractsWithMedia;
-
     protected $fillable = [
         'title',
         'slug',
@@ -34,7 +30,6 @@ class Post extends Model implements HasMedia
     public function getCoverUrlAttribute(): ?string
     {
         if (!$this->cover_image) return null;
-        
         $media = \Awcodes\Curator\Models\Media::find($this->cover_image);
         return $media ? $media->url : null;
     }
