@@ -7,11 +7,14 @@ use App\Models\PortfolioCategory;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use App\Traits\HasTrashAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 
 class PortfolioCategoryResource extends Resource
 {
+    use HasTrashAction;
+
     protected static ?string $model = PortfolioCategory::class;
     protected static ?string $navigationIcon = 'heroicon-o-tag';
     protected static ?string $navigationLabel = 'Категории';
@@ -80,7 +83,7 @@ class PortfolioCategoryResource extends Resource
             ->defaultSort('sort_order')
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                self::getTrashAction('Категории', 'name'),
             ]);
 
     }

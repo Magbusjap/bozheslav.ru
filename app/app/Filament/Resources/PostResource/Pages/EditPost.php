@@ -1,11 +1,18 @@
 <?php
+
 namespace App\Filament\Resources\PostResource\Pages;
+
 use App\Filament\Resources\PostResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use App\Models\Trash;
+use Filament\Actions\Action;
+use Filament\Notifications\Notification;
+
 class EditPost extends EditRecord
 {
     protected static string $resource = PostResource::class;
+
     protected function getHeaderActions(): array
     {
         return [
@@ -23,7 +30,20 @@ class EditPost extends EditRecord
                 ->icon('heroicon-o-eye')
                 ->color('warning')
                 ->visible(fn () => $this->record->status === 'draft'),
-            Actions\DeleteAction::make(),
+            Action::make('trash')
+                ->label('Удалить')
+                ->icon('heroicon-o-trash')
+                ->color('danger')
+                ->requiresConfirmation()
+                ->modalHeading('Переместить в корзину?')
+                ->modalDescription(fn() => "«{$this->record->title}» будет перемещено в корзину на 60 дней.")
+                ->modalSubmitActionLabel('Переместить в корзину')
+                ->action(function () {
+                    Trash::moveToTrash($this->record->withoutRelations(), 'Posts', 'title');
+                    $this->record->delete();
+                    Notification::make()->title('Перемещено в корзину')->success()->send();
+                    $this->redirect(PostResource::getUrl());
+                }),
         ];
     }
 }

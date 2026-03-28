@@ -37,6 +37,7 @@ class TrashResource extends Resource
                 Tables\Columns\TextColumn::make('model_name')
                     ->label('Название')
                     ->limit(50)
+                    ->wrap()
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('deletedBy.name')

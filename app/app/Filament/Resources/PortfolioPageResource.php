@@ -8,12 +8,15 @@ use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use App\Traits\HasTrashAction;
 use Filament\Tables;
 use Filament\Tables\Table;
 use FilamentTiptapEditor\TiptapEditor;
 
 class PortfolioPageResource extends Resource
 {
+    use HasTrashAction;
+
     protected static ?string $model = PortfolioPage::class;
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationLabel = 'Page-проекты';
@@ -201,7 +204,7 @@ class PortfolioPageResource extends Resource
             )
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                self::getTrashAction('Page-проекты'),
                 Tables\Actions\Action::make('view')
                     ->label('Просмотр')
                     ->icon('heroicon-o-arrow-top-right-on-square')

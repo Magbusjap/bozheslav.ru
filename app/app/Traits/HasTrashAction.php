@@ -26,7 +26,7 @@ trait HasTrashAction
             ->modalSubmitActionLabel('Переместить в корзину')
             ->modalIcon('heroicon-o-trash')
             ->action(function ($record) use ($label, $nameField) {
-                Trash::moveToTrash($record, $label, $nameField);
+                Trash::moveToTrash($record->withoutRelations(), $label, $nameField);
                 $record->delete();
 
                 Notification::make()
@@ -50,7 +50,7 @@ trait HasTrashAction
             ->modalSubmitActionLabel('Переместить в корзину')
             ->action(function ($records) use ($label, $nameField) {
                 $records->each(function ($record) use ($label, $nameField) {
-                    Trash::moveToTrash($record, $label, $nameField);
+                    Trash::moveToTrash($record->withoutRelations(), $label, $nameField);
                     $record->delete();
                 });
 
