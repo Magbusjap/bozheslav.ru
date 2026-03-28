@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="/css/index.css" />
+        <link rel="stylesheet" href="/css/vendor/highlight.min.css" />
         <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
         <title>{{ $page->seo_title ?? $page->title . ' — Михаил Божеслав' }}</title>
         <meta name="description" content="{{ $page->seo_description ?? '' }}">
@@ -68,7 +69,13 @@
                                         @break
                                     @case('markdown')
                                         <div class="md-content">
-                                            {!! (new \League\CommonMark\CommonMarkConverter())->convert($block['data']['content']) !!}
+                                            @php
+                                                $converter = new \League\CommonMark\GithubFlavoredMarkdownConverter([
+                                                    'html_input' => 'strip',
+                                                    'allow_unsafe_links' => false,
+                                                ]);
+                                            @endphp
+                                            {!! $converter->convert($block['data']['content']) !!}
                                         </div>
                                         @break
                                     @case('image_text')
@@ -181,6 +188,8 @@
         </main>
 
         <div id="footer"></div>
-        <script defer src="/js/index.js" type="module"></script>
+		<script src="/js/vendor/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+		<script defer src="/js/index.js" type="module"></script>
     </body>
 </html>

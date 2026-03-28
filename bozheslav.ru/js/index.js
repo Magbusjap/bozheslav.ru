@@ -13,6 +13,8 @@ import { init404 } from "./404.js";
 import { initCookieBanner } from "./cookie-banner.js";
 import { initBeforeAfter } from './before-after.js';
 import { initCarousel } from "./carousel.js";
+import { initMdCodeLang } from "./md-content.js";
+
 
 document.addEventListener("DOMContentLoaded", async () => {
 	await loadComponent("header", "/components/header.html");
@@ -33,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initCookieBanner();
 	initBeforeAfter();
 	initCarousel();
+	initMdCodeLang();
 });
 
 

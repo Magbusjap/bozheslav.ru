@@ -96,6 +96,17 @@
 										@endif
 									</blockquote>
 									@break
+								@case('markdown')
+									<div class="md-content">
+										@php
+											$converter = new \League\CommonMark\GithubFlavoredMarkdownConverter([
+												'html_input' => 'strip',
+												'allow_unsafe_links' => false,
+											]);
+										@endphp
+										{!! $converter->convert($block['data']['content']) !!}
+									</div>
+									@break
 								@case('image_text')
 									<div class="article-page__image-text article-page__image-text--{{ $block['data']['position'] }}">
 										<figure class="article-page__image-text-img" style="width: {{ $block['data']['width'] ?? 300 }}px;">
