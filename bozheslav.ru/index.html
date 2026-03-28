@@ -166,7 +166,7 @@
 											<img
 												class="hero__photo"
 												src="/images/mikhail-ankudinov-developer.jpg"
-												loading="lazy"
+												fetchpriority="high"
 												alt="Михаил Анкудинов — Разработчик"
 											/>
 										</picture>
