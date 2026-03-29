@@ -11,7 +11,7 @@ class TrackVisit
 {
     public function handle(Request $request, Closure $next)
     {
-        // Пропускаем админку, API, статику
+        // Skip admin panel, API, static files
         if ($this->shouldSkip($request)) {
             return $next($request);
         }
@@ -58,7 +58,7 @@ class TrackVisit
                 'os'           => $os,
             ]);
         } catch (\Exception $e) {
-            // Не ломаем сайт из-за ошибки аналитики
+            // not break the website because of an analytics error
         }
 
         return $next($request);
@@ -68,12 +68,25 @@ class TrackVisit
     {
         $path = $request->path();
 
-        // Пропускаем админку, livewire, storage, иконки
-        foreach (['admin', 'livewire', 'storage', 'icons', 'css', 'js', 'images'] as $skip) {
+        // Skip Livewire AJAX requests
+        if ($request->header('X-Livewire')) return true;
+        if (str_starts_with($path, 'livewire')) return true;
+
+        // Skip trusted IPs (configured in Monitoring section)
+        $trustedIps = json_decode(\App\Models\Option::get('trusted_ips', '[]'), true) ?? [];
+        if (in_array($request->ip(), $trustedIps)) return true;
+
+        // Skip authenticated users via session
+        if ($request->hasSession() && $request->session()->has('password_hash_web')) {
+            return true;
+        }
+
+        // Skip admin panel, storage, static assets
+        foreach (['magbusjap', 'storage', 'icons', 'css', 'js', 'images'] as $skip) {
             if (str_starts_with($path, $skip)) return true;
         }
 
-        // Пропускаем ботов
+        // Skip known bots and crawlers
         $ua = strtolower($request->userAgent() ?? '');
         foreach (['bot', 'crawler', 'spider', 'curl', 'wget', 'python'] as $bot) {
             if (str_contains($ua, $bot)) return true;
