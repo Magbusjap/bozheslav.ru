@@ -667,7 +667,9 @@
 										</time>
 									</span>
 								</div>
-								<h3 class="blog-card__title">{{ $post->title }}</h3>
+								<a href="/blog/{{ $post->slug }}" class="blog-card__link-a" >
+									<h2 class="blog-card__title">{{ $post->title }}</h2>
+								</a>
 								<p class="blog-card__desc">{{ $post->excerpt }}</p>
 								<a href="/blog/{{ $post->slug }}" class="blog-card__link">
 									Читать далее

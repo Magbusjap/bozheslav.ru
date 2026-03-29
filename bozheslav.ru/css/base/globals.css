@@ -269,6 +269,13 @@ body.has-admin-bar .nav {
 	height: 1.25rem;
 }
 
+a.blog-card__link-a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+
 /* ==========================================================================
    Utilities
    ========================================================================== */

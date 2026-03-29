@@ -193,10 +193,12 @@ class PostResource extends Resource
 			->columns([
 				Tables\Columns\TextColumn::make('title')
 					->searchable()
+					->wrap()
 					->extraAttributes(['style' => 'cursor: pointer; text-decoration: none;'])
     				->extraAttributes(['onmouseover' => 'this.style.textDecoration="underline"', 'onmouseout' => 'this.style.textDecoration="none"']),
 				Tables\Columns\TextColumn::make('slug')
-					->searchable(),
+					->searchable()
+					->wrap(),
 				Tables\Columns\ImageColumn::make('cover_image')
     				->getStateUsing(fn ($record) => $record->cover_url)
 					->width(85)
