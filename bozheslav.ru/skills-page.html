@@ -100,6 +100,10 @@
 										Laravel
 										<span class="skill-tag__bar" style="--level: 45%"></span>
 									</button>
+									<button class="skill-tag" data-skill="filament">
+										Filament
+										<span class="skill-tag__bar" style="--level: 66%"></span>
+									</button>
 									<button class="skill-tag" data-skill="php">
 										PHP
 										<span class="skill-tag__bar" style="--level: 40%"></span>
