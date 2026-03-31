@@ -40,7 +40,7 @@ Route::get('/blog', function () {
 });
 
 
-// Блог — solo article
+// Blog — solo article
 Route::get('/blog/{slug}', function ($slug) {
     $query = \App\Models\Post::where('slug', $slug);
     
@@ -146,4 +146,5 @@ Route::get('/resume/download', [App\Http\Controllers\ResumeController::class, 'd
     ->name('resume.download');
 
 
-
+// hh_parser
+Route::get('/api/vacancies', [App\Http\Controllers\ParserController::class, 'search']);
