@@ -150,6 +150,7 @@
                                             <div class="parser-block__empty" style="display:none">
                                                 Ничего не найдено. Попробуйте другой запрос.
                                             </div>
+                                            <div class="parser-block__pagination" style="display:none"></div>
                                         </div>
                                         @break
                                 @endswitch
