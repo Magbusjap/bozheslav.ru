@@ -14,6 +14,7 @@ import { initCookieBanner } from "./cookie-banner.js";
 import { initBeforeAfter } from './before-after.js';
 import { initCarousel } from "./carousel.js";
 import { initMdCodeLang } from "./md-content.js";
+import { initParserBlocks } from './parser-block.js';
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initBeforeAfter();
 	initCarousel();
 	initMdCodeLang();
+	initParserBlocks();
 });
 
 

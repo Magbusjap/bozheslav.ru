@@ -174,6 +174,30 @@ class PortfolioPageResource extends Resource
                                 ->default('100%')
                                 ->helperText('Например: 800px или 70%'),
                         ]),
+                    Forms\Components\Builder\Block::make('parser')
+                        ->label('AJAX-парсер')
+                        ->icon('heroicon-o-table-cells')
+                        ->schema([
+                            Forms\Components\TextInput::make('endpoint')
+                                ->label('Endpoint (URL)')
+                                ->placeholder('/api/vacancies')
+                                ->required(),
+                            Forms\Components\TextInput::make('param')
+                                ->label('Параметр запроса')
+                                ->placeholder('query')
+                                ->default('query')
+                                ->required(),
+                            Forms\Components\TextInput::make('data_key')
+                                ->label('Ключ массива в JSON-ответе')
+                                ->placeholder('vacancies')
+                                ->required(),
+                            Forms\Components\TextInput::make('placeholder')
+                                ->label('Placeholder поля поиска')
+                                ->placeholder('Введите запрос...'),
+                            Forms\Components\TextInput::make('search_label')
+                                ->label('Текст кнопки')
+                                ->default('Найти'),
+                        ]),
                 ])
                 ->columnSpanFull(),
             Forms\Components\Section::make('SEO')

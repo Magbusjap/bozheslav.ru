@@ -123,6 +123,35 @@
                                             </div>
                                         @endif
                                         @break
+                                    @case('parser')
+                                        <div class="parser-block"
+                                            data-endpoint="{{ $block['data']['endpoint'] }}"
+                                            data-param="{{ $block['data']['param'] }}"
+                                            data-key="{{ $block['data']['data_key'] }}"
+                                        >
+                                            <div class="parser-block__form">
+                                                <input
+                                                    class="input parser-block__input"
+                                                    type="text"
+                                                    placeholder="{{ $block['data']['placeholder'] ?? 'Введите запрос...' }}"
+                                                />
+                                                <button class="btn btn--primary parser-block__btn">
+                                                    {{ $block['data']['search_label'] ?? 'Найти' }}
+                                                </button>
+                                            </div>
+                                            <div class="parser-block__status" style="display:none"></div>
+                                            <div class="parser-block__error" style="display:none"></div>
+                                            <div class="parser-block__table-wrap" style="display:none">
+                                                <table class="parser-block__table">
+                                                    <thead class="parser-block__thead"></thead>
+                                                    <tbody class="parser-block__tbody"></tbody>
+                                                </table>
+                                            </div>
+                                            <div class="parser-block__empty" style="display:none">
+                                                Ничего не найдено. Попробуйте другой запрос.
+                                            </div>
+                                        </div>
+                                        @break
                                 @endswitch
                             @endforeach
                         @endif
