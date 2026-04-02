@@ -153,6 +153,36 @@
                                             <div class="parser-block__pagination" style="display:none"></div>
                                         </div>
                                         @break
+                                
+
+                                    @case('mjml_workspace')
+                                        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; padding: 40px 0;">
+                                            
+                                            @if(!empty($block['data']['project_title']))
+                                                <h3 style="margin-bottom: 20px; font-weight: 600;">{{ $block['data']['project_title'] }}</h3>
+                                            @endif
+
+                                            <div style="width: 100%; max-width: 1000px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; overflow: hidden;">
+                                                
+                                                <div style="background: #f8fafc; padding: 12px; border-bottom: 1px solid #e2e8f0; display: flex; gap: 6px;">
+                                                    <span style="width: 8px; height: 8px; background: #ff5f56; border-radius: 50%;"></span>
+                                                    <span style="width: 8px; height: 8px; background: #ffbd2e; border-radius: 50%;"></span>
+                                                    <span style="width: 8px; height: 8px; background: #27c93f; border-radius: 50%;"></span>
+                                                </div>
+
+                                                {{-- 
+                                                    ВАЖНО: Вместо $renderedHtml используем хелпер 
+                                                    и данные из блока: $block['data']['html_content'] 
+                                                --}}
+                                                <iframe 
+                                                    srcdoc="{{ compileMjml($block['data']['html_content']) }}" 
+                                                    style="width: 100%; border: none; display: block; min-height: 400px;"
+                                                    loading="lazy"
+                                                    onload="this.style.height = '0px'; this.style.height = (this.contentWindow.document.documentElement.scrollHeight + 20) + 'px';"
+                                                ></iframe>
+                                            </div>
+                                        </div>
+                                        @break
                                 @endswitch
                             @endforeach
                         @endif

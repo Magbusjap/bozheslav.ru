@@ -148,3 +148,5 @@ Route::get('/resume/download', [App\Http\Controllers\ResumeController::class, 'd
 
 // hh_parser
 Route::get('/api/vacancies', [App\Http\Controllers\ParserController::class, 'search']);
+
+

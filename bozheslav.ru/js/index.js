@@ -15,6 +15,7 @@ import { initBeforeAfter } from './before-after.js';
 import { initCarousel } from "./carousel.js";
 import { initMdCodeLang } from "./md-content.js";
 import { initParserBlocks } from './parser-block.js';
+import { initMailResizer } from './mail-resizer.js';
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initCarousel();
 	initMdCodeLang();
 	initParserBlocks();
+	initMailResizer();
 });
 
 

@@ -2,6 +2,13 @@
 
 namespace App\Filament\Resources;
 
+// MJML
+use Filament\Forms\Components\Builder\Block;
+use Filament\Forms\Components\Tabs;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\ViewField;
+use Filament\Forms\Components\TextInput;
+// end MJML
 use App\Filament\Resources\PortfolioPageResource\Pages;
 use App\Models\PortfolioPage;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
@@ -197,6 +204,43 @@ class PortfolioPageResource extends Resource
                             Forms\Components\TextInput::make('search_label')
                                 ->label('Текст кнопки')
                                 ->default('Найти'),
+                        ]),
+                    Forms\Components\Builder\Block::make('mjml_workspace')
+                        ->label('Email Конструктор (MJML)')
+                        ->icon('heroicon-o-envelope')
+                        ->schema([
+                            Tabs::make('Email Editor')
+                                ->tabs([
+                                    // Вкладка с полями ввода
+                                    Tabs\Tab::make('Рабочая область')
+                                        ->icon('heroicon-m-pencil-square')
+                                        ->schema([
+                                            Forms\Components\TextInput::make('project_title')
+                                                ->label('Название макета')
+                                                ->placeholder('Например: Taskduck Promo'),
+                                            
+                                            CuratorPicker::make('images')
+                                                ->label('Медиа-файлы проекта')
+                                                ->multiple()
+                                                ->buttonLabel('Добавить картинки'),
+
+                                            Forms\Components\Textarea::make('html_content')
+                                                ->label('HTML код письма')
+                                                ->rows(15)
+                                                ->columnSpanFull()
+                                                ->live(onBlur: true) // Превью обновится, когда ты переключишь вкладку
+                                                ->helperText('Вставь сюда скомпилированный HTML из MJML'),
+                                        ]),
+
+                                    // Вкладка с живым просмотром
+                                    Tabs\Tab::make('Предпросмотр')
+                                        ->icon('heroicon-m-eye')
+                                        ->schema([
+                                            ViewField::make('html_content') // Используем то же имя поля, чтобы подхватить данные
+                                                ->view('filament.forms.components.email-preview-iframe')
+                                        ]),
+                                ])
+                                ->columnSpanFull(),
                         ]),
                 ])
                 ->columnSpanFull(),
