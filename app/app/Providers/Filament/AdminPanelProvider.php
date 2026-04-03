@@ -56,6 +56,7 @@ class AdminPanelProvider extends PanelProvider
                 'Портфолио',
                 'Аналитика',
                 'Отслеживание',
+                'Рассылки',
                 'Профиль',
                 'Настройки',
                 'Система',

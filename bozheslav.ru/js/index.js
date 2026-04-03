@@ -15,7 +15,7 @@ import { initBeforeAfter } from './before-after.js';
 import { initCarousel } from "./carousel.js";
 import { initMdCodeLang } from "./md-content.js";
 import { initParserBlocks } from './parser-block.js';
-import { initMailResizer } from './mail-resizer.js';
+import { initMailResizer } from './filament/builder/components/mail-resizer.js';
 
 
 document.addEventListener("DOMContentLoaded", async () => {
