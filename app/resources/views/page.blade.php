@@ -162,7 +162,7 @@
                                                 <h3 style="margin-bottom: 20px; font-weight: 600;">{{ $block['data']['project_title'] }}</h3>
                                             @endif
 
-                                            <div style="width: 100%; max-width: 1000px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; overflow: hidden;">
+                                            <div style="width: 100%; max-width: 700px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; overflow: hidden;">
                                                 
                                                 <div style="background: #f8fafc; padding: 12px; border-bottom: 1px solid #e2e8f0; display: flex; gap: 6px;">
                                                     <span style="width: 8px; height: 8px; background: #ff5f56; border-radius: 50%;"></span>

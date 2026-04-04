@@ -15,4 +15,9 @@ class EmailMedia extends Model
         'mime_type',
         'size',
     ];
+
+    public function emailFolder()
+    {
+       return $this->belongsTo(EmailFolder::class, 'folder', 'slug');
+    }
 }

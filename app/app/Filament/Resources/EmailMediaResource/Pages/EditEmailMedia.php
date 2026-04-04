@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\EmailMediaResource\Pages;
 
 use App\Filament\Resources\EmailMediaResource;
-use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
 class EditEmailMedia extends EditRecord
@@ -12,8 +11,6 @@ class EditEmailMedia extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        return [
-            Actions\DeleteAction::make(),
-        ];
+        return [];
     }
 }
