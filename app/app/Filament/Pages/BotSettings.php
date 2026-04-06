@@ -29,6 +29,10 @@ class BotSettings extends Page implements Forms\Contracts\HasForms
             'bot_rules'       => Option::where('key', 'bot_rules')->value('value') ?? '',
             'bot_keywords'    => Option::where('key', 'bot_keywords')->value('value') ?? '',
             'bot_about'       => Option::where('key', 'bot_about')->value('value') ?? '',
+            'leads_role'     => Option::where('key', 'leads_role')->value('value') ?? '',
+            'leads_system'   => Option::where('key', 'leads_system')->value('value') ?? '',
+            'leads_rules'    => Option::where('key', 'leads_rules')->value('value') ?? '',
+            'leads_template' => Option::where('key', 'leads_template')->value('value') ?? '',
         ]);
     }
 
@@ -60,6 +64,24 @@ class BotSettings extends Page implements Forms\Contracts\HasForms
                     ->label('Ключевые слова (через запятую)')
                     ->rows(3)
                     ->placeholder('верстка, вёрстка, laravel, php, html...'),
+            ]),
+            Forms\Components\Section::make('Поиск компаний')->schema([
+                Forms\Components\Textarea::make('leads_role')
+                    ->label('Роль AI для компаний')
+                    ->rows(3)
+                    ->placeholder('Ты помогаешь фрилансеру находить потенциальных заказчиков...'),
+                Forms\Components\Textarea::make('leads_system')
+                    ->label('Системный промпт для компаний')
+                    ->rows(5)
+                    ->placeholder('Анализируй компанию и определяй подходит ли она...'),
+                Forms\Components\Textarea::make('leads_rules')
+                    ->label('Правила отбора компаний')
+                    ->rows(4)
+                    ->placeholder('Подходит если: есть сайт, малый/средний бизнес...'),
+                Forms\Components\Textarea::make('leads_template')
+                    ->label('Шаблон письма')
+                    ->rows(6)
+                    ->placeholder('Здравствуйте! Меня зовут Михаил...'),
             ]),
         ])->statePath('data');
     }
