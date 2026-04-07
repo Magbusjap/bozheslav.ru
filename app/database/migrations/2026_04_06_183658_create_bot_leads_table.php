@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('bot_leads', function (Blueprint $table) {
             $table->id();
+            $table->string('company_name');
+            $table->string('contact_email')->nullable();
+            $table->string('website')->nullable();
+            $table->string('source')->nullable(); // hh, 2gis, avito, manual
+            $table->string('niche')->nullable(); // кафе, салон, магазин
+            $table->boolean('has_website')->default(false);
+            $table->string('site_quality')->nullable(); // bad, none, ok
+            $table->string('status')->default('new'); // new, sent, replied, rejected
+            $table->text('ai_analysis')->nullable();
+            $table->boolean('sent_to_telegram')->default(false);
+            $table->timestamp('email_sent_at')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
