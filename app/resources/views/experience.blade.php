@@ -35,6 +35,54 @@
 					</div>
 
 					<div class="experience-timeline">
+
+						<!-- OnFlaude CMS -->
+						<div class="exp-entry exp-entry--project">
+							<div class="exp-entry__marker">
+								<span class="exp-entry__icon">
+									<svg class="sprites badge__icon" aria-hidden="true">
+										<use href="/icons/sprites.svg#folder-data-storage"></use>
+									</svg>
+								</span>
+								<span class="exp-entry__line"></span>
+							</div>
+							<div class="exp-entry__body card">
+								<div class="card__body">
+									<div class="exp-entry__head">
+										<div>
+											<h3 class="exp-entry__title">
+												OnFlaude — open-source CMS на Laravel
+											</h3>
+											<span class="exp-entry__type">Личный проект · в разработке</span>
+										</div>
+										<time class="exp-entry__date">2026 — н.в.</time>
+									</div>
+									<p class="exp-entry__desc">
+										Разрабатываю open-source альтернативу WordPress на Laravel 12 +
+										Filament 4 + PostgreSQL 16. Принципы Lean Architecture (минимум
+										сторонних пакетов), ITCSS-архитектура CSS, сборка на Vite.
+										Реализованы: роли пользователей без внешних пакетов, медиабиблиотека
+										с папками и thumbnails, options-таблица для глобальных настроек,
+										recovery-endpoint для восстановления доступа, Pest-тесты на
+										PostgreSQL. Репозиторий:
+										<a href="https://github.com/Magbusjap/onflaude" target="_blank" rel="noopener">github.com/Magbusjap/onflaude</a>.
+									</p>
+									<div class="exp-entry__tags">
+										<span class="badge badge--outline">Laravel 12</span>
+										<span class="badge badge--outline">Filament 4</span>
+										<span class="badge badge--outline">PostgreSQL</span>
+										<span class="badge badge--outline">Livewire</span>
+										<span class="badge badge--outline">Alpine.js</span>
+										<span class="badge badge--outline">ITCSS</span>
+										<span class="badge badge--outline">Vite</span>
+										<span class="badge badge--outline">Pest</span>
+										<span class="badge badge--outline">Open Source</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
 						<!-- Personal project -->
 						<div class="exp-entry exp-entry--project">
 							<div class="exp-entry__marker">
